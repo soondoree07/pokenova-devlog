@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokenova Devlog</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #0e1117;
+      color: #e2e8f0;
+      font-family: 'Segoe UI', 'Noto Sans KR', sans-serif;
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1a1f2e 0%, #16213e 100%);
+      border-bottom: 1px solid #2d3748;
+      padding: 28px 24px 22px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #fff;
+    }
+
+    header h1 span {
+      color: #63b3ed;
+    }
+
+    header p {
+      margin-top: 6px;
+      font-size: 0.9rem;
+      color: #718096;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 16px 80px;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 28px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, #63b3ed, #4a5568);
+    }
+
+    .log-entry {
+      position: relative;
+      margin-bottom: 36px;
+    }
+
+    .log-entry::before {
+      content: '';
+      position: absolute;
+      left: -24px;
+      top: 16px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #63b3ed;
+      border: 2px solid #0e1117;
+      box-shadow: 0 0 0 3px rgba(99,179,237,0.25);
+    }
+
+    .log-card {
+      background: #1a202c;
+      border: 1px solid #2d3748;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+
+    .log-card:hover {
+      border-color: #4a5568;
+    }
+
+    .log-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 20px;
+      cursor: pointer;
+      user-select: none;
+      background: #1e2535;
+    }
+
+    .log-date {
+      background: #2d3748;
+      color: #90cdf4;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      white-space: nowrap;
+      letter-spacing: 0.3px;
+    }
+
+    .log-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #e2e8f0;
+      flex: 1;
+    }
+
+    .log-toggle {
+      color: #4a5568;
+      font-size: 1.1rem;
+      transition: transform 0.2s;
+    }
+
+    .log-entry.open .log-toggle {
+      transform: rotate(180deg);
+    }
+
+    .log-body {
+      display: none;
+      padding: 16px 20px 20px;
+      border-top: 1px solid #2d3748;
+    }
+
+    .log-entry.open .log-body {
+      display: block;
+    }
+
+    .log-items {
+      list-style: none;
+      margin-bottom: 16px;
+    }
+
+    .log-items li {
+      position: relative;
+      padding-left: 16px;
+      margin-bottom: 7px;
+      font-size: 0.88rem;
+      color: #cbd5e0;
+      line-height: 1.55;
+    }
+
+    .log-items li::before {
+      content: '•';
+      position: absolute;
+      left: 4px;
+      color: #63b3ed;
+      font-weight: 700;
+    }
+
+    .commits-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #718096;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 8px;
+    }
+
+    .commits-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .commit-item {
+      font-size: 0.8rem;
+      color: #718096;
+      font-family: 'Consolas', 'Monaco', monospace;
+      padding: 4px 8px;
+      background: #171c27;
+      border-radius: 6px;
+      border-left: 2px solid #2d3748;
+    }
+
+    .commit-item span {
+      color: #4fd1c5;
+    }
+
+    .no-commits {
+      font-size: 0.8rem;
+      color: #4a5568;
+      font-style: italic;
+    }
+
+    #loading {
+      text-align: center;
+      padding: 80px 0;
+      color: #718096;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #4a5568;
+      font-size: 0.78rem;
+      border-top: 1px solid #1a202c;
+    }
+
+    footer a {
+      color: #63b3ed;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Pokenova <span>Devlog</span></h1>
+    <p>개발 작업 로그 — 날짜별 변경사항 기록</p>
+  </header>
+
+  <main>
+    <div id="loading">로딩 중...</div>
+    <div class="timeline" id="timeline" style="display:none"></div>
+  </main>
+
+  <footer>
+    <a href="https://soondoree07.github.io/pokenova_project/" target="_blank">Pokenova 사이트</a> &nbsp;·&nbsp;
+    <a href="https://github.com/soondoree07/pokenova_project" target="_blank">GitHub</a>
+  </footer>
+
+  <script>
+    async function load() {
+      const res = await fetch('logs.json');
+      const logs = await res.json();
+
+      const timeline = document.getElementById('timeline');
+      document.getElementById('loading').style.display = 'none';
+      timeline.style.display = 'block';
+
+      logs.forEach((log, i) => {
+        const entry = document.createElement('div');
+        entry.className = 'log-entry' + (i === 0 ? ' open' : '');
+
+        const itemsHtml = log.items.map(item => `<li>${item}</li>`).join('');
+
+        let commitsHtml = '';
+        if (log.commits && log.commits.length > 0) {
+          const commitItems = log.commits.map(c => {
+            const [hash, ...rest] = c.split(' - ');
+            return `<div class="commit-item"><span>${hash}</span> — ${rest.join(' - ')}</div>`;
+          }).join('');
+          commitsHtml = `<div class="commits-label">Commits</div><div class="commits-list">${commitItems}</div>`;
+        } else {
+          commitsHtml = `<div class="commits-label">Commits</div><div class="no-commits">기록 없음</div>`;
+        }
+
+        entry.innerHTML = `
+          <div class="log-card">
+            <div class="log-header">
+              <div class="log-date">${log.date}</div>
+              <div class="log-title">${log.title}</div>
+              <div class="log-toggle">▼</div>
+            </div>
+            <div class="log-body">
+              <ul class="log-items">${itemsHtml}</ul>
+              ${commitsHtml}
+            </div>
+          </div>
+        `;
+
+        entry.querySelector('.log-header').addEventListener('click', () => {
+          entry.classList.toggle('open');
+        });
+
+        timeline.appendChild(entry);
+      });
+    }
+
+    load().catch(err => {
+      document.getElementById('loading').textContent = '로그를 불러오지 못했습니다.';
+      console.error(err);
+    });
+  </script>
+</body>
+</html>
