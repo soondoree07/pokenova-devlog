@@ -4,10 +4,12 @@
     "project": "pokenova",
     "title": "신규 아이템 스프라이트 보완",
     "items": [
-      "악의족자·물의족자 스프라이트 이미지 추가 (serebii 출처)"
+      "악의족자·물의족자 스프라이트 이미지 추가 (serebii 출처)",
+      "신규 아이템 51개 + 새 메가스톤 45개 스프라이트 전부 serebii로 교체 (wikia/PokeAPI 404 해결)"
     ],
     "commits": [
-      "3c0bd58 - fix: 악의족자·물의족자 스프라이트 이미지 추가 (serebii)"
+      "3c0bd58 - fix: 악의족자·물의족자 스프라이트 이미지 추가 (serebii)",
+      "6be05d6 - fix: 신규 아이템·메가스톤 스프라이트 124개 serebii로 교체"
     ]
   },
   {
