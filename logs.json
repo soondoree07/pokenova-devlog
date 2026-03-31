@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-04-01",
+    "project": "pokenova",
+    "title": "신규 아이템 스프라이트 보완",
+    "items": [
+      "악의족자·물의족자 스프라이트 이미지 추가 (serebii 출처)"
+    ],
+    "commits": [
+      "3c0bd58 - fix: 악의족자·물의족자 스프라이트 이미지 추가 (serebii)"
+    ]
+  },
+  {
     "date": "2026-03-31",
     "project": "pokenova",
     "title": "엔트리 도구 모달 섹션 재구성 + 뒤로가기 기능",
