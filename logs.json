@@ -2,16 +2,18 @@
   {
     "date": "2026-04-01",
     "project": "pokenova",
-    "title": "Gen 9 기술 35개 데이터 오류 전면 수정",
+    "title": "Gen 8/9 기술 데이터 오류 전면 검증 및 수정",
     "items": [
       "ID 850~884 기술 35개가 8세대로 잘못 표기된 것을 9세대로 수정",
       "타입 오류 전면 수정 (소금절이 강철→바위, 플레어송 바위→불꽃, 아쿠아스텝 풀→물 등 대부분 타입이 틀려 있었음)",
       "위력·명중률 누락 데이터 보완 (소금절이 위력40/명중100, 테라버스트 위력80/명중100 등)",
       "영어명 오류 수정 (대검돌격 bitter blade→Glaive Rush, 레이징불 rage fist→Raging Bull, 썰렁개그 chilling water→Chilly Reception, 달려들기 eternabeam→Pounce)",
+      "PokeAPI로 Gen 8/9 전체 기술 검증 후 변화 기술 7개의 power 0 → null 수정 (파워시프트·승리의춤·농성·초승달의기도·화염의수호·하드프레스·드래곤옐)",
       "fix_gen9_moves.py 수정 스크립트 추가 (PokeAPI 기반 자동 수정)"
     ],
     "commits": [
-      "85bb5c8 - fix: Gen 9 기술 35개 타입/위력/명중/세대/영어명 전면 수정 (ID 850-884)"
+      "85bb5c8 - fix: Gen 9 기술 35개 타입/위력/명중/세대/영어명 전면 수정 (ID 850-884)",
+      "6bc6962 - fix: 변화 기술 7개의 power 0 → null 수정"
     ]
   },
   {
