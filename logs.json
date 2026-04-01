@@ -31,9 +31,11 @@
       "entry.html 기술 룩업 하이픈/공백 포맷 불일치 해소",
       "SV 신규 기술 64개 한국어 번역 적용 (pokemon.fandom.com/ko) → 미번역 기술 0개 달성",
       "기술 도감(movedex.html) 신규 생성 — 타입/분류 필터 + 검색",
-      "learnsets 전면 재구축: SV 미등장 포켓몬 최신 버전 fallback, 메가/거다이맥스 원종 기술 상속 (1286마리, 67638개)"
+      "learnsets 전면 재구축: SV 미등장 포켓몬 최신 버전 fallback, 메가/거다이맥스 원종 기술 상속 (1286마리, 67638개)",
+      "4개 페이지 네비게이션 위치 통일: 모든 페이지 헤더 오른쪽 상단에 동일한 스타일의 버튼 배치"
     ],
     "commits": [
+      "5222ee6 - fix: 4개 페이지 네비게이션 위치 통일 (헤더 오른쪽 상단)",
       "6d49c5f - feat: learnsets 전면 재구축 — SV fallback + 메가/거다이맥스 원종 상속",
       "11fb923 - feat: 기술 도감(movedex.html) 신규 + learnsets 재구축 스크립트 개선",
       "1dabadb - feat: SV 신규 기술 64개 한국어 번역 적용",
