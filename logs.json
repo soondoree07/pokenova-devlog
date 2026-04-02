@@ -9,12 +9,14 @@
       "신비록/사마자르/다투곰/포푸니크/장침바루 formType=region 추가 → 히스이 리전폼 필터 표시",
       "다투곰 불필요한 formLabel '히스이의 모습' 제거",
       "대쓰여너 암컷·러브로스 영물폼 type alt→hisui, 러브로스 regionType=hisui 추가",
-      "전체 폼 스프라이트 261개 파일명을 za_{name_en}.png 형식으로 통일 → 브라우저 URL디코딩으로 인한 메가진화 이미지 미표시 문제 해결"
+      "전체 폼 스프라이트 261개 파일명을 za_{name_en}.png 형식으로 통일 → 브라우저 URL디코딩으로 인한 메가진화 이미지 미표시 문제 해결",
+      "리더보드 _lbGet: where(mode)+orderBy+where(difficulty) 복합 인덱스 오류 → mode만 Firestore 필터링 후 클라이언트에서 difficulty 필터·정렬·100개 slice로 우회"
     ],
     "commits": [
       "b1f733c - fix: ZA 메가폼 이미지 파일명 수정 및 가라르 달마모드 리전폼 필터 누락 수정",
       "ce0efa3 - fix: 히스이 전용 포켓몬 리전폼 필터 표시 및 러브로스 히스이 분류",
-      "6adb433 - fix: 폼 스프라이트 파일명 단순화로 메가/리전폼 이미지 표시 수정"
+      "6adb433 - fix: 폼 스프라이트 파일명 단순화로 메가/리전폼 이미지 표시 수정",
+      "1cecd2a - fix: Firestore 복합 인덱스 없이 리더보드 쿼리 우회"
     ]
   },
   {
