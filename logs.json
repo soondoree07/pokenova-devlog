@@ -2,14 +2,17 @@
   {
     "date": "2026-04-04",
     "project": "pokenova",
-    "title": "전체 페이지 모바일 가로 스크롤 방지",
+    "title": "모바일 반응형: 가로 스크롤 방지 + 햄버거 메뉴",
     "items": [
       "모든 페이지(index/pokedex/movedex/itemdex/entry/admin)에 html, body { overflow-x: hidden } 추가",
       "index.html 헤더: body의 padding: 0 16px 때문에 헤더가 뷰포트보다 좁게 렌더링되던 문제 수정 — width: calc(100% + 32px) / margin-left: -16px으로 풀폭 확보",
-      "모바일(≤600px)에서도 동일하게 width: calc(100% + 24px) / margin-left: -12px 적용"
+      "모바일(≤600px)에서도 동일하게 width: calc(100% + 24px) / margin-left: -12px 적용",
+      "전체 5개 페이지에 햄버거 메뉴 추가: ≤600px에서 nav 숨기고 ☰ 버튼 표시, 탭 시 세로 드롭다운으로 5개 메뉴 표시",
+      "드롭다운 외부 탭 시 자동 닫힘, ☰/✕ 아이콘 토글"
     ],
     "commits": [
-      "a0c7ba8 - fix: 전체 페이지 모바일 가로 스크롤 방지 및 헤더 전체 너비 수정"
+      "a0c7ba8 - fix: 전체 페이지 모바일 가로 스크롤 방지 및 헤더 전체 너비 수정",
+      "dbf6d84 - feat: 모바일 햄버거 메뉴 추가 (≤600px)"
     ]
   },
   {
