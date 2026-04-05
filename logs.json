@@ -14,7 +14,12 @@
       "🎱 오늘의 포켓몬 페이지(today.html) 신규 추가 — 몬스터볼 클릭 시 영상 재생 후 랜덤 포켓몬 공개",
       "PokeAPI 한국어 플레이버 텍스트 자동 로드, 보관하기/놓아주기/다시뽑기 기능",
       "보관된 포켓몬 컬렉션 localStorage 저장 및 그리드 표시",
-      "videos/pokeball-open.mp4 영상 파일 추가, 전체 페이지 nav에 링크 추가"
+      "videos/pokeball-open.mp4 영상 파일 추가, 전체 페이지 nav에 링크 추가",
+      "하루 1회 뽑기 제한 + 컬렉션 중복 제외 + 컬렉션 칩 클릭 시 상세 모달 표시",
+      "컬렉션 100마리 제한 — 초과 시 유저가 직접 교체할 포켓몬 선택하는 스왑 모달 추가",
+      "네비 아이콘 정리 — 퀴즈 🎴→❓, 오늘의 포켓몬 앞 🎱 제거",
+      "포켓몬 플레이버 텍스트 제거 → 특성(랜덤 1개) + 능력치 6종 표로 교체 (PokeAPI 의존성 제거)",
+      "특성 '—' 버그 수정 — daily record 복원 시 pokemonDB에서 id로 직접 조회"
     ],
     "commits": [
       "eb9efbf - Add robots.txt with sitemap reference",
@@ -22,7 +27,15 @@
       "b037622 - seo: og:image URL을 pokenova.vercel.app으로 변경",
       "a959713 - feat(admin): 리더보드 섹션 추가 및 리더보드 초기화 버튼 추가",
       "a53fbd3 - feat: 능력치 맞추기 퀴즈 탭 추가 (HABCDS 공개, 포켓몬 이름 맞추기, 목숨 10개)",
-      "3b2e8c0 - feat: 오늘의 포켓몬 페이지 추가 (today.html)"
+      "3b2e8c0 - feat: 오늘의 포켓몬 페이지 추가 (today.html)",
+      "09c3201 - fix(today): 영상 종료 시 영상 즉시 숨기고 포켓몬 카드 표시",
+      "d35daa9 - fix(today): video.src 빈값 문제 수정 — source 태그 제거하고 src 직접 설정",
+      "27a31c9 - feat(today): 하루 1회 뽑기, 중복 제외, 컬렉션 상세 모달",
+      "3ca72f0 - feat(today): 컬렉션 100마리 제한 — 초과 시 가장 오래된 포켓몬 자동 교체",
+      "65d5e93 - feat(today): 컬렉션 100마리 초과 시 교체할 포켓몬 직접 선택",
+      "738b659 - style: 네비 아이콘 정리 — 🎴→❓(퀴즈), 🎱 제거(오늘의 포켓몬)",
+      "e0c267b - feat(today): 포켓몬 설명 제거 → 특성(랜덤) + 능력치 표로 교체",
+      "20ca8e4 - fix(today): 특성 표시 버그 수정 — pokemonDB에서 id로 직접 조회"
     ]
   },
   {
