@@ -8,13 +8,14 @@
       "포켓몬 맞추기 난이도 선택 HTML에서 b-diff-selector 클래스 제거 — 기술 맞추기와 동일한 diff-selector 클래스만 사용",
       "기술 맞추기 시작 화면 카드 높이를 포켓몬 맞추기와 일치시킴 — m-name-revealed 요소가 display:none 없이 min-height를 차지하던 문제 수정",
       "아이템 도감 오류신고를 카드별 버튼에서 페이지 상단 단일 버튼으로 변경 — 모달에서 아이템 검색 후 선택하여 신고하는 2단계 흐름으로 개선",
-      "Google Search Console 소유권 인증 파일 추가 — pokenova.vercel.app 사이트 등록"
+      "Google Search Console 소유권 인증 — cleanUrls 충돌로 HTML 파일 방식 실패, 메타 태그 방식으로 변경하여 index.html에 추가"
     ],
     "commits": [
       "cca1e27 - fix: hamburger CSS order + unify barcode/move diff layout",
       "b7bd533 - fix: hide m-name-revealed on start so move card matches pokemon card size",
       "d12060a - feat: itemdex report as page-level button with item search",
-      "9815412 - add Google Search Console verification file"
+      "9815412 - add Google Search Console verification file",
+      "4013d14 - add Google Search Console meta tag verification"
     ]
   },
   {
