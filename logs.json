@@ -1,5 +1,23 @@
 [
   {
+    "date": "2026-04-06",
+    "project": "claude-dashboard",
+    "title": "Claude Dashboard 구축 — 브라우저에서 Claude Code 조작하는 원격 대시보드 완성",
+    "items": [
+      "Next.js + xterm.js + WebSocket + node-pty 기반 브라우저 터미널 대시보드 구축",
+      "tmux 세션 목록 조회 / 새 세션 생성 / 세션 종료 기능 구현",
+      "세션 클릭 시 xterm.js 터미널로 tmux attach — Claude Code 원격 조작 가능",
+      "Next.js middleware Edge Runtime 오류 수정 — Node.js crypto → Web Crypto API로 교체",
+      "xterm.js CSS를 CDN 대신 패키지에서 직접 로드하도록 변경 + fit() 타이밍 수정",
+      "Cloudflare Tunnel 설정 — ai.junghyeok.com 고정 도메인 연결",
+      "PM2로 Next.js 서버 + cloudflared 프로세스 관리 및 자동 재시작 설정",
+      "Windows 시작 시 WSL + PM2 자동 실행되도록 .vbs 스타트업 스크립트 등록",
+      "비밀번호 로그인 → Google OAuth (next-auth) 로그인으로 전환",
+      "특정 Gmail 계정만 허용하는 이메일 화이트리스트 인증 구현"
+    ],
+    "commits": []
+  },
+  {
     "date": "2026-04-05",
     "project": "pokenova",
     "title": "햄버거/카드 버그 수정 + 아이템 도감 오류신고 개선 + Google Search Console 등록",
