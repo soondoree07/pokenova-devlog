@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-04-07",
+    "project": "pokenova",
+    "title": "에써르 암컷 특성 데이터 오류 수정",
+    "items": [
+      "에써르 암컷(Indeedee-female) 1번 특성을 정신력(Inner Focus)에서 마이페이스(Own Tempo)로 수정",
+      "에써르 암컷 숨겨진 특성을 치유의마음(Healer)에서 사이코메이커(Psychic Surge)로 수정"
+    ],
+    "commits": [
+      "1d6c743 - fix: 에써르 암컷 특성 수정 (정신력→마이페이스, 치유의마음→사이코메이커)"
+    ]
+  },
+  {
     "date": "2026-04-06",
     "project": "jbae",
     "title": "작품 데이터 수정 및 제목·설명 다수 보완",
