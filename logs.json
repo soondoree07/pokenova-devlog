@@ -16,6 +16,7 @@
       "초상투영(Embody Aspect) 퀴즈에 오거폰 4폼 연결 (도감에는 미표시)",
       "관리자 페이지 F5 새로고침 시 숫자가 다르게 나오는 버그 수정 (Firebase 초기화 타이밍 레이스)",
       "전 페이지(7개)에 Google Analytics 추가 — 실시간 접속자 수 확인 가능",
+      "포켓몬 맞추기 니드런♀/♂ 정답 처리 개선 — '니드런'만 입력해도 정답 처리",
       "전 퀴즈 모드 보상 통일: 정답 누적 5의 배수마다 목숨 부족 시 목숨 +1, 꽉 찼으면 힌트 +1 (b/m/a/i/st)",
       "ZA 메가진화 5종 퀴즈/도감 활성화: 치렁/모단단게/갑주무사/킬라플로르/드닐레이브 (메가스톤·스프라이트·타입 모두 기존 데이터에 있었고 CANONICAL_MEGA만 누락)",
       "CANONICAL_MEGA 구조 개선: index.html+pokedex.html 중복 하드코딩 → data/canonical_mega.json 단일 파일로 분리"
@@ -32,7 +33,8 @@
       "38fd321 - fix: pokedex.html CANONICAL_MEGA에도 ZA 메가 5종 추가",
       "04ad632 - refactor: CANONICAL_MEGA를 canonical_mega.json으로 분리 (단일 소스 관리)",
       "9e9ab21 - fix: F5 새로고침 시 Firebase 초기화 전 loadDashboard 호출 문제 수정",
-      "30280d6 - feat: 전 페이지 Google Analytics(G-42TMREJVJT) 추가"
+      "30280d6 - feat: 전 페이지 Google Analytics(G-42TMREJVJT) 추가",
+      "7113506 - fix: 니드런 정답 입력 시 ♂♀ 기호 없이 '니드런'만 쳐도 정답 처리"
     ]
   },
   {
