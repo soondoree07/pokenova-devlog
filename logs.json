@@ -501,7 +501,7 @@
   },
   {
     "date": "2026-03-29",
-    "project": "jbae-portfolio",
+    "project": "jbae",
     "title": "전체 작업 로그 CHANGELOG.md 추가",
     "items": [
       "CHANGELOG.md 생성 — 3/19~3/29 전체 57개 커밋 히스토리 정리"
@@ -525,7 +525,7 @@
   },
   {
     "date": "2026-03-28",
-    "project": "jbae-portfolio",
+    "project": "jbae",
     "title": "작가 소개글 수정 / 갤러리 4열 그리드 전환 / 작품 크기 비례 레이아웃",
     "items": [
       "작가 소개글(bio) 수정: 한복천 바느질 + 먹선 콜라쥬 기법으로 표현 구체화",
@@ -686,7 +686,7 @@
   },
   {
     "date": "2026-03-24",
-    "project": "jbae-portfolio",
+    "project": "jbae",
     "title": "작품 배치 전면 정리 / 이미지 교체 및 크롭",
     "items": [
       "2009년 만들어가는 이야기~구름시리즈 solo 배치",
@@ -721,7 +721,7 @@
   },
   {
     "date": "2026-03-22",
-    "project": "jbae-portfolio",
+    "project": "jbae",
     "title": "2열 masonry 레이아웃 및 2022년 썸네일 수정",
     "items": [
       "갤러리 2열 masonry 레이아웃으로 개선",
@@ -734,7 +734,7 @@
   },
   {
     "date": "2026-03-21",
-    "project": "jbae-portfolio",
+    "project": "jbae",
     "title": "배정혜 작가 실제 데이터 전면 적용 / 이미지 처리 / 모바일 대응",
     "items": [
       "배정혜 작가 포트폴리오 실제 데이터 적용 및 약력 섹션 추가",
@@ -777,7 +777,7 @@
   },
   {
     "date": "2026-03-19",
-    "project": "jbae-portfolio",
+    "project": "jbae",
     "title": "포트폴리오 사이트 초기 생성",
     "items": [
       "포트폴리오 사이트 최초 생성 (index.html, year.html, style.css, script.js, data.json)",
