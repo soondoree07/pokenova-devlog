@@ -8,11 +8,13 @@
       "entry.html, movedex.html, index.html, today.html, pokedex.html, itemdex.html - 로컬 JSON fetch를 pochams API로 전환",
       "quiz_pokemon → /api/data/pokemon, quiz_moves → /api/data/moves, quiz_items → /api/data/items, quiz_abilities → /api/data/abilities",
       "learnsets.json → pochams /data/learnsets.json 정적 서빙으로 전환",
-      "zmoves, pokemon_stats, canonical_mega는 로컬 유지"
+      "zmoves, pokemon_stats, canonical_mega는 로컬 유지",
+      "itemdex.html - desc_lang 필터를 null 허용으로 수정 (pochams API는 desc_lang 필드 미포함)"
     ],
     "commits": [
       "8f2dc9f - data: 브리두라스 기술 리스트에서 바디프레스 제거",
-      "07bb932 - feat: 포켓몬 데이터 fetch를 pochams API로 전환"
+      "07bb932 - feat: 포켓몬 데이터 fetch를 pochams API로 전환",
+      "0d84d16 - fix: itemdex desc_lang 필터 null 허용 (pochams API 호환)"
     ]
   },
   {
