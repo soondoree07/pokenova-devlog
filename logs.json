@@ -2,6 +2,19 @@
   {
     "date": "2026-04-10",
     "project": "pochams_project",
+    "title": "성능 개선 + 마이페이지 + 통계 + Vercel 도메인 변경",
+    "items": [
+      "서버 컴포넌트 self-fetch 제거 - fetch('/api/...') 대신 Prisma 직접 호출로 전환 (HTTP 왕복 제거로 로딩 속도 개선)",
+      "lib/queries.ts 추가 - 팀/샘플/마이/통계 공통 DB 쿼리 모음",
+      "Vercel 프로젝트명 pochams_project → pochams-battle, 도메인 pochams-battle.vercel.app으로 변경"
+    ],
+    "commits": [
+      "b4e61e7 - perf: 서버 컴포넌트 self-fetch 제거 → Prisma 직접 호출로 전환"
+    ]
+  },
+  {
+    "date": "2026-04-10",
+    "project": "pochams_project",
     "title": "마이페이지 + 사용률 통계 + 팀/샘플 CRUD 완성",
     "items": [
       "마이페이지 - 내 팀/내 샘플/좋아요 탭, 프로필 헤더 (구글 아바타+이름)",
