@@ -29,13 +29,20 @@
       "Neon DB 연결 및 prisma db push로 스키마 동기화",
       "Next.js 16 proxy 규칙에 맞게 middleware.ts → proxy.ts 전환",
       "공통 Header 컴포넌트 추가 (로고, 팀/샘플 네비, 로그인/로그아웃)",
-      "메인 페이지 구성 - 히어로 섹션 + 기능 소개 3카드"
+      "메인 페이지 구성 - 히어로 섹션 + 기능 소개 3카드",
+      "Prisma 스키마에 PokemonData/MoveData/ItemData/AbilityData 테이블 추가",
+      "@prisma/adapter-neon으로 Prisma 7 client 엔진 연결 (lib/prisma.ts 업데이트)",
+      "prisma/seed.ts 작성 - pokenova JSON → Neon DB 초기 적재 (포켓몬 1025, 기술 929, 도구 659, 특성 308)",
+      "공유 API 엔드포인트 생성: GET /api/data/pokemon, /moves, /items, /abilities, /pokemon/[id]",
+      "learnsets.json public/data에 정적 서빙",
+      "sign-in 페이지 Suspense 래핑 (useSearchParams 빌드 에러 수정)"
     ],
     "commits": [
       "294dc58 - chore: 프로젝트 초기 세팅 (Next.js 15 + Prisma + NextAuth)",
       "8afc872 - feat: pokenova 포켓몬 데이터 연동 (포켓몬/기술/도구/특성/능력치)",
       "366bdeb - feat: DB 스키마 + NextAuth Google 로그인 설정",
-      "edac579 - feat: 메인 페이지 + 헤더 컴포넌트 + Next.js 16 proxy 마이그레이션"
+      "edac579 - feat: 메인 페이지 + 헤더 컴포넌트 + Next.js 16 proxy 마이그레이션",
+      "3f4d0ce - feat: 포켓몬 데이터 DB 연동 및 공유 API 구축"
     ]
   },
   {
