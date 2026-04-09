@@ -51,7 +51,8 @@
       "7a6aa62 - fix: tsconfig exclude prisma dir",
       "7e4c075 - fix: prisma generate postinstall",
       "6a233c5 - fix: moves API moveClass → class 변환",
-      "pochams 프로덕션 배포 완료: https://pochamsproject.vercel.app"
+      "pochams 프로덕션 배포 완료: https://pochamsproject.vercel.app",
+      "4d96807 - fix: API 라우트에 CORS 헤더 추가 (pokenova 크로스 도메인 요청 허용)"
     ]
   },
   {
