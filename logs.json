@@ -2,6 +2,22 @@
   {
     "date": "2026-04-10",
     "project": "pochams_project",
+    "title": "팀 수정 + 샘플 목록/상세/등록/수정 구현",
+    "items": [
+      "팀 수정 API (PUT /api/teams/[id]) 및 수정 페이지 구현",
+      "샘플 API 구현 - GET/POST /api/samples, GET/PUT/DELETE /api/samples/[id], 좋아요 토글",
+      "샘플 목록 페이지 - 정렬(최신/좋아요/조회), 페이지네이션, 포켓몬 스프라이트+타입 뱃지 카드",
+      "샘플 상세 페이지 - 스펙(특성/도구/기술/노력치/테라타입), 메모, 파트너/상성 포켓몬 스프라이트",
+      "샘플 등록/수정 폼 - 포켓몬 선택 후 스펙 입력, PokemonTagInput으로 파트너/상성 선택",
+      "PokemonTagInput 컴포넌트 - 검색+태그 방식 다중 포켓몬 선택"
+    ],
+    "commits": [
+      "0aa0b2b - feat: 팀 수정 + 샘플 목록/상세/등록/수정 구현"
+    ]
+  },
+  {
+    "date": "2026-04-10",
+    "project": "pochams_project",
     "title": "팀 목록/상세/등록 페이지 구현",
     "items": [
       "팀 API 구현 - GET/POST /api/teams (필터·정렬·페이지네이션), GET/DELETE /api/teams/[id], 좋아요 토글",
