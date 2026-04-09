@@ -9,11 +9,24 @@
       "Vercel 프로젝트명 pochams_project → pochams-battle, 도메인 pochams-battle.vercel.app으로 변경",
       "닉네임 설정 기능 추가 - 마이페이지 설정 탭에서 닉네임 변경, PUT /api/my/profile",
       "유저 공개 프로필 페이지 구현 (/users/[id]) - 아바타, 가입일, 등록한 팀/샘플 목록",
-      "팀/샘플 카드 작성자 이름 → 유저 페이지 링크 연결"
+      "팀/샘플 카드 작성자 이름 → 유저 페이지 링크 연결",
+      "스프라이트 URL 절대경로 수정 - DB에 pokenova.vercel.app 기준 절대 URL로 저장, 외부 CDN 의존 없이 자체 서빙"
     ],
     "commits": [
       "b4e61e7 - perf: 서버 컴포넌트 self-fetch 제거 → Prisma 직접 호출로 전환",
-      "2cb0561 - feat: 닉네임 설정 + 유저 프로필 페이지 구현"
+      "2cb0561 - feat: 닉네임 설정 + 유저 프로필 페이지 구현",
+      "ec81f90 - fix: 스프라이트 URL 절대경로로 변환 (pokenova.vercel.app 기준)"
+    ]
+  },
+  {
+    "date": "2026-04-10",
+    "project": "pokenova_project",
+    "title": "POCHAMS_API 도메인 업데이트",
+    "items": [
+      "pokenova 전체 HTML 파일의 POCHAMS_API를 pochamsproject.vercel.app → pochams-battle.vercel.app으로 변경 (6개 파일)"
+    ],
+    "commits": [
+      "f031406 - fix: POCHAMS_API 도메인 pochams-battle.vercel.app으로 업데이트"
     ]
   },
   {
