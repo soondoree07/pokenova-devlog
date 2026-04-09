@@ -1,6 +1,17 @@
 [
   {
     "date": "2026-04-09",
+    "project": "pokenova",
+    "title": "브리두라스 기술 리스트 바디프레스 제거",
+    "items": [
+      "브리두라스(Brute Bonnet) 기술 리스트에서 바디프레스(body-press) 제거"
+    ],
+    "commits": [
+      "8f2dc9f - data: 브리두라스 기술 리스트에서 바디프레스 제거"
+    ]
+  },
+  {
+    "date": "2026-04-09",
     "project": "pochams_project",
     "title": "포챔스 프로젝트 GitHub 레포 생성 및 초기 세팅 + 포켓몬 데이터 연동",
     "items": [
