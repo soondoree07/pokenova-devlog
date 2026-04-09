@@ -2,16 +2,19 @@
   {
     "date": "2026-04-09",
     "project": "pochams_project",
-    "title": "포챔스 프로젝트 GitHub 레포 생성 및 초기 세팅",
+    "title": "포챔스 프로젝트 GitHub 레포 생성 및 초기 세팅 + 포켓몬 데이터 연동",
     "items": [
       "GitHub private 레포 생성 (soondoree07/pochams_project)",
       "Next.js 15 App Router + TypeScript + Tailwind CSS 초기화",
       "Prisma 스키마 작성 - Team, TeamSample, StandaloneSample, Like 모델, UsageStat",
       "App Router 기반 폴더 구조 세팅 (팀/샘플/통계/계산기/마이페이지)",
-      ".env.example 및 prisma 클라이언트 싱글톤 설정"
+      ".env.example 및 prisma 클라이언트 싱글톤 설정",
+      "pokenova_project에서 포켓몬/기술/도구/특성/능력치 JSON 데이터 연동",
+      "타입 정의 및 검색/조회 유틸 함수 작성"
     ],
     "commits": [
-      "294dc58 - chore: 프로젝트 초기 세팅 (Next.js 15 + Prisma + NextAuth)"
+      "294dc58 - chore: 프로젝트 초기 세팅 (Next.js 15 + Prisma + NextAuth)",
+      "8afc872 - feat: pokenova 포켓몬 데이터 연동 (포켓몬/기술/도구/특성/능력치)"
     ]
   },
   {
