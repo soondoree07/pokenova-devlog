@@ -14,12 +14,17 @@
       "Prisma 스키마 NextAuth 모델 추가 (Account, Session, VerificationToken)",
       "NextAuth Google OAuth 설정 및 API 라우트",
       "미들웨어로 /my, /teams/new, /samples/new 인증 보호",
-      "Google 로그인 페이지 + SessionProvider 전역 연결"
+      "Google 로그인 페이지 + SessionProvider 전역 연결",
+      "Neon DB 연결 및 prisma db push로 스키마 동기화",
+      "Next.js 16 proxy 규칙에 맞게 middleware.ts → proxy.ts 전환",
+      "공통 Header 컴포넌트 추가 (로고, 팀/샘플 네비, 로그인/로그아웃)",
+      "메인 페이지 구성 - 히어로 섹션 + 기능 소개 3카드"
     ],
     "commits": [
       "294dc58 - chore: 프로젝트 초기 세팅 (Next.js 15 + Prisma + NextAuth)",
       "8afc872 - feat: pokenova 포켓몬 데이터 연동 (포켓몬/기술/도구/특성/능력치)",
-      "366bdeb - feat: DB 스키마 + NextAuth Google 로그인 설정"
+      "366bdeb - feat: DB 스키마 + NextAuth Google 로그인 설정",
+      "edac579 - feat: 메인 페이지 + 헤더 컴포넌트 + Next.js 16 proxy 마이그레이션"
     ]
   },
   {
