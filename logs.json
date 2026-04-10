@@ -2,14 +2,18 @@
   {
     "date": "2026-04-10",
     "project": "pochams_project",
-    "title": "계산기·샘플 제작에 메가진화 포켓몬 추가",
+    "title": "메가진화 계산기/샘플 동작 완성",
     "items": [
-      "seed.ts: 메가진화형을 별도 PokemonData 행으로 삽입 (ID: 100000 + base_id*10 + formIndex)",
-      "기본형 1025 + 메가 93 = 1118개 seeded, 메가 전부 inChampions: true",
-      "DamageCalc learnset: 메가형(charizard-mega-x)은 기본형(charizard) learnset으로 폴백"
+      "seed.ts: 메가진화형을 별도 PokemonData 행으로 삽입 (inChampions: false, 계산기 전용)",
+      "계산기: 메가진화 포켓몬 선택 시 메가스톤 자동 고정 + 특성 자동 고정",
+      "계산기: 샘플에서 메가스톤 아이템 설정 시 해당 메가진화 포켓몬으로 자동 전환",
+      "계산기: 아이템 드롭다운에서 메가스톤 수동 선택 불가 (오직 자동만 가능)",
+      "샘플 제작: 포켓몬 리스트에서 메가진화 형태 제외",
+      "샘플 제작/수정: 메가진화 형태 있는 포켓몬은 해당 메가스톤이 도구 목록 최상단에 표시",
+      "API (my-samples, my-teams): 계산기용 샘플 로드 시 item 필드 포함"
     ],
     "commits": [
-      "94896f6 - feat: 계산기·샘플 제작에 메가진화 포켓몬 추가"
+      "2cc1f96 - feat: mega evolution support in calc and samples"
     ]
   },
   {
