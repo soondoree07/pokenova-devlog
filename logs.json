@@ -19,7 +19,8 @@
       "champions_data_1_2.json 반영 - quiz_moves.json 병합 (기존 desc 유지, 수치 변경 18개 + move_categories 170개 신규 태그 추가)",
       "MoveData 스키마에 moveCategories 필드 추가 및 DB/API 반영",
       "master_moves.json 반영 - contact(접촉기 여부), in_champions(포챔스 출전 여부) 필드 추가",
-      "샘플 생성/수정 폼 포켓몬 선택을 포챔스 출전 186마리로 제한 (PokemonData inChampions 필드 추가)"
+      "샘플 생성/수정 폼 포켓몬 선택을 포챔스 출전 186마리로 제한 (PokemonData inChampions 필드 추가)",
+      "계산기 특성 보정 시스템 통합 - 공격자/수비자 특성 선택 드롭다운 추가 (포켓몬 고유 특성 목록에서 선택), 40개 이상 특성 자동 보정 (단단한발톱/예리함/철주먹/테크니션/적응력 등), 천하장사/진홍빛고동/하드론엔진 등 실수치 레벨 특성 처리, 조건부 특성 UI (HP비율, 상태이상, 성별, 마지막행동, 교체직후 등), 더블 아군 특성 선택 (파워스폿/배터리/강철정신), 계산 결과에 특성 보정 내용 표시"
     ],
     "commits": [
       "b4e61e7 - perf: 서버 컴포넌트 self-fetch 제거 → Prisma 직접 호출로 전환",
@@ -32,7 +33,8 @@
       "22b4c91 - fix: 성격 이름 통일 (constants.ts ↔ 계산기 NATURE_GRID 일치)",
       "693645a - feat: MoveData에 moveCategories 필드 추가",
       "2ebe215 - feat: MoveData에 contact/inChampions 필드 추가",
-      "74bfedd - feat: 샘플 폼 포켓몬 선택을 포챔스 출전 포켓몬으로 제한"
+      "74bfedd - feat: 샘플 폼 포켓몬 선택을 포챔스 출전 포켓몬으로 제한",
+      "529f382 - feat: 계산기 특성 보정 시스템 통합"
     ]
   },
   {
