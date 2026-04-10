@@ -17,7 +17,8 @@
       "계산기 샘플 불러오기 - 공격자/수비자 카드에서 내 샘플 또는 좋아요 누른 샘플 선택 시 포켓몬 + SP + 성격 자동 적용",
       "성격 이름 통일 - constants.ts NATURES를 계산기 그리드 이름과 일치하도록 수정 (외로운→외로움 등 6개 수정, 중립 5개 명시적 등록)",
       "champions_data_1_2.json 반영 - quiz_moves.json 병합 (기존 desc 유지, 수치 변경 18개 + move_categories 170개 신규 태그 추가)",
-      "MoveData 스키마에 moveCategories 필드 추가 및 DB/API 반영"
+      "MoveData 스키마에 moveCategories 필드 추가 및 DB/API 반영",
+      "master_moves.json 반영 - contact(접촉기 여부), in_champions(포챔스 출전 여부) 필드 추가"
     ],
     "commits": [
       "b4e61e7 - perf: 서버 컴포넌트 self-fetch 제거 → Prisma 직접 호출로 전환",
@@ -28,7 +29,8 @@
       "ffd28f0 - feat(calc): 기술 자동 분류 감지 + 공격자 습득 기술 필터링",
       "34fd2d7 - feat(calc): 내 샘플/좋아요 샘플 불러오기 기능 추가",
       "22b4c91 - fix: 성격 이름 통일 (constants.ts ↔ 계산기 NATURE_GRID 일치)",
-      "693645a - feat: MoveData에 moveCategories 필드 추가"
+      "693645a - feat: MoveData에 moveCategories 필드 추가",
+      "2ebe215 - feat: MoveData에 contact/inChampions 필드 추가"
     ]
   },
   {
