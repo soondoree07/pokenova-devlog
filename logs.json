@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-04-11",
+    "project": "pochams_project",
+    "title": "[미해결] /admin 페이지 접속 불가 — 로그인해도 메인으로 튕김",
+    "items": [
+      "문제: https://pochams-battle.vercel.app/admin 접속 시 로그인 상태임에도 메인페이지로 redirect됨",
+      "원인 후보 1: session callback에서 nicknameSet DB 쿼리 실패로 session이 null로 떨어지는 경우",
+      "원인 후보 2: ADMIN_EMAIL 환경변수는 Vercel Production에 설정됨 확인 완료 — 값 불일치 가능성",
+      "원인 후보 3: Prisma client가 배포 시 nicknameSet 필드를 인식 못하는 경우 (generate 누락)",
+      "확인해야 할 것: Vercel 배포 로그에서 /admin 요청 시 에러 여부, ADMIN_EMAIL 실제 값이 soondoree07@gmail.com인지",
+      "다음 할 일: auth.ts session callback을 try/catch로 감싸서 DB 쿼리 실패해도 session이 살아있게 수정, admin 체크 로직 디버깅"
+    ],
+    "commits": []
+  },
+  {
     "date": "2026-04-10",
     "project": "pochams_project",
     "title": "관리자 페이지 + 패치노트 수정 기능",
