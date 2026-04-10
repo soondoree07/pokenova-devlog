@@ -2,8 +2,14 @@
   {
     "date": "2026-04-10",
     "project": "pochams_project",
-    "title": "홈 섹션 순서 변경 + 패치노트 기능 추가",
+    "title": "코드 감사 - 버그 수정 및 타입 정리",
     "items": [
+      "좋아요 버튼 res.ok 체크 누락 수정 (LikeButton, SampleLikeButton) - API 실패 시 상태 불일치 방지",
+      "삭제 버튼 res.ok 체크 추가, 실패 시 alert 표시 (DeleteTeamButton, DeleteSampleButton)",
+      "패치노트 삭제 API: 없는 항목 요청 시 Prisma 500 → 404 처리",
+      "getTeamDetail에 포켓몬 stats 필드 추가 - 팀 샘플카드 실수치 계산이 항상 미작동하던 버그 수정",
+      "fetchPokemonMap 반환값 각 쿼리에서 명시적 타입 지정 - JSX/페이지 전체의 as Parameters<typeof ...> 패턴 제거",
+      "SampleListCard author 타입을 nullable로 수정 (익명 샘플 지원)",
       "홈 섹션 순서 변경: 사용률Top → 단일샘플 → 배틀팀",
       "패치노트 기능 신규 구현 - PatchNote DB 모델 추가, GET/POST/DELETE API",
       "PatchNotePanel 컴포넌트 - 패치노트 목록 표시, 관리자 전용 작성/삭제 폼",
@@ -11,6 +17,7 @@
       "Vercel 환경변수 ADMIN_EMAIL, NEXT_PUBLIC_ADMIN_EMAIL 추가"
     ],
     "commits": [
+      "bf3d7b9 - fix: 버그 수정 및 코드 정리",
       "ae55fe7 - feat: 패치노트 기능 추가 + 홈 섹션 순서 변경",
       "f78d776 - ci: redeploy for env var update"
     ]
