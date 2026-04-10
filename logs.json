@@ -39,7 +39,8 @@
       "계산기 결정력/내구지수 표시 - 결과 화면에 공격자 물리/특수 실수치 + 수비자 물리/특수 내구지수 수치 표시",
       "계산기 팀 불러오기 - SamplePicker에 팀 탭 추가, /api/calc/my-teams 라우트 신규 (내 팀 + 좋아요 팀 → 팀 내 포켓몬 선택)",
       "재앙 특성 자동 적용 - 재앙의목간(Atk×0.75)/검(SpDef×0.75)/그릇(SpAtk×0.75)/구슬(Def×0.75) 체크박스 없이 특성 선택 시 스탯 자동 반영, 프렌드가드 수비 데미지 ×0.75 자동 적용",
-      "계산기 자주 쓰는 기술 퀵셀렉 - 공격자 포켓몬 선택 시 usageStat moveUsage Top5 기술을 칩 버튼으로 빠른 선택"
+      "계산기 자주 쓰는 기술 퀵셀렉 - 공격자 포켓몬 선택 시 usageStat moveUsage Top5 기술을 칩 버튼으로 빠른 선택",
+      "빌드 오류 수정 - teams/new/page.tsx를 서버 컴포넌트로 변환하여 useSearchParams Suspense 경계 문제 해결, global-error.tsx 추가로 /_global-error 프리렌더 안정화"
     ],
     "commits": [
       "b4e61e7 - perf: 서버 컴포넌트 self-fetch 제거 → Prisma 직접 호출로 전환",
@@ -56,7 +57,8 @@
       "529f382 - feat: 계산기 특성 보정 시스템 통합",
       "fdcaf32 - fix(calc): 기술&조건에서 적응력 체크박스 제거 (특성 선택 시 자동 적용)",
       "92ab06b - feat: 아이템 포챔스 필터링 + 계산기 도구 보정 추가",
-      "f5a2a5e - feat: 기획서 Task 1~10 전체 구현"
+      "f5a2a5e - feat: 기획서 Task 1~10 전체 구현",
+      "78dde93 - fix: teams/new useSearchParams Suspense 분리 + global-error 페이지 추가"
     ]
   },
   {
