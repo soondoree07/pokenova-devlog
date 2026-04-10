@@ -2,6 +2,20 @@
   {
     "date": "2026-04-10",
     "project": "pochams_project",
+    "title": "관리자 페이지 + 패치노트 수정 기능",
+    "items": [
+      "/admin: ADMIN_EMAIL 서버사이드 체크, 서비스 현황 대시보드 (유저/팀/샘플/조회수/좋아요)",
+      "최근 가입 유저 10명, 조회수 Top 팀 5개 / Top 샘플 5개 테이블",
+      "패치노트 CRUD UI: 생성/수정/삭제 (PatchNoteManager 클라이언트 컴포넌트)",
+      "/api/patch-notes/[id] PUT 엔드포인트 신규 추가"
+    ],
+    "commits": [
+      "d4f2906 - feat: 관리자 페이지 + 패치노트 수정 기능"
+    ]
+  },
+  {
+    "date": "2026-04-10",
+    "project": "pochams_project",
     "title": "유저 페이지 + 첫 로그인 닉네임 설정",
     "items": [
       "User 모델에 nicknameSet 필드 추가, 기존 유저 일괄 true 처리",
