@@ -2,6 +2,19 @@
   {
     "date": "2026-04-10",
     "project": "pochams_project",
+    "title": "계산기 아이템 기본값 없음 + 메가진화 메가스톤 자동 적용",
+    "items": [
+      "계산기 아이템 Combobox placeholder '없음'으로 변경 - 기본값(도구 없음) 명확화",
+      "메가진화 포켓몬 선택 시 해당 메가스톤 자동 적용 (메가XX → XX나이트, X/Y/Z 변형 지원)",
+      "아이템 목록에 스톤이 없으면 자동 적용 안 함, 적용된 경우 인디고 배지로 표시(변경 불가)"
+    ],
+    "commits": [
+      "4965006 - feat: 계산기 아이템 기본값 없음 + 메가진화 메가스톤 자동 적용"
+    ]
+  },
+  {
+    "date": "2026-04-10",
+    "project": "pochams_project",
     "title": "코드 감사 - 버그 수정 및 타입 정리",
     "items": [
       "좋아요 버튼 res.ok 체크 누락 수정 (LikeButton, SampleLikeButton) - API 실패 시 상태 불일치 방지",
