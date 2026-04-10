@@ -2,6 +2,19 @@
   {
     "date": "2026-04-10",
     "project": "pochams_project",
+    "title": "계산기·샘플 제작에 메가진화 포켓몬 추가",
+    "items": [
+      "seed.ts: 메가진화형을 별도 PokemonData 행으로 삽입 (ID: 100000 + base_id*10 + formIndex)",
+      "기본형 1025 + 메가 93 = 1118개 seeded, 메가 전부 inChampions: true",
+      "DamageCalc learnset: 메가형(charizard-mega-x)은 기본형(charizard) learnset으로 폴백"
+    ],
+    "commits": [
+      "94896f6 - feat: 계산기·샘플 제작에 메가진화 포켓몬 추가"
+    ]
+  },
+  {
+    "date": "2026-04-10",
+    "project": "pochams_project",
     "title": "계산기 아이템 기본값 없음 + 메가진화 메가스톤 자동 적용",
     "items": [
       "계산기 아이템 Combobox placeholder '없음'으로 변경 - 기본값(도구 없음) 명확화",
