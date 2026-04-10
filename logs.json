@@ -2,6 +2,21 @@
   {
     "date": "2026-04-10",
     "project": "pochams_project",
+    "title": "유저 페이지 + 첫 로그인 닉네임 설정",
+    "items": [
+      "User 모델에 nicknameSet 필드 추가, 기존 유저 일괄 true 처리",
+      "세션 callback에서 nicknameSet DB 조회 후 세션에 포함",
+      "/setup-nickname: 첫 구글 로그인 시 닉네임 설정 전용 페이지",
+      "Header: 프로필/이름 클릭 → /users/[id], nicknameSet=false면 setup 리다이렉트",
+      "/users/[id]: 본인 프로필 접근 시 닉네임 변경 폼 노출 (타인은 읽기 전용)"
+    ],
+    "commits": [
+      "af3f917 - feat: 유저 페이지 + 첫 로그인 닉네임 설정"
+    ]
+  },
+  {
+    "date": "2026-04-10",
+    "project": "pochams_project",
     "title": "메가진화 계산기/샘플 동작 완성",
     "items": [
       "seed.ts: 메가진화형을 별도 PokemonData 행으로 삽입 (inChampions: false, 계산기 전용)",
