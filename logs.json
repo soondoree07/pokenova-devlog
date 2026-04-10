@@ -34,7 +34,8 @@
       "693645a - feat: MoveData에 moveCategories 필드 추가",
       "2ebe215 - feat: MoveData에 contact/inChampions 필드 추가",
       "74bfedd - feat: 샘플 폼 포켓몬 선택을 포챔스 출전 포켓몬으로 제한",
-      "529f382 - feat: 계산기 특성 보정 시스템 통합"
+      "529f382 - feat: 계산기 특성 보정 시스템 통합",
+      "fdcaf32 - fix(calc): 기술&조건에서 적응력 체크박스 제거 (특성 선택 시 자동 적용)"
     ]
   },
   {
