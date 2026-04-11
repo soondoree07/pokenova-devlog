@@ -10,14 +10,16 @@
       "Railway에 FastAPI 서버 Docker 배포 (CPU 전용 PyTorch, ~1GB 이미지)",
       "Vercel OCR_SERVER_URL 환경변수 설정 및 프로덕션 배포 완료",
       "OCR 포켓몬 목록 챔피언스 등록 포켓몬만 필터 (championsOnly=true)",
-      "EV 합 66 정규화: 32 초과 방지하며 32 미만에 +1, 0 초과에 -1로 조정"
+      "EV 합 66 정규화: 32 초과 방지하며 32 미만에 +1, 0 초과에 -1로 조정",
+      "샘플 등록/수정/팀 폼 UI 정리: 노력치 최대 510→66, 입력 max 252→32, 자연→성격 레이블, 테라타입 필드 제거"
     ],
     "commits": [
       "f3538ae - feat: EasyOCR 서버 추가 및 OCR 기능 연동",
       "8c00fa5 - fix: Dockerfile libgl1-mesa-glx → libgl1 (Debian trixie 호환)",
       "554221a - fix: PyTorch CPU 전용 설치로 Docker 이미지 크기 절감 (5.9GB → ~1GB)",
       "6a0c1c3 - feat: OCR 포켓몬 목록 챔피언스 필터 적용 + EV 합 66 정규화",
-      "d1fac7f - fix: EV 정규화 로직 - 32 초과 방지"
+      "d1fac7f - fix: EV 정규화 로직 - 32 초과 방지",
+      "dacaf8e - feat: 샘플 폼 노력치 510→66, 자연→성격, 테라타입 제거"
     ]
   },
   {
