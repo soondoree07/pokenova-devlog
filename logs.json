@@ -1,6 +1,18 @@
 [
   {
     "date": "2026-04-12",
+    "project": "pokenova",
+    "title": "기술 명중·PP 버그 수정 및 캐시 무효화",
+    "items": [
+      "기술도감·배틀팀 퀴즈 등 기술 표시 곳곳에서 명중·PP가 '-'로 나오던 버그 수정 (pochams API select 필드 누락이 원인)",
+      "localStorage 캐시 키 버전 업: pkdex_moves→v2, pkdex_items→v2, pkdex_learnsets→v2 (기존 캐시 강제 무효화)"
+    ],
+    "commits": [
+      "d6e25eb - fix: localStorage 캐시 키 버전 업 (_v2)"
+    ]
+  },
+  {
+    "date": "2026-04-12",
     "project": "pochams_project",
     "title": "EasyOCR 서버 전환 및 Railway 배포 완료",
     "items": [
