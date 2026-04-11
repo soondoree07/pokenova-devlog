@@ -21,7 +21,8 @@
       "API 라우트 Cache-Control 헤더 추가 (s-maxage=3600, stale-while-revalidate=86400)",
       "DB 인덱스 추가: Team/TeamSample/StandaloneSample/UsageStat 자주 쓰는 컬럼",
       "getSampleList select 최적화: memo/partnerPokemon/counterPokemon 목록 조회 시 제외",
-      "next.config.ts 이미지 remotePatterns 추가 (pokenova.vercel.app, googleusercontent)"
+      "next.config.ts 이미지 remotePatterns 추가 (pokenova.vercel.app, googleusercontent)",
+      "DamageCalc 기술 목록 버그 수정: 공백 포함 이름 포켓몬(타푸 시리즈·파라독스·Mr. Mime 등 28종) learnset 조회 실패 → 전체 기술 표시되던 문제 해결"
     ],
     "commits": [
       "f3538ae - feat: EasyOCR 서버 추가 및 OCR 기능 연동",
@@ -31,7 +32,8 @@
       "d1fac7f - fix: EV 정규화 로직 - 32 초과 방지",
       "dacaf8e - feat: 샘플 폼 노력치 510→66, 자연→성격, 테라타입 제거",
       "e478c87 - feat: 팀/샘플 UI 개선 - 배틀 구분·실수치·노력치·렌탈코드",
-      "d25f54e - perf: server-side data prefetch, API caching, DB indexes"
+      "d25f54e - perf: server-side data prefetch, API caching, DB indexes",
+      "ce6a28b - fix: DamageCalc learnset 키 공백→하이픈 변환"
     ]
   },
   {
