@@ -2,6 +2,18 @@
   {
     "date": "2026-04-11",
     "project": "pochams_project",
+    "title": "계산기 검색 Enter 선택 + 특성 1개 자동 선택",
+    "items": [
+      "Combobox: 드롭다운이 열려 있을 때 Enter로 첫 번째 항목 선택 (포켓몬/기술/도구 공통)",
+      "공격/수비 포켓몬 변경 시 특성이 1개뿐이면 자동 선택, 2개 이상이면 초기화"
+    ],
+    "commits": [
+      "9f20b8f - feat: 계산기 검색 Enter 선택 + 특성 1개 자동 선택"
+    ]
+  },
+  {
+    "date": "2026-04-11",
+    "project": "pochams_project",
     "title": "대미지 계산기 UX 개선 5종",
     "items": [
       "성격 색상 반전: 올라가는 능력치 빨강, 내려가는 능력치 파랑",
