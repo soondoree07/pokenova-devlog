@@ -2,6 +2,18 @@
   {
     "date": "2026-04-11",
     "project": "pochams_project",
+    "title": "비로그인 팀/샘플 등록 허용",
+    "items": [
+      "proxy.ts matcher에서 /teams/new, /samples/new 제거 → 비로그인 접근 가능",
+      "API는 기존에도 authorId: null 허용 → 익명 등록 그대로 동작"
+    ],
+    "commits": [
+      "f88dc7e - feat: 비로그인 팀/샘플 등록 허용"
+    ]
+  },
+  {
+    "date": "2026-04-11",
+    "project": "pochams_project",
     "title": "통계 텍스트 정리 + 계산기 날씨/웨더볼 개선",
     "items": [
       "통계 페이지: '사용률 통계' → '통계', '사용률 데이터' → '데이터'",
