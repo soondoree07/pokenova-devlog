@@ -17,14 +17,16 @@
   {
     "date": "2026-04-11",
     "project": "pochams_project",
-    "title": "코드 정리 + 버그 수정",
+    "title": "코드 정리 + 버그 수정 + 알트폼 seed 자동화",
     "items": [
       "samples/new: 미사용 useSession import/변수 제거",
       "teams/new: 비로그인 시 '내 샘플에서 가져오기' 버튼 숨김 (비로그인은 내 샘플 없음)",
-      "api/teams POST: as any 제거 → Prisma.TeamUncheckedCreateInput 타입 명시"
+      "api/teams POST: as any 제거 → Prisma.TeamUncheckedCreateInput 타입 명시",
+      "알트폼(알로라/가라르/히스이/팔데아 등) seed.ts에 자동 처리 로직 통합 — quiz_pokemon.json forms 필드 기반, 수동 스크립트(seed-alt-forms.ts) 제거"
     ],
     "commits": [
-      "0e64c7f - refactor: 불필요한 코드 제거 + 버그 수정"
+      "0e64c7f - refactor: 불필요한 코드 제거 + 버그 수정",
+      "3a82273 - refactor: 알트폼을 seed.ts에서 quiz_pokemon.json forms 필드 기반으로 자동 처리"
     ]
   },
   {
