@@ -1,6 +1,19 @@
 [
   {
     "date": "2026-04-11",
+    "project": "pokenova",
+    "title": "퀴즈 세대 필터 버그 수정",
+    "items": [
+      "리전폼(알로라/가라르/히스이/팔데아), 메가진화, 거다이맥스 폼이 세대 필터에서 올바른 세대로 분류되지 않는 버그 수정",
+      "폼 엔트리에 genNum 필드 추가 — alola→7, galar/hisui→8, paldea→9, mega→6, gmax→8, primal→6",
+      "bGetFilteredPool이 genNum을 우선 참조하도록 변경 (기존: base ID 범위로만 세대 판별)"
+    ],
+    "commits": [
+      "83fdf04 - fix: 세대 필터가 리전폼·메가·거다이맥스에 적용되지 않는 버그 수정"
+    ]
+  },
+  {
+    "date": "2026-04-11",
     "project": "pochams_project",
     "title": "코드 정리 + 버그 수정",
     "items": [
