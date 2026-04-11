@@ -14,6 +14,19 @@
   {
     "date": "2026-04-12",
     "project": "pochams_project",
+    "title": "learnset 기술 필터링 대소문자 버그 수정 및 샘플 등록 폼 필터링 추가",
+    "items": [
+      "DamageCalc 기술 필터링 대소문자 불일치 수정: 기선제압(Upper Hand) 등 대문자 혼합 기술명이 learnset 비교 시 누락되던 버그 수정 (m.en.toLowerCase() 추가)",
+      "샘플 등록 폼에 learnset 기반 기술 필터링 추가: 포켓몬 선택 시 배울 수 있는 기술만 표시 (계산기와 동일 방식)",
+      "getMoveOptions에 en 필드 추가: 샘플 폼 learnset 비교에 필요"
+    ],
+    "commits": [
+      "d6fc444 - fix: learnset 기술 필터링 대소문자 불일치 수정, 샘플 등록 폼에 learnset 필터링 추가"
+    ]
+  },
+  {
+    "date": "2026-04-12",
+    "project": "pochams_project",
     "title": "EasyOCR 서버 전환 및 Railway 배포 완료",
     "items": [
       "Tesseract.js → EasyOCR(FastAPI) 방식으로 전환: 한글 게임 UI 인식률 대폭 향상",
