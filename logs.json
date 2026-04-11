@@ -2,6 +2,20 @@
   {
     "date": "2026-04-11",
     "project": "pochams_project",
+    "title": "proxy.ts database session 호환 수정 + admin 디버깅",
+    "items": [
+      "proxy.ts: getToken()은 JWT strategy 전용 → database strategy에서 항상 null 반환하는 버그 수정",
+      "proxy.ts: 쿠키 직접 확인 방식으로 교체 (next-auth.session-token 존재 여부)",
+      "proxy.ts: redirect URL /api/auth/signin → /sign-in으로 수정",
+      "admin/page.tsx: ADMIN_EMAIL module-level 상수 → 함수 내 읽기로 변경, 불일치 시 console.warn 추가"
+    ],
+    "commits": [
+      "b6790a4 - fix: proxy.ts database session 호환 + admin 이메일 불일치 디버깅"
+    ]
+  },
+  {
+    "date": "2026-04-11",
+    "project": "pochams_project",
     "title": "계산기 검색 Enter 선택 + 특성 1개 자동 선택",
     "items": [
       "Combobox: 드롭다운이 열려 있을 때 Enter로 첫 번째 항목 선택 (포켓몬/기술/도구 공통)",
