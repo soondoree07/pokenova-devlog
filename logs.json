@@ -1,5 +1,22 @@
 [
   {
+    "date": "2026-04-12",
+    "project": "pochams_project",
+    "title": "EasyOCR 서버 전환 및 Railway 배포 완료",
+    "items": [
+      "Tesseract.js → EasyOCR(FastAPI) 방식으로 전환: 한글 게임 UI 인식률 대폭 향상",
+      "CROP_REGIONS 좌표 20장 샘플 테스트로 최종 보정 (노력치 6개 전부 100% 인식)",
+      "preprocess_text 반전 처리 추가: 킬라플로르·겁쟁이 등 오인식 케이스 수정",
+      "Railway에 FastAPI 서버 Docker 배포 (CPU 전용 PyTorch, ~1GB 이미지)",
+      "Vercel OCR_SERVER_URL 환경변수 설정 및 프로덕션 배포 완료"
+    ],
+    "commits": [
+      "f3538ae - feat: EasyOCR 서버 추가 및 OCR 기능 연동",
+      "8c00fa5 - fix: Dockerfile libgl1-mesa-glx → libgl1 (Debian trixie 호환)",
+      "554221a - fix: PyTorch CPU 전용 설치로 Docker 이미지 크기 절감 (5.9GB → ~1GB)"
+    ]
+  },
+  {
     "date": "2026-04-11",
     "project": "pochams_project",
     "title": "OCR 샘플 등록 기능 (Tesseract.js)",
