@@ -2,6 +2,24 @@
   {
     "date": "2026-04-11",
     "project": "pochams_project",
+    "title": "프로덕션 배포 + 타입 오류 수정 4건",
+    "items": [
+      "api/teams/route.ts: authorId null → Prisma unchecked cast로 타입 수정",
+      "api/teams/[id]/route.ts: team.author.id → team.author?.id optional chaining",
+      "TeamCard.tsx: author non-null → nullable 타입 수정, null 렌더링 처리 추가",
+      "queries.ts: isOwner 계산 시 team.author?.id optional chaining",
+      "pochams-battle.vercel.app 프로덕션 배포 완료"
+    ],
+    "commits": [
+      "6c4d3cb - fix: authorId null → undefined",
+      "7448908 - fix: Prisma 타입 오류 2건 수정",
+      "7c03088 - fix: TeamCard author nullable 타입 수정",
+      "5da8d2e - fix: queries.ts author nullable optional chaining"
+    ]
+  },
+  {
+    "date": "2026-04-11",
+    "project": "pochams_project",
     "title": "proxy.ts database session 호환 수정 + admin 디버깅",
     "items": [
       "proxy.ts: getToken()은 JWT strategy 전용 → database strategy에서 항상 null 반환하는 버그 수정",
