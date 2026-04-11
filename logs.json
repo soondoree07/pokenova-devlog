@@ -36,7 +36,7 @@
       "next.config.ts 이미지 remotePatterns 추가 (pokenova.vercel.app, googleusercontent)",
       "DamageCalc 기술 목록 버그 수정: 공백 포함 이름 포켓몬(타푸 시리즈·파라독스·Mr. Mime 등 28종) learnset 조회 실패 → 전체 기술 표시되던 문제 해결",
       "pokenova 데이터 동기화: /api/data/moves에 pp·accuracy·gen·desc·hidden·is_zmove·is_dmax·is_gmax 필드 추가 (기술도감·퀴즈 명중/PP '-' 표시 버그 수정)",
-      "pokenova 데이터 동기화: /api/data/items에 desc 필드 추가",
+      "pokenova 데이터 동기화: /api/data/items에 desc·mega_en·needs_ko 필드 추가 (메가스톤 연결, 도구 필터링)",
       "public/data/learnsets.json을 pokenova 최신본으로 동기화 (14마리 차이 해소)"
     ],
     "commits": [
@@ -49,7 +49,8 @@
       "e478c87 - feat: 팀/샘플 UI 개선 - 배틀 구분·실수치·노력치·렌탈코드",
       "d25f54e - perf: server-side data prefetch, API caching, DB indexes",
       "ce6a28b - fix: DamageCalc learnset 키 공백→하이픈 변환",
-      "d5c80e4 - fix: items API에 desc 필드 추가, learnsets 동기화"
+      "d5c80e4 - fix: items API에 desc 필드 추가, learnsets 동기화",
+      "e2b20e0 - fix: items DB/API에 mega_en·needs_ko 필드 추가"
     ]
   },
   {
