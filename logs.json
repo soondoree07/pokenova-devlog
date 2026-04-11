@@ -2,6 +2,20 @@
   {
     "date": "2026-04-11",
     "project": "pochams_project",
+    "title": "/admin 접속 불가 버그 해결",
+    "items": [
+      "원인: ADMIN_EMAIL을 module-level 상수로 읽으면 Next.js 모듈 초기화 시점에 env var을 못 읽음",
+      "수정: isAdmin 함수 내부에서 process.env.ADMIN_EMAIL 읽도록 변경 → 요청 시점에 정상 읽힘",
+      "디버그 로그 추가/제거 과정 거쳐 원인 확인 완료"
+    ],
+    "commits": [
+      "b6790a4 - fix: proxy.ts database session 호환 + admin 이메일 불일치 디버깅",
+      "a06006b - chore: admin 디버그 로그 제거"
+    ]
+  },
+  {
+    "date": "2026-04-11",
+    "project": "pochams_project",
     "title": "프로덕션 배포 + 타입 오류 수정 4건",
     "items": [
       "api/teams/route.ts: authorId null → Prisma unchecked cast로 타입 수정",
