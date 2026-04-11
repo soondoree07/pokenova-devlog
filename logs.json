@@ -2,6 +2,19 @@
   {
     "date": "2026-04-11",
     "project": "pochams_project",
+    "title": "코드 정리 + 버그 수정",
+    "items": [
+      "samples/new: 미사용 useSession import/변수 제거",
+      "teams/new: 비로그인 시 '내 샘플에서 가져오기' 버튼 숨김 (비로그인은 내 샘플 없음)",
+      "api/teams POST: as any 제거 → Prisma.TeamUncheckedCreateInput 타입 명시"
+    ],
+    "commits": [
+      "0e64c7f - refactor: 불필요한 코드 제거 + 버그 수정"
+    ]
+  },
+  {
+    "date": "2026-04-11",
+    "project": "pochams_project",
     "title": "비로그인 팀/샘플 등록 허용",
     "items": [
       "proxy.ts matcher에서 /teams/new, /samples/new 제거 → 비로그인 접근 가능",
