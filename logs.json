@@ -5,10 +5,12 @@
     "title": "기술 명중·PP 버그 수정 및 캐시 무효화",
     "items": [
       "기술도감·배틀팀 퀴즈 등 기술 표시 곳곳에서 명중·PP가 '-'로 나오던 버그 수정 (pochams API select 필드 누락이 원인)",
-      "localStorage 캐시 키 버전 업: pkdex_moves→v2, pkdex_items→v2, pkdex_learnsets→v2 (기존 캐시 강제 무효화)"
+      "localStorage 캐시 키 버전 업: pkdex_moves→v2, pkdex_items→v2, pkdex_learnsets→v2 (기존 캐시 강제 무효화)",
+      "itemdex 챔피언스 필터 버그 수정: items API snake_case 전환으로 인한 inChampions → in_champions 필드명 동기화"
     ],
     "commits": [
-      "d6e25eb - fix: localStorage 캐시 키 버전 업 (_v2)"
+      "d6e25eb - fix: localStorage 캐시 키 버전 업 (_v2)",
+      "757e5bd - fix: itemdex 챔피언스 필터 in_champions 필드명 수정"
     ]
   },
   {
@@ -63,7 +65,8 @@
       "d25f54e - perf: server-side data prefetch, API caching, DB indexes",
       "ce6a28b - fix: DamageCalc learnset 키 공백→하이픈 변환",
       "d5c80e4 - fix: items API에 desc 필드 추가, learnsets 동기화",
-      "e2b20e0 - fix: items DB/API에 mega_en·needs_ko 필드 추가"
+      "e2b20e0 - fix: items DB/API에 mega_en·needs_ko 필드 추가",
+      "145ff25 - fix: DamageCalc ItemRow 타입 champions_category snake_case 수정"
     ]
   },
   {
