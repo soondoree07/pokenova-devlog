@@ -21,7 +21,9 @@
       "루가루암(lycanroc) 한낮의 모습 learnset 65개 추가",
       "퍼퓨돈(oinkologne) 수컷 level-up 15개 추가 (machine 미완)",
       "스트린더(toxtricity) 하이한 모습 learnset 79개 추가",
-      "우라오스(urshifu) 일격의 태세 learnset 70개 추가"
+      "우라오스(urshifu) 일격의 태세 learnset 70개 추가",
+      "기술 이름 33개 일괄 수정 (배턴터치, 앙코르, 비장의무기, 록블라스트, 패스트가드, 벌레먹기 등)",
+      "아이템 이름 15개 일괄 수정 (슈퍼볼, 깃털 시리즈, 록메모리 등)"
     ],
     "commits": [
       "4189901 - feat: 27마리 기본폼 forms 항목 추가 및 hidden forms 지원",
@@ -29,7 +31,8 @@
       "cc9d595 - feat: 6마리 learnset 추가 및 기술 한국어 이름 수정",
       "3d608d6 - feat: 16마리 기본폼 learnset 복사, 덱스(deoxys) learnset 추가, 스킬스왑 이름 수정",
       "8fef06e - feat: 도롱충이·도롱마담·탱탱겔 기본폼 learnset 추가 및 champions_learnsets 재생성",
-      "88b4d48 - feat: 탱그릴·에써르·루가루암·퍼퓨돈·스트린더·우라오스 기본폼 learnset 추가"
+      "88b4d48 - feat: 탱그릴·에써르·루가루암·퍼퓨돈·스트린더·우라오스 기본폼 learnset 추가",
+      "f82043e - fix: 기술·아이템 한국어 이름 일괄 수정 (48건)"
     ]
   },
   {
