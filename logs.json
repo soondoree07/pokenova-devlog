@@ -15,14 +15,21 @@
       "도롱충이(burmy) 초록도롱 learnset 7개 추가 (잠재파워 제외)",
       "도롱마담(wormadam) 초록도롱 learnset 45개 추가 (잠재파워 제외)",
       "탱탱겔(jellicent) 수컷 learnset 61개 추가",
-      "champions_learnsets.json 재생성 (186마리, 9907개)"
+      "champions_learnsets.json 재생성 (186마리, 9907개)",
+      "탱그릴(frillish) 수컷/암컷 learnset 57개 추가",
+      "에써르(indeedee) 수컷 learnset 50개 추가",
+      "루가루암(lycanroc) 한낮의 모습 learnset 65개 추가",
+      "퍼퓨돈(oinkologne) 수컷 level-up 15개 추가 (machine 미완)",
+      "스트린더(toxtricity) 하이한 모습 learnset 79개 추가",
+      "우라오스(urshifu) 일격의 태세 learnset 70개 추가"
     ],
     "commits": [
       "4189901 - feat: 27마리 기본폼 forms 항목 추가 및 hidden forms 지원",
       "3c8e09a - fix: 기본폼 forms 항목을 별도 DB 행 대신 표시용으로만 처리",
       "cc9d595 - feat: 6마리 learnset 추가 및 기술 한국어 이름 수정",
       "3d608d6 - feat: 16마리 기본폼 learnset 복사, 덱스(deoxys) learnset 추가, 스킬스왑 이름 수정",
-      "8fef06e - feat: 도롱충이·도롱마담·탱탱겔 기본폼 learnset 추가 및 champions_learnsets 재생성"
+      "8fef06e - feat: 도롱충이·도롱마담·탱탱겔 기본폼 learnset 추가 및 champions_learnsets 재생성",
+      "88b4d48 - feat: 탱그릴·에써르·루가루암·퍼퓨돈·스트린더·우라오스 기본폼 learnset 추가"
     ]
   },
   {
