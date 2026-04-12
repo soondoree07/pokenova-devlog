@@ -7,11 +7,17 @@
       "기본폼 learnset이 비어있는 27마리에 실드폼/수컷/노말폼 등 기본 forms 항목 삽입 (type=base, 별도 DB 행 생성 없이 표시용으로만)",
       "도롱충이 모래땅/슈레폼 hidden: true 처리",
       "화염레오 암컷폼, 노고고치 3마디폼 hidden: true로 추가",
-      "케르디오 formLabel 누락 보완 (평상시 추가)"
+      "케르디오 formLabel 누락 보완 (평상시 추가)",
+      "흉내내(mime_jr), 마임꽁꽁(mr_rime), 니드런♀, 니드런♂, 창파나이트(sirfetchd), 타입:널(type_null) learnset 신규 추가",
+      "깨트리다→깨트리기, 얼다바람→얼어붙은바람, 로케트박치기→로켓박치기, 스킬스웹→스킬스왑 기술 이름 수정",
+      "aegislash/basculegion/basculin/enamorus/giratina/keldeo/landorus/meloetta/palafin/shaymin/thundurus/tornadus/wishiwashi/oricorio/tatsugiri/zygarde 기본폼 learnset을 알트폼에서 복사",
+      "덱스(deoxys) 노말폼 learnset 81개 추가"
     ],
     "commits": [
       "4189901 - feat: 27마리 기본폼 forms 항목 추가 및 hidden forms 지원",
-      "3c8e09a - fix: 기본폼 forms 항목을 별도 DB 행 대신 표시용으로만 처리"
+      "3c8e09a - fix: 기본폼 forms 항목을 별도 DB 행 대신 표시용으로만 처리",
+      "cc9d595 - feat: 6마리 learnset 추가 및 기술 한국어 이름 수정",
+      "3d608d6 - feat: 16마리 기본폼 learnset 복사, 덱스(deoxys) learnset 추가, 스킬스왑 이름 수정"
     ]
   },
   {
