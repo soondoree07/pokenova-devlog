@@ -89,7 +89,8 @@
       "revalidateTag 2번째 인자 추가로 Next.js 16 빌드 오류 수정",
       "OCR 순차 처리로 변경 — 병렬 gather 제거, worker=1, 크롭별 순차 추론으로 OOM 방지",
       "샘플 이름 기본값에 \" 샘플\" 접미사 추가 (예: 더시마사리 샘플)",
-      "샘플 등록/수정/삭제 시 통계 자동 재집계 — runAggregate() 백그라운드 호출 후 revalidateTag(stats)"
+      "샘플 등록/수정/삭제 시 통계 자동 재집계 — runAggregate() 백그라운드 호출 후 revalidateTag(stats)",
+      "메인 페이지 섹션 제목 \"사용률 Top 포켓몬\" → \"샘플 Top 포켓몬\" 변경"
     ],
     "commits": [
       "0b247b6 - fix: OCR 기술 매칭을 전체 기술 목록으로 확장",
@@ -108,7 +109,8 @@
       "d1da2d3 - perf: unstable_cache 적용, revalidateTag 추가, next.config 최적화",
       "ede1a0e - fix: revalidateTag 2번째 인자 추가 (Next.js 16 호환)",
       "c309fdc - fix: OCR 순차 처리로 변경 — 동시 추론 제거로 OOM 방지",
-      "c1bf4ef - feat: 샘플 등록/수정/삭제 시 통계 자동 갱신 + 샘플 이름 기본값에 \" 샘플\" 추가"
+      "c1bf4ef - feat: 샘플 등록/수정/삭제 시 통계 자동 갱신 + 샘플 이름 기본값에 \" 샘플\" 추가",
+      "a2d6086 - fix: 메인 페이지 \"사용률 Top 포켓몬\" → \"샘플 Top 포켓몬\""
     ]
   },
   {
