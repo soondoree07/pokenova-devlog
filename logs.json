@@ -33,7 +33,8 @@
       "펌킨인(gourgeist) learnset 추가 (레벨업 15 + 머신 29 = 총 44개) - 챔피언스 186마리 learnset 전원 완성",
       "도감 메가진화 전체 사라진 버그 수정: canonical_mega.json의 name_en을 API 포맷(언더스코어)에 맞게 수정",
       "포켓몬 위키 대조 후 누락 기술 335개 일괄 추가: Pattern1(알/레벨업 누락 90종), Pattern2(머신 누락 16종), Pattern3(로토무 폼체인지 5개) — learnsets 70119개, champions 10464개",
-      "SV 미등장 챔피언스 18마리(보스로라/샤크니아/폭타 등) Bulbapedia Gen8 기준 cross-reference 후 누락 기술 91개 추가 — learnsets 70210개, champions 10555개"
+      "SV 미등장 챔피언스 18마리(보스로라/샤크니아/폭타 등) Bulbapedia Gen8 기준 cross-reference 후 누락 기술 91개 추가 — learnsets 70210개, champions 10555개",
+      "히스이폼 오염 제거 및 실제 누락 기술 보완: arcanine/decidueye/samurott/infernape/leafeon/emboar/greninja/hawlucha 8마리에서 히스이 전용 기술 24개 삭제, 실제 누락 기술 8개 추가 — learnsets 70194개, champions 10539개"
     ],
     "commits": [
       "4189901 - feat: 27마리 기본폼 forms 항목 추가 및 hidden forms 지원",
@@ -51,7 +52,8 @@
       "21e8d23 - fix: 이어롭(lopunny) 속이기(fake_out) 레벨업 기술 누락 추가",
       "679319a - fix: canonical_mega.json 하이픈→언더스코어 수정 (API name_en 포맷 맞춤)",
       "679d235 - learnset: Pattern 1/2/3 누락 기술 335개 일괄 추가",
-      "059f4d3 - learnset: SV 미등장 챔피언스 18마리 누락 기술 91개 추가"
+      "059f4d3 - learnset: SV 미등장 챔피언스 18마리 누락 기술 91개 추가",
+      "bbae6c2 - fix(learnsets): 챔피언스 포켓몬 배우는 기술 정확도 개선"
     ]
   },
   {
