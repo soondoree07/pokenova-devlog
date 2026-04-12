@@ -11,13 +11,18 @@
       "흉내내(mime_jr), 마임꽁꽁(mr_rime), 니드런♀, 니드런♂, 창파나이트(sirfetchd), 타입:널(type_null) learnset 신규 추가",
       "깨트리다→깨트리기, 얼다바람→얼어붙은바람, 로케트박치기→로켓박치기, 스킬스웹→스킬스왑 기술 이름 수정",
       "aegislash/basculegion/basculin/enamorus/giratina/keldeo/landorus/meloetta/palafin/shaymin/thundurus/tornadus/wishiwashi/oricorio/tatsugiri/zygarde 기본폼 learnset을 알트폼에서 복사",
-      "덱스(deoxys) 노말폼 learnset 81개 추가"
+      "덱스(deoxys) 노말폼 learnset 81개 추가",
+      "도롱충이(burmy) 초록도롱 learnset 7개 추가 (잠재파워 제외)",
+      "도롱마담(wormadam) 초록도롱 learnset 45개 추가 (잠재파워 제외)",
+      "탱탱겔(jellicent) 수컷 learnset 61개 추가",
+      "champions_learnsets.json 재생성 (186마리, 9907개)"
     ],
     "commits": [
       "4189901 - feat: 27마리 기본폼 forms 항목 추가 및 hidden forms 지원",
       "3c8e09a - fix: 기본폼 forms 항목을 별도 DB 행 대신 표시용으로만 처리",
       "cc9d595 - feat: 6마리 learnset 추가 및 기술 한국어 이름 수정",
-      "3d608d6 - feat: 16마리 기본폼 learnset 복사, 덱스(deoxys) learnset 추가, 스킬스왑 이름 수정"
+      "3d608d6 - feat: 16마리 기본폼 learnset 복사, 덱스(deoxys) learnset 추가, 스킬스왑 이름 수정",
+      "8fef06e - feat: 도롱충이·도롱마담·탱탱겔 기본폼 learnset 추가 및 champions_learnsets 재생성"
     ]
   },
   {
