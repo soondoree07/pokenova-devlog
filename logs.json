@@ -1,6 +1,33 @@
 [
   {
     "date": "2026-04-12",
+    "project": "pokenova",
+    "title": "27마리 기본폼 forms 추가 및 hidden forms 지원",
+    "items": [
+      "기본폼 learnset이 비어있는 27마리에 실드폼/수컷/노말폼 등 기본 forms 항목 삽입 (aegislash_shield, lycanroc_midday, meowstic_male 등 고유 name_en 사용)",
+      "도롱충이 모래땅/슈레폼 hidden: true 처리",
+      "화염레오 암컷폼, 노고고치 3마디폼 hidden: true로 추가",
+      "케르디오 formLabel 누락 보완 (평상시 추가)"
+    ],
+    "commits": [
+      "4189901 - feat: 27마리 기본폼 forms 항목 추가 및 hidden forms 지원"
+    ]
+  },
+  {
+    "date": "2026-04-12",
+    "project": "pochams_project",
+    "title": "hidden forms seed 제외 처리 + 모든 en 필드 underscore 정규화",
+    "items": [
+      "seed.ts: hidden: true 항목을 메가폼/알트폼/임베디드 forms 배열에서 모두 필터링",
+      "모든 en 필드 underscore 정규화 (공백·하이픈·아포스트로피·콜론 → _)"
+    ],
+    "commits": [
+      "07df3ec - feat: hidden forms 시드에서 제외 처리",
+      "1819e26 - refactor: en 필드 underscore 정규화 대응 - learnset 룩업·특성 이름 하드코딩 일괄 수정"
+    ]
+  },
+  {
+    "date": "2026-04-12",
     "project": "pochams_project",
     "title": "모든 en 필드 underscore 정규화 (공백·하이픈·아포스트로피·콜론 → _)",
     "items": [
