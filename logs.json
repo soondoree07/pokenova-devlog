@@ -95,7 +95,8 @@
       "runAggregate fire-and-forget → await로 변경 — 서버리스 함수 조기 종료 시 집계 누락 방지",
       "바디프레스 데미지 계산 수정 — 공격자의 방어 수치/방어 랭크로 계산, 화상 0.5배 유지",
       "샘플/팀 목록 정렬·페이지·필터를 클라이언트 fetch로 전환 — 서버 이동 없이 즉시 반영, 스켈레톤 로딩 추가, API에 텍스트 검색 파라미터 추가",
-      "노력치 입력칸 UX 개선 — 중앙 정렬, 클릭 시 전체 선택, 빈칸 placeholder 제거, 숫자 스피너 숨김"
+      "노력치 입력칸 UX 개선 — 중앙 정렬, 클릭 시 전체 선택, 빈칸 placeholder 제거, 숫자 스피너 숨김",
+      "헤더 세션 깜빡임 수정 — useSession status=loading 중 로그인 버튼 렌더 skip"
     ],
     "commits": [
       "0b247b6 - fix: OCR 기술 매칭을 전체 기술 목록으로 확장",
@@ -120,7 +121,8 @@
       "fd8a93b - fix: runAggregate fire-and-forget → await로 변경 (서버리스 조기 종료 방지)",
       "f73af17 - feat: 바디프레스 데미지 계산 — 공격자의 방어 수치/랭크로 계산",
       "51395e1 - perf: 샘플/팀 목록 클라이언트 fetch 전환 — 정렬/페이지 변경 시 서버 이동 없이 즉시 반영",
-      "fe96860 - fix: 노력치 입력칸 중앙 정렬, 클릭 시 전체 선택, 빈칸 placeholder 제거, 스피너 숨김"
+      "fe96860 - fix: 노력치 입력칸 중앙 정렬, 클릭 시 전체 선택, 빈칸 placeholder 제거, 스피너 숨김",
+      "e2a59ab - fix: 세션 로딩 중 로그인 버튼 깜빡임 제거 — status=loading 시 렌더 skip"
     ]
   },
   {
