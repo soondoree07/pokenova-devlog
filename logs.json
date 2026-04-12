@@ -26,7 +26,10 @@
       "아이템 이름 15개 일괄 수정 (슈퍼볼, 깃털 시리즈, 록메모리 등)",
       "기술 이름 추가 수정 9건 (달빛, 록클라임, 블레이즈킥, 맹독엄니, 얼어붙은세계 등)",
       "퍼퓨돈(oinkologne) 수컷 machine 39개 + egg 5개 추가 (총 59개 완성)",
-      "냐오닉스(meowstic) 수컷 learnset 65개 추가"
+      "냐오닉스(meowstic) 수컷 learnset 65개 추가",
+      "파밀리쥐(maushold) learnset 추가 (레벨업 16 + 머신 39 + 교배 6 = 총 62개)",
+      "모르페코(morpeko) learnset 추가 (레벨업 14 + 머신 50 + 교배 8 = 총 72개)",
+      "champions_learnsets.json 재생성 (186마리, 10088개)"
     ],
     "commits": [
       "4189901 - feat: 27마리 기본폼 forms 항목 추가 및 hidden forms 지원",
@@ -38,7 +41,8 @@
       "f82043e - fix: 기술·아이템 한국어 이름 일괄 수정 (48건)",
       "fa4b38a - fix: 기술 한국어 이름 추가 수정 9건 (달빛, 록클라임, 블레이즈킥 등)",
       "b85dccf - feat: 퍼퓨돈·냐오닉스 수컷 learnset 완성 및 champions_learnsets 재생성",
-      "615e419 - feat: 탱탱겔 암컷(jellicent_female) learnset 추가"
+      "615e419 - feat: 탱탱겔 암컷(jellicent_female) learnset 추가",
+      "12257bf - learnset: 파밀리쥐(maushold), 모르페코(morpeko) 배우는 기술 추가"
     ]
   },
   {
