@@ -80,7 +80,11 @@
       "seed.ts: hidden: true 항목을 메가폼/알트폼/임베디드 forms 배열에서 모두 필터링",
       "렌탈코드 입력 10자리로 변경 및 제한 (placeholder, maxLength, slice 추가)",
       "모든 en 필드 underscore 정규화 (공백·하이픈·아포스트로피·콜론 → _)",
-      "좋아요 버튼 SVG 하트 아이콘으로 교체"
+      "좋아요 버튼 SVG 하트 아이콘으로 교체",
+      "샘플 등록에 싱글/더블 배틀 포맷 선택 추가 (StandaloneSample DB 필드 추가)",
+      "통계 집계 API: 전체/싱글/더블 별도 집계, countBased=샘플수/weightedBased=좋아요수",
+      "통계 화면: 사용률% → 샘플 수/좋아요 수 표시, 헤더 레이블 정렬 기준에 따라 전환",
+      "OCR 서버 Railway OOM 수정: workers 13→4, 이미지 너비 1280→960px"
     ],
     "commits": [
       "0b247b6 - fix: OCR 기술 매칭을 전체 기술 목록으로 확장",
@@ -93,7 +97,9 @@
       "4499fda - feat: 통계 집계 API 추가 (POST /api/stats/aggregate)",
       "27c801c - fix: OCR 포켓몬 이름 필드를 챔피언스 전체 목록 select로 고정",
       "c783ce2 - fix: OCR 기술 매칭을 해당 포켓몬 learnset 기반으로 변경, EV 강제 합산 제거",
-      "c1c8d3f - fix: 좋아요 버튼 아이콘을 SVG 하트로 교체"
+      "c1c8d3f - fix: 좋아요 버튼 아이콘을 SVG 하트로 교체",
+      "ce1b556 - feat: 샘플 배틀 포맷(싱글/더블) 추가 + 통계 좋아요 기반 개편",
+      "adcae4b - fix: OCR 서버 메모리 절약 - workers 13→4, 이미지 너비 1280→960"
     ]
   },
   {
