@@ -1,16 +1,45 @@
 [
   {
     "date": "2026-04-12",
+    "project": "pochams_project",
+    "title": "learnsets DB 마이그레이션 - Neon PostgreSQL 통합 완료",
+    "items": [
+      "PokemonLearnset 모델 추가 (prisma/schema.prisma): id, pokemon_en, move_en, method, level 필드, pokemon_en 인덱스",
+      "seed.ts에 seedLearnsets 함수 추가: pokenova/data/learnsets.json (1285마리) 기준 67618행 적재, 5000행 단위 배치 처리",
+      "/api/data/learnsets 엔드포인트 신규 생성: DB에서 조회 후 기존 JSON 형식({[pokemon_en]: [{en, method, level}][]})으로 반환",
+      "DamageCalc.tsx와 SampleNewForm.tsx: 정적 파일 /data/learnsets.json → API /api/data/learnsets로 전환",
+      "pokenova movedex.html, entry.html: learnsets URL을 pochams API로 전환, 캐시 키 pkdex_learnsets_v3로 업"
+    ],
+    "commits": [
+      "ed7fa58 - feat: learnsets DB 마이그레이션 (67618행), /api/data/learnsets 엔드포인트 추가"
+    ]
+  },
+  {
+    "date": "2026-04-12",
+    "project": "pokenova",
+    "title": "learnsets URL을 pochams API DB로 전환",
+    "items": [
+      "movedex.html, entry.html: /data/learnsets.json → /api/data/learnsets (pochams DB 기반), 캐시 키 pkdex_learnsets_v3로 업"
+    ],
+    "commits": [
+      "503d800 - fix: learnsets URL을 API DB로 전환, 캐시 키 v3"
+    ]
+  },
+  {
+    "date": "2026-04-12",
     "project": "pokenova",
     "title": "기술 명중·PP 버그 수정 및 캐시 무효화",
     "items": [
       "기술도감·배틀팀 퀴즈 등 기술 표시 곳곳에서 명중·PP가 '-'로 나오던 버그 수정 (pochams API select 필드 누락이 원인)",
       "localStorage 캐시 키 버전 업: pkdex_moves→v2, pkdex_items→v2, pkdex_learnsets→v2 (기존 캐시 강제 무효화)",
-      "itemdex 챔피언스 필터 버그 수정: items API snake_case 전환으로 인한 inChampions → in_champions 필드명 동기화"
+      "itemdex 챔피언스 필터 버그 수정: items API snake_case 전환으로 인한 inChampions → in_champions 필드명 동기화",
+      "포켓몬 도감 포챔스 필터 버그 수정: pokemon API에 inChampions 필드 누락으로 필터 클릭 시 0마리 표시되던 문제 해결",
+      "pkdex_pokemon 캐시 키 v2로 업 (movedex, entry, pokedex 3개 파일)"
     ],
     "commits": [
       "d6e25eb - fix: localStorage 캐시 키 버전 업 (_v2)",
-      "757e5bd - fix: itemdex 챔피언스 필터 in_champions 필드명 수정"
+      "757e5bd - fix: itemdex 챔피언스 필터 in_champions 필드명 수정",
+      "ee05572 - fix: pkdex_pokemon 캐시 키 v2로 업 (inChampions 필드 추가 반영)"
     ]
   },
   {
