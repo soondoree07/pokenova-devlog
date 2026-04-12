@@ -84,7 +84,8 @@
       "샘플 등록에 싱글/더블 배틀 포맷 선택 추가 (StandaloneSample DB 필드 추가)",
       "통계 집계 API: 전체/싱글/더블 별도 집계, countBased=샘플수/weightedBased=좋아요수",
       "통계 화면: 사용률% → 샘플 수/좋아요 수 표시, 헤더 레이블 정렬 기준에 따라 전환",
-      "OCR 서버 Railway OOM 수정: workers 13→4, 이미지 너비 1280→960px"
+      "OCR 서버 Railway OOM 수정: workers 13→4, 이미지 너비 1280→960px",
+      "페이지 성능 최적화: unstable_cache(팀/샘플 60s, 통계 3600s), revalidateTag 캐시 무효화, next.config optimizePackageImports/image formats 추가, 홈 stats DB 쿼리 take:12 감소"
     ],
     "commits": [
       "0b247b6 - fix: OCR 기술 매칭을 전체 기술 목록으로 확장",
@@ -99,7 +100,8 @@
       "c783ce2 - fix: OCR 기술 매칭을 해당 포켓몬 learnset 기반으로 변경, EV 강제 합산 제거",
       "c1c8d3f - fix: 좋아요 버튼 아이콘을 SVG 하트로 교체",
       "ce1b556 - feat: 샘플 배틀 포맷(싱글/더블) 추가 + 통계 좋아요 기반 개편",
-      "adcae4b - fix: OCR 서버 메모리 절약 - workers 13→4, 이미지 너비 1280→960"
+      "adcae4b - fix: OCR 서버 메모리 절약 - workers 13→4, 이미지 너비 1280→960",
+      "d1da2d3 - perf: unstable_cache 적용, revalidateTag 추가, next.config 최적화"
     ]
   },
   {
