@@ -64,13 +64,15 @@
       "seed.ts: hidden: true 항목을 메가폼/알트폼/임베디드 forms 배열에서 모두 필터링",
       "모든 en 필드 underscore 정규화 (공백·하이픈·아포스트로피·콜론 → _)",
       "렌탈코드 입력 10자리로 변경 및 제한 (placeholder, maxLength, slice 추가)",
-      "좋아요 버튼 아이콘 SVG 하트로 교체 — 눌림 여부 관계없이 모양·크기 동일, 색만 변경"
+      "좋아요 버튼 아이콘 SVG 하트로 교체 — 눌림 여부 관계없이 모양·크기 동일, 색만 변경",
+      "네비게이션바 팀 목록 왼쪽에 '메인' 링크 추가"
     ],
     "commits": [
       "07df3ec - feat: hidden forms 시드에서 제외 처리",
       "1819e26 - refactor: en 필드 underscore 정규화 대응 - learnset 룩업·특성 이름 하드코딩 일괄 수정",
       "6d80c6d - fix: 렌탈코드 입력 10자리로 변경 및 제한",
-      "c1c8d3f - fix: 좋아요 버튼 아이콘을 SVG 하트로 교체"
+      "c1c8d3f - fix: 좋아요 버튼 아이콘을 SVG 하트로 교체",
+      "6b5c60c - feat: 네비게이션바에 '메인' 링크 추가"
     ]
   },
   {
