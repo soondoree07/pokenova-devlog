@@ -1,4 +1,11 @@
 {
   "pokenova": [],
-  "pochams_project": []
+  "pochams_project": [
+    {
+      "title": "포챔스 배틀 기획서 v1.0",
+      "file": "specs/pochams_project/기획서.md",
+      "date": "2026-04-13",
+      "type": "md"
+    }
+  ]
 }
