@@ -2,6 +2,36 @@
   {
     "date": "2026-04-12",
     "project": "pochams_project",
+    "title": "모든 en 필드 underscore 정규화 (공백·하이픈·아포스트로피·콜론 → _)",
+    "items": [
+      "quiz_pokemon.json, quiz_moves.json, quiz_items.json, quiz_abilities.json, learnsets.json, pokemon_stats.json 전체 en 필드 정규화: 공백·하이픈·마침표·콜론 → _, 직선·곡선 아포스트로피 제거 (예: Iron Hands → iron_hands, Fake Out → fake_out, Farfetch'd → farfetchd)",
+      "DB re-seed: 정규화된 데이터로 전체 재적재",
+      "DamageCalc.tsx: learnset 룩업에서 공백→하이픈 변환 로직 제거, 메가폼 폴백 패턴 -mega → _mega로 수정, 특성 en toLowerCase 불필요 제거",
+      "SampleNewForm.tsx: 동일하게 learnset 룩업 로직 정규화",
+      "abilityModifiers.ts: 특성 이름 하드코딩 전부 underscore로 일괄 치환 (flash fire → flash_fire 등 30여개)",
+      "movedex.html: moveKey 함수 단순화, lsKeyToPokeMap 빌드 로직 정규화",
+      "entry.html: moveByEn 룩업 단순화, pokeEn 변환 로직 제거, rayquaza_mega·dragon_ascent 상수 수정",
+      "pokedex.html: STATS_MAP 키 빌드·룩업에서 불필요한 toLowerCase 제거"
+    ],
+    "commits": [
+      "1819e26 - refactor: en 필드 underscore 정규화 대응 - learnset 룩업·특성 이름 하드코딩 일괄 수정"
+    ]
+  },
+  {
+    "date": "2026-04-12",
+    "project": "pokenova",
+    "title": "모든 en 필드 underscore 정규화",
+    "items": [
+      "JSON 데이터 6개 파일 전체 en 필드 underscore 정규화 완료",
+      "movedex.html, entry.html, pokedex.html: 변환 로직 제거 및 정규화된 en 직접 사용"
+    ],
+    "commits": [
+      "cb6ea2e - refactor: 모든 en 필드 underscore 정규화"
+    ]
+  },
+  {
+    "date": "2026-04-12",
+    "project": "pochams_project",
     "title": "learnsets DB 마이그레이션 - Neon PostgreSQL 통합 완료",
     "items": [
       "PokemonLearnset 모델 추가 (prisma/schema.prisma): id, pokemon_en, move_en, method, level 필드, pokemon_en 인덱스",
