@@ -4,13 +4,14 @@
     "project": "pokenova",
     "title": "27마리 기본폼 forms 추가 및 hidden forms 지원",
     "items": [
-      "기본폼 learnset이 비어있는 27마리에 실드폼/수컷/노말폼 등 기본 forms 항목 삽입 (aegislash_shield, lycanroc_midday, meowstic_male 등 고유 name_en 사용)",
+      "기본폼 learnset이 비어있는 27마리에 실드폼/수컷/노말폼 등 기본 forms 항목 삽입 (type=base, 별도 DB 행 생성 없이 표시용으로만)",
       "도롱충이 모래땅/슈레폼 hidden: true 처리",
       "화염레오 암컷폼, 노고고치 3마디폼 hidden: true로 추가",
       "케르디오 formLabel 누락 보완 (평상시 추가)"
     ],
     "commits": [
-      "4189901 - feat: 27마리 기본폼 forms 항목 추가 및 hidden forms 지원"
+      "4189901 - feat: 27마리 기본폼 forms 항목 추가 및 hidden forms 지원",
+      "3c8e09a - fix: 기본폼 forms 항목을 별도 DB 행 대신 표시용으로만 처리"
     ]
   },
   {
