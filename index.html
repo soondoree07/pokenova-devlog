@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Devlog</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -17,7 +18,7 @@
     header {
       background: linear-gradient(135deg, #1a1f2e 0%, #16213e 100%);
       border-bottom: 1px solid #2d3748;
-      padding: 28px 24px 22px;
+      padding: 28px 24px 0;
       text-align: center;
     }
 
@@ -36,6 +37,35 @@
       color: #718096;
     }
 
+    /* 탭 네비게이션 */
+    .tab-nav {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      margin-top: 20px;
+    }
+
+    .tab-btn {
+      padding: 10px 32px;
+      border: none;
+      border-bottom: 3px solid transparent;
+      background: transparent;
+      color: #718096;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s;
+      letter-spacing: 0.3px;
+    }
+
+    .tab-btn:hover { color: #a0aec0; }
+
+    .tab-btn.active {
+      color: #90cdf4;
+      border-bottom-color: #63b3ed;
+    }
+
+    /* 필터바 */
     .filter-bar {
       display: flex;
       justify-content: center;
@@ -73,6 +103,11 @@
       padding: 32px 16px 80px;
     }
 
+    /* 탭 패널 */
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* ── 로그 타임라인 ── */
     .timeline {
       position: relative;
       padding-left: 28px;
@@ -81,9 +116,7 @@
     .timeline::before {
       content: '';
       position: absolute;
-      left: 7px;
-      top: 0;
-      bottom: 0;
+      left: 7px; top: 0; bottom: 0;
       width: 2px;
       background: linear-gradient(to bottom, #63b3ed, #4a5568);
     }
@@ -98,10 +131,8 @@
     .log-entry::before {
       content: '';
       position: absolute;
-      left: -24px;
-      top: 16px;
-      width: 12px;
-      height: 12px;
+      left: -24px; top: 16px;
+      width: 12px; height: 12px;
       border-radius: 50%;
       background: #63b3ed;
       border: 2px solid #0e1117;
@@ -174,10 +205,7 @@
 
     .log-entry.open .log-body { display: block; }
 
-    .log-items {
-      list-style: none;
-      margin-bottom: 14px;
-    }
+    .log-items { list-style: none; margin-bottom: 14px; }
 
     .log-items li {
       position: relative;
@@ -221,6 +249,169 @@
 
     .no-commits { font-size: 0.8rem; color: #4a5568; font-style: italic; }
 
+    /* ── 기획서 탭 ── */
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 20px;
+    }
+
+    .specs-project-card {
+      background: #1a202c;
+      border: 1px solid #2d3748;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .specs-project-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 18px;
+      background: #1e2535;
+      border-bottom: 1px solid #2d3748;
+    }
+
+    .specs-project-name {
+      font-size: 0.9rem;
+      font-weight: 700;
+      flex: 1;
+    }
+
+    .specs-file-count {
+      font-size: 0.72rem;
+      color: #718096;
+    }
+
+    .specs-file-list { padding: 10px 12px; }
+
+    .specs-file-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.15s;
+      text-decoration: none;
+    }
+
+    .specs-file-item:hover { background: #2d3748; }
+
+    .specs-file-icon {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .specs-file-info { flex: 1; min-width: 0; }
+
+    .specs-file-title {
+      font-size: 0.87rem;
+      font-weight: 600;
+      color: #e2e8f0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .specs-file-meta {
+      font-size: 0.73rem;
+      color: #718096;
+      margin-top: 1px;
+    }
+
+    .specs-empty {
+      padding: 20px;
+      text-align: center;
+      color: #4a5568;
+      font-size: 0.82rem;
+    }
+
+    .specs-empty-hint {
+      margin-top: 6px;
+      font-size: 0.76rem;
+      color: #2d3748;
+      font-family: 'Consolas', monospace;
+    }
+
+    /* ── 마크다운 모달 ── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+      z-index: 1000;
+      padding: 24px 16px;
+      overflow-y: auto;
+    }
+
+    .modal-overlay.open { display: flex; align-items: flex-start; justify-content: center; }
+
+    .modal-box {
+      background: #1a202c;
+      border: 1px solid #2d3748;
+      border-radius: 16px;
+      width: 100%;
+      max-width: 760px;
+      overflow: hidden;
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 20px;
+      background: #1e2535;
+      border-bottom: 1px solid #2d3748;
+    }
+
+    .modal-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #e2e8f0;
+      flex: 1;
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      color: #718096;
+      font-size: 1.4rem;
+      cursor: pointer;
+      line-height: 1;
+      padding: 2px 6px;
+      border-radius: 6px;
+      transition: background 0.1s;
+    }
+
+    .modal-close:hover { background: #2d3748; color: #e2e8f0; }
+
+    .modal-content {
+      padding: 24px 28px;
+      max-height: 75vh;
+      overflow-y: auto;
+    }
+
+    /* 마크다운 스타일 */
+    .md-body { color: #cbd5e0; line-height: 1.75; font-size: 0.9rem; }
+    .md-body h1 { font-size: 1.6rem; font-weight: 800; color: #e2e8f0; margin: 0 0 16px; padding-bottom: 10px; border-bottom: 2px solid #2d3748; }
+    .md-body h2 { font-size: 1.25rem; font-weight: 700; color: #e2e8f0; margin: 24px 0 10px; padding-bottom: 6px; border-bottom: 1px solid #2d3748; }
+    .md-body h3 { font-size: 1rem; font-weight: 700; color: #90cdf4; margin: 18px 0 8px; }
+    .md-body h4 { font-size: 0.9rem; font-weight: 700; color: #a0aec0; margin: 14px 0 6px; }
+    .md-body p { margin-bottom: 12px; }
+    .md-body ul, .md-body ol { padding-left: 20px; margin-bottom: 12px; }
+    .md-body li { margin-bottom: 5px; }
+    .md-body code { background: #171c27; color: #4fd1c5; padding: 2px 6px; border-radius: 4px; font-size: 0.85em; font-family: 'Consolas', monospace; }
+    .md-body pre { background: #171c27; border: 1px solid #2d3748; border-radius: 8px; padding: 14px 16px; overflow-x: auto; margin-bottom: 14px; }
+    .md-body pre code { background: none; padding: 0; color: #e2e8f0; }
+    .md-body blockquote { border-left: 3px solid #63b3ed; padding-left: 14px; color: #a0aec0; margin: 12px 0; }
+    .md-body table { width: 100%; border-collapse: collapse; margin-bottom: 14px; font-size: 0.85rem; }
+    .md-body th { background: #1e2535; color: #90cdf4; padding: 8px 12px; text-align: left; border-bottom: 2px solid #2d3748; }
+    .md-body td { padding: 7px 12px; border-bottom: 1px solid #2d3748; }
+    .md-body a { color: #63b3ed; text-decoration: underline; }
+    .md-body hr { border: none; border-top: 1px solid #2d3748; margin: 20px 0; }
+    .md-body strong { color: #e2e8f0; font-weight: 700; }
+
     #loading {
       text-align: center;
       padding: 80px 0;
@@ -243,14 +434,41 @@
   <header>
     <h1>Dev<span>log</span></h1>
     <p>프로젝트별 개발 작업 기록</p>
+    <nav class="tab-nav">
+      <button class="tab-btn active" data-tab="log">개발 로그</button>
+      <button class="tab-btn" data-tab="specs">기획서</button>
+    </nav>
   </header>
 
-  <div class="filter-bar" id="filter-bar"></div>
+  <!-- 개발 로그 탭 -->
+  <div id="panel-log" class="tab-panel active">
+    <div class="filter-bar" id="filter-bar"></div>
+    <main>
+      <div id="loading">로딩 중...</div>
+      <div class="timeline" id="timeline" style="display:none"></div>
+    </main>
+  </div>
 
-  <main>
-    <div id="loading">로딩 중...</div>
-    <div class="timeline" id="timeline" style="display:none"></div>
-  </main>
+  <!-- 기획서 탭 -->
+  <div id="panel-specs" class="tab-panel">
+    <main>
+      <div id="specs-loading">로딩 중...</div>
+      <div class="specs-grid" id="specs-grid" style="display:none"></div>
+    </main>
+  </div>
+
+  <!-- 마크다운 모달 -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <span class="modal-title" id="modal-title"></span>
+        <button class="modal-close" id="modal-close">✕</button>
+      </div>
+      <div class="modal-content">
+        <div class="md-body" id="modal-body"></div>
+      </div>
+    </div>
+  </div>
 
   <footer>
     <a href="https://soondoree07.github.io/pokenova_project/" target="_blank">Pokenova</a> &nbsp;·&nbsp;
@@ -259,14 +477,23 @@
   </footer>
 
   <script>
-    // 프로젝트별 색상
+    // ── 탭 전환 ──────────────────────────────────────────────────
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
+      });
+    });
+
+    // ── 프로젝트 색상 ─────────────────────────────────────────────
     const PROJECT_COLORS = {
       pokenova: { bg: '#2d3b1f', border: '#68d391', text: '#9ae6b4' },
     };
 
     function getProjectColor(name) {
       if (PROJECT_COLORS[name]) return PROJECT_COLORS[name];
-      // 새 프로젝트는 색상 자동 배정
       const palette = [
         { bg: '#2d1f3b', border: '#b794f4', text: '#d6bcfa' },
         { bg: '#1f2d3b', border: '#63b3ed', text: '#90cdf4' },
@@ -279,7 +506,7 @@
       return PROJECT_COLORS[name];
     }
 
-    let allEntries = [];
+    // ── 개발 로그 ─────────────────────────────────────────────────
     let activeFilter = 'all';
 
     function applyFilter(project) {
@@ -312,7 +539,7 @@
       });
     }
 
-    async function load() {
+    async function loadLogs() {
       const res = await fetch('logs.json');
       const logs = await res.json();
 
@@ -330,7 +557,6 @@
 
         const color = getProjectColor(log.project || 'etc');
         const badgeStyle = `background:${color.bg};border:1px solid ${color.border};color:${color.text}`;
-
         const itemsHtml = log.items.map(item => `<li>${item}</li>`).join('');
 
         let commitsHtml = '';
@@ -367,8 +593,115 @@
       });
     }
 
-    load().catch(err => {
+    // ── 기획서 ────────────────────────────────────────────────────
+    function fileIcon(type) {
+      return type === 'pdf' ? '📄' : type === 'md' ? '📝' : '📁';
+    }
+
+    async function openMarkdown(filePath, title) {
+      try {
+        const res = await fetch(filePath);
+        if (!res.ok) throw new Error('파일을 불러올 수 없습니다.');
+        const text = await res.text();
+        document.getElementById('modal-title').textContent = title;
+        document.getElementById('modal-body').innerHTML = marked.parse(text);
+        document.getElementById('modal-overlay').classList.add('open');
+      } catch (e) {
+        alert('파일을 불러오지 못했습니다: ' + e.message);
+      }
+    }
+
+    document.getElementById('modal-close').addEventListener('click', () => {
+      document.getElementById('modal-overlay').classList.remove('open');
+    });
+
+    document.getElementById('modal-overlay').addEventListener('click', (e) => {
+      if (e.target === document.getElementById('modal-overlay')) {
+        document.getElementById('modal-overlay').classList.remove('open');
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') document.getElementById('modal-overlay').classList.remove('open');
+    });
+
+    async function loadSpecs() {
+      const res = await fetch('specs.json');
+      const specs = await res.json();
+
+      const grid = document.getElementById('specs-grid');
+      document.getElementById('specs-loading').style.display = 'none';
+      grid.style.display = 'grid';
+
+      const projects = Object.keys(specs);
+
+      if (projects.length === 0) {
+        grid.innerHTML = '<p style="color:#4a5568;text-align:center;padding:40px 0;">등록된 기획서가 없습니다.</p>';
+        return;
+      }
+
+      projects.forEach(projectName => {
+        const files = specs[projectName] || [];
+        const color = getProjectColor(projectName);
+
+        const card = document.createElement('div');
+        card.className = 'specs-project-card';
+
+        let filesHtml = '';
+        if (files.length === 0) {
+          filesHtml = `
+            <div class="specs-empty">
+              등록된 기획서가 없습니다
+              <div class="specs-empty-hint">specs/${projectName}/ 폴더에 파일 추가 후 specs.json 업데이트</div>
+            </div>`;
+        } else {
+          filesHtml = files.map(f => {
+            const ext = f.file.split('.').pop().toLowerCase();
+            const icon = fileIcon(ext);
+            if (ext === 'md') {
+              return `
+                <div class="specs-file-item" onclick="openMarkdown('${f.file}', '${f.title.replace(/'/g, "\\'")}')">
+                  <span class="specs-file-icon">${icon}</span>
+                  <div class="specs-file-info">
+                    <div class="specs-file-title">${f.title}</div>
+                    <div class="specs-file-meta">${f.date || ''} · Markdown</div>
+                  </div>
+                  <span style="color:#4a5568;font-size:0.75rem;">열기 →</span>
+                </div>`;
+            } else {
+              return `
+                <a class="specs-file-item" href="${f.file}" target="_blank">
+                  <span class="specs-file-icon">${icon}</span>
+                  <div class="specs-file-info">
+                    <div class="specs-file-title">${f.title}</div>
+                    <div class="specs-file-meta">${f.date || ''} · ${ext.toUpperCase()}</div>
+                  </div>
+                  <span style="color:#4a5568;font-size:0.75rem;">열기 →</span>
+                </a>`;
+            }
+          }).join('');
+        }
+
+        card.innerHTML = `
+          <div class="specs-project-header">
+            <div class="specs-project-name" style="color:${color.text}">${projectName}</div>
+            <div class="specs-file-count">${files.length}개 파일</div>
+          </div>
+          <div class="specs-file-list">${filesHtml}</div>
+        `;
+
+        grid.appendChild(card);
+      });
+    }
+
+    // 로드
+    loadLogs().catch(err => {
       document.getElementById('loading').textContent = '로그를 불러오지 못했습니다.';
+      console.error(err);
+    });
+
+    loadSpecs().catch(err => {
+      document.getElementById('specs-loading').textContent = '기획서를 불러오지 못했습니다.';
       console.error(err);
     });
   </script>
