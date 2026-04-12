@@ -44,7 +44,8 @@
       "b85dccf - feat: 퍼퓨돈·냐오닉스 수컷 learnset 완성 및 champions_learnsets 재생성",
       "615e419 - feat: 탱탱겔 암컷(jellicent_female) learnset 추가",
       "12257bf - learnset: 파밀리쥐(maushold), 모르페코(morpeko) 배우는 기술 추가",
-      "4921e8b - learnset: 펌킨인(gourgeist) 배우는 기술 추가 - 챔피언스 186마리 완성"
+      "4921e8b - learnset: 펌킨인(gourgeist) 배우는 기술 추가 - 챔피언스 186마리 완성",
+      "21e8d23 - fix: 이어롭(lopunny) 속이기(fake_out) 레벨업 기술 누락 추가"
     ]
   },
   {
