@@ -62,11 +62,13 @@
     "title": "hidden forms seed 제외 처리 + 모든 en 필드 underscore 정규화",
     "items": [
       "seed.ts: hidden: true 항목을 메가폼/알트폼/임베디드 forms 배열에서 모두 필터링",
-      "모든 en 필드 underscore 정규화 (공백·하이픈·아포스트로피·콜론 → _)"
+      "모든 en 필드 underscore 정규화 (공백·하이픈·아포스트로피·콜론 → _)",
+      "렌탈코드 입력 10자리로 변경 및 제한 (placeholder, maxLength, slice 추가)"
     ],
     "commits": [
       "07df3ec - feat: hidden forms 시드에서 제외 처리",
-      "1819e26 - refactor: en 필드 underscore 정규화 대응 - learnset 룩업·특성 이름 하드코딩 일괄 수정"
+      "1819e26 - refactor: en 필드 underscore 정규화 대응 - learnset 룩업·특성 이름 하드코딩 일괄 수정",
+      "6d80c6d - fix: 렌탈코드 입력 10자리로 변경 및 제한"
     ]
   },
   {
