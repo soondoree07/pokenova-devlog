@@ -1,0 +1,1096 @@
+{
+  "meta": {
+    "title": "포챔스 팀 공유 사이트 — Pokemon Champions Team Hub",
+    "version": "v4.3",
+    "created_at": "2026-04",
+    "description": "Pokemon Champions 배틀팀 및 단일 샘플을 공유하고, 사용률 통계와 결정력 계산기를 제공하는 커뮤니티 플랫폼",
+    "updated_at": "2026-04",
+    "changelog": "v4.3: 중립 성격 4개 = 성실과 동일 처리, 성격 보정 매핑 완성"
+  },
+  "content_types": {
+    "battle_team": {
+      "description": "6마리 샘플 + 운영방법으로 구성된 실전 팀",
+      "unit": "팀 1개 = TeamSample 6개",
+      "rental_code": "선택 입력, 중복 허용",
+      "likes": "팀 단위 + 팀 내 샘플 단위 (독립)",
+      "stats_contribution": "TeamSample로 집계",
+      "home_section": "팀 목록 섹션",
+      "detail_page": "/teams/:id"
+    },
+    "standalone_sample": {
+      "description": "포켓몬 1마리의 기술/도구/특성/SP 세트 단독 공유",
+      "likes": "단일 샘플 단위",
+      "stats_contribution": "TeamSample과 동일 가중치로 합산",
+      "home_section": "단일 샘플 섹션",
+      "detail_page": "/samples/:id"
+    }
+  },
+  "core_concepts": {
+    "sample": {
+      "definition": "포켓몬 한 마리의 실전 세트 단위",
+      "name_format": "[자유입력 접두사] + '[포켓몬이름] 샘플' (접미사 자동 고정)",
+      "name_examples": [
+        "솔라블레이드 리자몽 샘플",
+        "목탄 리자몽 샘플",
+        "리자몽 샘플"
+      ],
+      "prefix_optional": true
+    },
+    "stat_points": {
+      "description": "포챔스 EV/IV 대체 시스템",
+      "total_cap": 66,
+      "per_stat_cap": 32,
+      "iv_fixed": 31,
+      "effect": "1 SP = 레벨50 실수치 +1 직접 가산",
+      "formula": {
+        "hp": "floor((2 × base_stat_HP + 31) × 50/100 + 60) + SP_HP",
+        "others": "floor((2 × base_stat + 31) × 50/100 + 5) × nature_modifier + SP",
+        "nature_modifier": {
+          "up": 1.1,
+          "neutral": 1.0,
+          "down": 0.9
+        },
+        "note": "성격보정 적용 위치(SP 가산 전/후) 실제 게임 내 검증 필요"
+      }
+    },
+    "natures": {
+      "note": "포챔스 성격 선택 화면 기준 (IMG_2746 확인). 중립 5개는 화면에 표시 안 됨 — 추후 확인 필요.",
+      "grid": {
+        "rows": "올라가는 스탯 (공격/방어/특수공격/특수방어/스피드)",
+        "cols": "내려가는 스탯 (공격/방어/특수공격/특수방어/스피드)"
+      },
+      "confirmed_20": [
+        {
+          "ko": "성실",
+          "boost": null,
+          "drop": null,
+          "note": "중립 (보정 없음)"
+        },
+        {
+          "ko": "성실",
+          "boost": "공격",
+          "drop": "공격",
+          "note": "중립"
+        },
+        {
+          "ko": "외로움",
+          "boost": "공격",
+          "drop": "방어"
+        },
+        {
+          "ko": "고집",
+          "boost": "공격",
+          "drop": "특수공격"
+        },
+        {
+          "ko": "개구쟁이",
+          "boost": "공격",
+          "drop": "특수방어"
+        },
+        {
+          "ko": "용감",
+          "boost": "공격",
+          "drop": "스피드"
+        },
+        {
+          "ko": "대담",
+          "boost": "방어",
+          "drop": "공격"
+        },
+        {
+          "ko": "장난꾸러기",
+          "boost": "방어",
+          "drop": "특수공격"
+        },
+        {
+          "ko": "촐랑",
+          "boost": "방어",
+          "drop": "특수방어"
+        },
+        {
+          "ko": "무사태평",
+          "boost": "방어",
+          "drop": "스피드"
+        },
+        {
+          "ko": "조심",
+          "boost": "특수공격",
+          "drop": "공격"
+        },
+        {
+          "ko": "의젓",
+          "boost": "특수공격",
+          "drop": "방어"
+        },
+        {
+          "ko": "덜렁",
+          "boost": "특수공격",
+          "drop": "특수방어"
+        },
+        {
+          "ko": "냉정",
+          "boost": "특수공격",
+          "drop": "스피드"
+        },
+        {
+          "ko": "차분",
+          "boost": "특수방어",
+          "drop": "공격"
+        },
+        {
+          "ko": "암전",
+          "boost": "특수방어",
+          "drop": "방어"
+        },
+        {
+          "ko": "신중",
+          "boost": "특수방어",
+          "drop": "특수공격"
+        },
+        {
+          "ko": "건방",
+          "boost": "특수방어",
+          "drop": "스피드"
+        },
+        {
+          "ko": "겁쟁이",
+          "boost": "스피드",
+          "drop": "공격"
+        },
+        {
+          "ko": "성급",
+          "boost": "스피드",
+          "drop": "방어"
+        },
+        {
+          "ko": "명랑",
+          "boost": "스피드",
+          "drop": "특수공격"
+        },
+        {
+          "ko": "천진난만",
+          "boost": "스피드",
+          "drop": "특수방어"
+        }
+      ],
+      "neutral_5_tbd": {
+        "description": "중립 성격 5개 — 그리드 대각선에 표시 안 됨, 게임 내 별도 확인 필요",
+        "positions": [
+          "방어↑ / 방어↓",
+          "특수공격↑ / 특수공격↓",
+          "특수방어↑ / 특수방어↓",
+          "스피드↑ / 스피드↓"
+        ]
+      },
+      "flat_list_confirmed": [
+        "성실",
+        "외로움",
+        "고집",
+        "개구쟁이",
+        "용감",
+        "대담",
+        "장난꾸러기",
+        "촐랑",
+        "무사태평",
+        "조심",
+        "의젓",
+        "덜렁",
+        "냉정",
+        "차분",
+        "암전",
+        "신중",
+        "건방",
+        "겁쟁이",
+        "성급",
+        "명랑",
+        "천진난만"
+      ],
+      "neutral_handling": {
+        "description": "중립 성격 5개는 이름과 무관하게 모두 성실과 동일하게 처리",
+        "nature_modifier": {
+          "boost": 1.0,
+          "drop": 1.0
+        },
+        "confirmed_name": "성실",
+        "unconfirmed_4": "이름 미확인이나 계산기/샘플 등록에서 동일하게 적용 (보정 없음)",
+        "ocr_matching": "인식된 성격이 21개 목록에 없으면 → 중립으로 처리"
+      },
+      "calculator_logic": {
+        "neutral": {
+          "names": [
+            "성실",
+            "???",
+            "???",
+            "???",
+            "???"
+          ],
+          "atk_modifier": 1.0,
+          "def_modifier": 1.0,
+          "spa_modifier": 1.0,
+          "spd_modifier": 1.0,
+          "spe_modifier": 1.0
+        },
+        "non_neutral_20": "boost 스탯 ×1.1 / drop 스탯 ×0.9",
+        "mapping": {
+          "성실": {
+            "boost": null,
+            "drop": null
+          },
+          "외로움": {
+            "boost": "atk",
+            "drop": "def"
+          },
+          "고집": {
+            "boost": "atk",
+            "drop": "spa"
+          },
+          "개구쟁이": {
+            "boost": "atk",
+            "drop": "spd"
+          },
+          "용감": {
+            "boost": "atk",
+            "drop": "spe"
+          },
+          "대담": {
+            "boost": "def",
+            "drop": "atk"
+          },
+          "장난꾸러기": {
+            "boost": "def",
+            "drop": "spa"
+          },
+          "촐랑": {
+            "boost": "def",
+            "drop": "spd"
+          },
+          "무사태평": {
+            "boost": "def",
+            "drop": "spe"
+          },
+          "조심": {
+            "boost": "spa",
+            "drop": "atk"
+          },
+          "의젓": {
+            "boost": "spa",
+            "drop": "def"
+          },
+          "덜렁": {
+            "boost": "spa",
+            "drop": "spd"
+          },
+          "냉정": {
+            "boost": "spa",
+            "drop": "spe"
+          },
+          "차분": {
+            "boost": "spd",
+            "drop": "atk"
+          },
+          "암전": {
+            "boost": "spd",
+            "drop": "def"
+          },
+          "신중": {
+            "boost": "spd",
+            "drop": "spa"
+          },
+          "건방": {
+            "boost": "spd",
+            "drop": "spe"
+          },
+          "겁쟁이": {
+            "boost": "spe",
+            "drop": "atk"
+          },
+          "성급": {
+            "boost": "spe",
+            "drop": "def"
+          },
+          "명랑": {
+            "boost": "spe",
+            "drop": "spa"
+          },
+          "천진난만": {
+            "boost": "spe",
+            "drop": "spd"
+          }
+        }
+      }
+    }
+  },
+  "features": {
+    "team_registration": {
+      "auth_required": true,
+      "required_fields": [
+        "team_name",
+        "battle_format",
+        "description",
+        "samples_x6"
+      ],
+      "optional_fields": [
+        "rental_code",
+        "season"
+      ],
+      "battle_format_options": [
+        "싱글",
+        "더블"
+      ],
+      "sample_fields": {
+        "required": [
+          "sample_name",
+          "pokemon",
+          "nature",
+          "ability",
+          "item",
+          "moves_x4",
+          "stat_points_x6"
+        ],
+        "optional": [
+          "tera_type"
+        ]
+      },
+      "stat_points_ui": {
+        "type": "horizontal_slider",
+        "buttons": [
+          "MAX",
+          "MIN"
+        ],
+        "realtime_stat_preview": true,
+        "constraints": {
+          "per_stat_max": 32,
+          "total_max": 66,
+          "realtime_block": true
+        }
+      },
+      "iv": "전부 31 고정, 입력 필드 없음",
+      "rental_code_duplicate": "허용 (식별자 아닌 참고 정보)",
+      "modification": {
+        "edit": false,
+        "delete": true,
+        "copy": true,
+        "copy_note": "복사본은 원본과 독립 관리, copied_from으로 출처 기록"
+      },
+      "import_from_standalone": {
+        "description": "팀 슬롯 입력 시 '내 샘플에서 가져오기' 버튼으로 StandaloneSample 편입",
+        "independence": "편입 후 원본과 독립 저장, origin_sample_id로 출처 기록"
+      }
+    },
+    "standalone_sample_registration": {
+      "auth_required": true,
+      "required_fields": [
+        "sample_name",
+        "pokemon",
+        "nature",
+        "ability",
+        "item",
+        "moves_x4",
+        "stat_points_x6",
+        "memo"
+      ],
+      "optional_fields": [
+        "partner_pokemon",
+        "counter_pokemon",
+        "tera_type"
+      ],
+      "partner_pokemon_desc": "같이 쓰면 좋은 포켓몬 (복수 선택 가능)",
+      "counter_pokemon_desc": "이 샘플이 잡을 수 있는 포켓몬 (복수 선택 가능)",
+      "team_integration_flow": [
+        "1. /samples/new 에서 단독 등록",
+        "2. 팀 등록(/teams/new) 시 '내 샘플에서 가져오기' 버튼",
+        "3. 내 단일 샘플 목록 팝업 → 선택 → 슬롯에 자동 입력",
+        "4. 편입 후 원본과 독립 저장 (origin_sample_id로 출처 기록)"
+      ]
+    },
+    "likes": {
+      "units": [
+        {
+          "type": "team_like",
+          "scope": "팀 전체",
+          "location": "팀 상세 페이지",
+          "effect": "팀 목록 인기순 정렬 기준"
+        },
+        {
+          "type": "team_sample_like",
+          "scope": "팀 내 샘플",
+          "location": "샘플 카드",
+          "effect": "포켓몬 사용률 통계 가중치 반영"
+        },
+        {
+          "type": "standalone_sample_like",
+          "scope": "단일 샘플",
+          "location": "단일 샘플 카드/상세",
+          "effect": "포켓몬 사용률 통계 가중치 반영 (TeamSample과 동일)"
+        }
+      ],
+      "dedup": "계정 기반 1인 1회, 취소 후 재클릭 가능"
+    },
+    "usage_stats": {
+      "update": {
+        "realtime": "팀/샘플 등록·삭제 즉시 반영",
+        "batch": "하루 1회 재집계로 오차 보정"
+      },
+      "tabs": [
+        {
+          "id": "count_based",
+          "label": "등록 기반",
+          "formula": "해당 포켓몬 포함 샘플 수 / 전체 샘플 수 × 100"
+        },
+        {
+          "id": "weighted",
+          "label": "좋아요 가중치 기반",
+          "formula": "Σ(1 + 샘플좋아요) / Σ전체샘플(1 + 샘플좋아요) × 100"
+        }
+      ],
+      "sample_scope": "TeamSample + StandaloneSample 동일 가중치 합산",
+      "filters": {
+        "battle_format": [
+          "싱글",
+          "더블",
+          "전체"
+        ],
+        "season": "시즌별 + 전체 기간 탭"
+      },
+      "metrics": [
+        "pokemon_usage_rate",
+        "move_usage_per_pokemon",
+        "item_usage_per_pokemon",
+        "ability_usage_per_pokemon",
+        "sp_spread_top3_per_pokemon",
+        "core_pairs_2",
+        "core_pairs_3",
+        "sample_top_likes_per_pokemon"
+      ],
+      "core_pairs_note": "코어 조합은 팀 내 조합 기준 (StandaloneSample partner 태그는 참고용)"
+    },
+    "damage_calculator": {
+      "team_load_options": [
+        "내 팀 즐겨찾기 (등록한 팀 + 좋아요 누른 팀)",
+        "전체 팀 검색 (팀이름/렌탈팀코드)"
+      ],
+      "attacker_auto_fill": "샘플 클릭 시 포켓몬/기술/SP/특성/성격 자동 입력 + 실수치 실시간 계산",
+      "defender_select_options": [
+        "포켓몬 이름 직접 검색",
+        "상대 팀 불러와서 샘플 선택"
+      ],
+      "swap_button": true,
+      "move_dropdown": {
+        "top_slots": "현재 샘플 기술 4개 상단 고정",
+        "expand_button": "자주 쓰는 기술 보기 (사이트 통계 기반)"
+      },
+      "rankup_input": {
+        "type": "plus_minus_button",
+        "range": [
+          -6,
+          6
+        ],
+        "step": 1
+      },
+      "attacker_inputs": [
+        "포켓몬/타입/물리·특수",
+        "기술/위력",
+        "SP 슬라이더 (실수치 실시간)",
+        "성격보정 (×0.9/×1.0/×1.1)",
+        "랭크업 (+/- 버튼)",
+        "특성 (64종)",
+        "도구 (30종 hold item + 베리)",
+        "날씨 (Harsh Sunlight/Rain/Sandstorm/Snow)",
+        "필드 (Grassy/Misty/Psychic/Electric Terrain)",
+        "상태이상 (Burn/Paralysis/Poison/Freeze/Sleep)",
+        "배수"
+      ],
+      "attacker_checkboxes": [
+        "급소",
+        "충전",
+        "도우미",
+        "배터리",
+        "파워스폿",
+        "프렌드가드",
+        "페어리오라",
+        "다크오라",
+        "오라브레이크",
+        "재앙의목간",
+        "재앙의검",
+        "재앙의그릇",
+        "재앙의구슬",
+        "강철정신"
+      ],
+      "result_display": {
+        "decisiveness": "결정력 수치",
+        "durability": "내구력 수치",
+        "damage_range_percent": "데미지 % 범위 (하한~상한)",
+        "ko_judgment": {
+          "guaranteed_1hko": "최솟값 ≥ 100%",
+          "high_chance_1hko": "최솟값 < 100% & 최댓값 ≥ 100% (확률 표시)",
+          "guaranteed_2hko": "최솟값 × 2 ≥ 100%",
+          "guaranteed_3hko": "최솟값 × 3 ≥ 100%"
+        }
+      },
+      "special_cases_v1": [
+        "화상 + 물리기 → 공격 ×0.5 (Guts 특성 시 무효 + ×1.5)",
+        "더블배틀 광역기 → 데미지 ×0.75",
+        "자속보정: ×1.5 / Adaptability ×2.0",
+        "날씨 보정: Harsh Sunlight+Fire ×1.5, Rain+Water ×1.5, Harsh Sunlight+Water ×0.5, Rain+Fire ×0.5",
+        "필드 보정: Electric Terrain+Electric ×1.3, Psychic Terrain+Psychic ×1.3, Grassy Terrain+Grass ×1.3",
+        "기술 카테고리별 특성: punching_move(Iron Fist), slicing_move(Sharpness), biting_move(Strong Jaw)",
+        "sound_move(Punk Rock), pulse_move(Mega Launcher), Technician, Overgrow/Blaze/Torrent/Swarm"
+      ],
+      "special_cases_v2_later": [
+        "자폭/대폭발 → 방어 실수치 ÷2",
+        "Solar Beam → 날씨별 위력 변동",
+        "Weather Ball → 날씨별 타입/위력 변동",
+        "Gyro Ball → 속도 비율 기반 위력",
+        "Terastallization 보정"
+      ],
+      "nature_list": [
+        "성실",
+        "외로움",
+        "고집",
+        "개구쟁이",
+        "용감",
+        "대담",
+        "장난꾸러기",
+        "촐랑",
+        "무사태평",
+        "조심",
+        "의젓",
+        "덜렁",
+        "냉정",
+        "차분",
+        "암전",
+        "신중",
+        "건방",
+        "겁쟁이",
+        "성급",
+        "명랑",
+        "천진난만"
+      ]
+    },
+    "sample_ocr": {
+      "description": "포챔스 게임 화면 사진을 업로드하면 샘플 정보를 자동으로 인식해서 폼에 입력해주는 기능",
+      "ocr_engine": "Tesseract.js (무료, 브라우저에서 실행, 한국어 kor 언어팩)",
+      "input_methods": {
+        "mobile": [
+          "갤러리에서 사진 선택",
+          "카메라로 직접 촬영"
+        ],
+        "pc": [
+          "파일 드래그앤드롭",
+          "파일 탐색기에서 선택",
+          "Ctrl+V 화면 캡처 붙여넣기"
+        ],
+        "note": "모든 입력 방식은 내부적으로 동일한 이미지 처리 로직으로 처리됨"
+      },
+      "screen_layout": {
+        "note": "포챔스 샘플 화면은 항상 고정 레이아웃 — 좌표 비율 기반으로 영역 크롭 후 OCR 실행",
+        "reference_screen": "No.6 리자몽 샘플 화면 기준",
+        "regions": {
+          "pokemon_name": {
+            "x": "21~27%",
+            "y": "86~91%",
+            "extract": "포켓몬 이름"
+          },
+          "nature": {
+            "x": "30~35%",
+            "y": "60~65%",
+            "extract": "성격 (능력 보정)"
+          },
+          "ability": {
+            "x": "66~97%",
+            "y": "63~73%",
+            "extract": "특성"
+          },
+          "move_1": {
+            "x": "74~97%",
+            "y": "17~24%",
+            "extract": "기술1"
+          },
+          "move_2": {
+            "x": "74~97%",
+            "y": "28~34%",
+            "extract": "기술2"
+          },
+          "move_3": {
+            "x": "74~97%",
+            "y": "38~45%",
+            "extract": "기술3"
+          },
+          "move_4": {
+            "x": "74~97%",
+            "y": "48~55%",
+            "extract": "기술4"
+          },
+          "sp_hp": {
+            "x": "31~34%",
+            "y": "32~37%",
+            "extract": "HP SP 수치"
+          },
+          "sp_atk": {
+            "x": "31~34%",
+            "y": "37~42%",
+            "extract": "공격 SP 수치"
+          },
+          "sp_def": {
+            "x": "31~34%",
+            "y": "42~47%",
+            "extract": "방어 SP 수치"
+          },
+          "sp_spa": {
+            "x": "31~34%",
+            "y": "47~52%",
+            "extract": "특수공격 SP 수치"
+          },
+          "sp_spd": {
+            "x": "31~34%",
+            "y": "52~57%",
+            "extract": "특수방어 SP 수치"
+          },
+          "sp_spe": {
+            "x": "31~34%",
+            "y": "57~62%",
+            "extract": "스피드 SP 수치"
+          }
+        }
+      },
+      "auto_filled_fields": [
+        "pokemon (champions_pokemon.json ko 필드와 매칭)",
+        "nature",
+        "ability",
+        "moves_x4 (master_moves.json ko 필드와 매칭)",
+        "sp_hp / sp_atk / sp_def / sp_spa / sp_spd / sp_spe"
+      ],
+      "manual_fields": [
+        "item (도구) — 경기마다 변경 가능하므로 드롭다운에서 직접 선택",
+        "sample_name — 유저가 직접 입력"
+      ],
+      "image_preprocessing": [
+        "가로 1280px 기준 리사이즈 (비율 유지)",
+        "그레이스케일 변환 → 텍스트 인식률 향상",
+        "대비/밝기 자동 보정",
+        "기울기 보정"
+      ],
+      "matching_logic": {
+        "description": "OCR 추출 텍스트 → JSON 데이터 매칭",
+        "pokemon": "champions_pokemon.json의 ko 필드와 완전 일치 또는 유사도 매칭",
+        "moves": "master_moves.json의 ko 필드와 매칭 (in_champions=true만)",
+        "ability": "quiz_abilities.json의 ko 필드와 매칭",
+        "nature": "포챔스 성격 선택 화면 기준 21개 확인 완료 (중립 4개 추후 확인 필요). flat_list: ['성실', '외로움', '고집', '개구쟁이', '용감', '대담', '장난꾸러기', '촐랑', '무사태평', '조심', '의젓', '덜렁', '냉정', '차분', '암전', '신중', '건방', '겁쟁이', '성급', '명랑', '천진난만']",
+        "fallback": "매칭 실패 시 유사한 후보 3개 제시 → 유저가 선택"
+      },
+      "confidence_ui": {
+        "description": "Tesseract 신뢰도 점수 기반으로 인식 결과를 색상으로 구분",
+        "high": {
+          "threshold": "90 이상",
+          "style": "정상 표시",
+          "action": "자동 입력"
+        },
+        "medium": {
+          "threshold": "70~90",
+          "style": "노란색 강조",
+          "action": "확인 요청"
+        },
+        "low": {
+          "threshold": "70 미만",
+          "style": "빨간색 강조",
+          "action": "직접 입력 요청"
+        }
+      },
+      "accuracy_expectations": {
+        "screenshot": "~100% (Switch 캡처 버튼 사용 시)",
+        "phone_camera": "70~85% (정면 촬영 기준)",
+        "degraded_conditions": [
+          "심하게 기울어진 사진 — 좌표 틀어짐",
+          "화면 일부 잘림 — 해당 항목 인식 불가",
+          "빛 반사/번짐 심한 경우 — 텍스트 뭉개짐"
+        ]
+      },
+      "ux_flow": [
+        "1. 사진 업로드 (갤러리/카메라/드래그앤드롭/Ctrl+V)",
+        "2. 이미지 전처리 (리사이즈/보정)",
+        "3. 각 영역 크롭 후 Tesseract.js OCR 실행",
+        "4. 추출 텍스트 → JSON 매칭",
+        "5. 신뢰도 기반 색상으로 결과 표시",
+        "6. 유저가 결과 확인 및 수정",
+        "7. 도구/샘플명은 유저가 직접 입력",
+        "8. 최종 확인 후 샘플 등록"
+      ],
+      "user_guide": [
+        "✅ 화면 전체가 나오도록 찍어주세요",
+        "✅ 가능하면 정면에서 찍어주세요",
+        "✅ Switch 캡처 버튼 스크린샷이 가장 정확해요",
+        "❌ 빛 반사가 심하면 인식이 어려울 수 있어요"
+      ],
+      "implementation_stack": {
+        "ocr": "Tesseract.js (kor 언어팩)",
+        "image_processing": "sharp 또는 Canvas API",
+        "fallback": "Google Cloud Vision API (Tesseract 신뢰도 낮을 경우 — 선택적)"
+      }
+    }
+  },
+  "pages": [
+    {
+      "name": "홈",
+      "path": "/",
+      "sections": [
+        {
+          "id": "sort_tabs",
+          "options": [
+            "최신 등록순",
+            "인기순"
+          ]
+        },
+        {
+          "id": "battle_teams",
+          "label": "배틀팀 목록",
+          "more_link": "/teams",
+          "card_fields": [
+            "팀이름",
+            "6마리 썸네일",
+            "팀 좋아요",
+            "시즌 태그",
+            "배틀형식 태그",
+            "등록자",
+            "렌탈팀코드"
+          ]
+        },
+        {
+          "id": "standalone_samples",
+          "label": "단일 샘플 목록",
+          "more_link": "/samples",
+          "card_fields": [
+            "포켓몬 이미지+이름",
+            "샘플이름",
+            "기술4개",
+            "도구",
+            "특성",
+            "좋아요"
+          ]
+        },
+        {
+          "id": "stats_preview",
+          "label": "사용률 Top 포켓몬 요약"
+        }
+      ]
+    },
+    {
+      "name": "팀 목록",
+      "path": "/teams",
+      "search_filters": [
+        "팀이름",
+        "렌탈팀코드",
+        "포켓몬이름",
+        "시즌",
+        "배틀형식"
+      ],
+      "sort_options": [
+        "최신순",
+        "인기순(팀 좋아요)"
+      ]
+    },
+    {
+      "name": "팀 상세",
+      "path": "/teams/:id",
+      "sections": [
+        "팀이름 / 배틀형식·시즌 태그 / 렌탈팀코드 / 등록자 / 팀 좋아요 버튼",
+        "팀 설명 (운영방법)",
+        "샘플 카드 × 6 (포켓몬이미지+이름 / 샘플이름 / 특성 / 도구 / 성격 / 기술4개 / SP 분포 바 / 실수치 / 샘플 좋아요 버튼 / 이 포켓몬으로 계산하기 버튼)",
+        "팀 복사하기 버튼 / 삭제 버튼 (본인만)"
+      ]
+    },
+    {
+      "name": "팀 등록",
+      "path": "/teams/new",
+      "flow": [
+        "기본정보 입력",
+        "6슬롯 입력 (내 샘플 가져오기 버튼 포함)",
+        "미리보기",
+        "제출"
+      ]
+    },
+    {
+      "name": "단일 샘플 목록",
+      "path": "/samples",
+      "search_filters": [
+        "포켓몬이름",
+        "샘플이름",
+        "기술명",
+        "도구",
+        "특성"
+      ],
+      "sort_options": [
+        "최신순",
+        "인기순(좋아요)"
+      ]
+    },
+    {
+      "name": "단일 샘플 상세",
+      "path": "/samples/:id",
+      "sections": [
+        "샘플이름 / 등록자 / 좋아요 버튼 / 조회수",
+        "포켓몬 이미지+이름 / 특성 / 도구 / 성격 / 기술4개",
+        "SP 분포 바 + 실수치",
+        "운영 메모",
+        "추천 파트너 (선택 항목)",
+        "대응 상대 포켓몬 (선택 항목)",
+        "이 포켓몬으로 계산하기 버튼 / 내 팀에 추가하기 버튼 / 삭제 버튼(본인만)"
+      ]
+    },
+    {
+      "name": "단일 샘플 등록",
+      "path": "/samples/new"
+    },
+    {
+      "name": "통계",
+      "path": "/stats",
+      "tabs": [
+        "등록 기반",
+        "좋아요 가중치 기반"
+      ],
+      "filters": [
+        "배틀형식",
+        "시즌 + 전체 기간"
+      ]
+    },
+    {
+      "name": "포켓몬 통계 상세",
+      "path": "/stats/:pokemon",
+      "sections": [
+        "기술 사용률",
+        "도구 사용률",
+        "특성 사용률",
+        "SP 분포 Top3",
+        "인기 샘플 Top N",
+        "코어 조합"
+      ]
+    },
+    {
+      "name": "결정력 계산기",
+      "path": "/calc"
+    },
+    {
+      "name": "내 페이지",
+      "path": "/my",
+      "sections": [
+        "내가 등록한 팀",
+        "내가 등록한 단일 샘플",
+        "즐겨찾기 (좋아요 누른 팀/샘플)"
+      ]
+    }
+  ],
+  "data_models": {
+    "Team": {
+      "fields": {
+        "id": "UUID",
+        "author_id": "UUID",
+        "team_name": "String (required)",
+        "rental_code": "String | null",
+        "battle_format": "Enum: 싱글 | 더블",
+        "season": "String | null",
+        "description": "Text (required)",
+        "samples": "Array<TeamSample> (6)",
+        "team_likes": "Integer",
+        "views": "Integer",
+        "copied_from": "UUID | null",
+        "created_at": "Timestamp"
+      }
+    },
+    "TeamSample": {
+      "description": "팀에 소속된 샘플. StandaloneSample에서 가져올 수 있으나 이후 독립 관리.",
+      "fields": {
+        "id": "UUID",
+        "team_id": "UUID",
+        "slot": "Integer 1~6",
+        "sample_name": "String",
+        "pokemon_id": "String",
+        "nature": "String",
+        "ability": "String",
+        "item": "String",
+        "moves": "Array<String> (4)",
+        "sp_hp": "Integer 0~32",
+        "sp_atk": "Integer 0~32",
+        "sp_def": "Integer 0~32",
+        "sp_spa": "Integer 0~32",
+        "sp_spd": "Integer 0~32",
+        "sp_spe": "Integer 0~32",
+        "sp_total_constraint": "≤ 66",
+        "tera_type": "String | null",
+        "sample_likes": "Integer",
+        "origin_sample_id": "UUID | null"
+      }
+    },
+    "StandaloneSample": {
+      "description": "팀과 독립적으로 존재하는 단일 샘플",
+      "fields": {
+        "id": "UUID",
+        "author_id": "UUID",
+        "sample_name": "String",
+        "pokemon_id": "String",
+        "nature": "String",
+        "ability": "String",
+        "item": "String",
+        "moves": "Array<String> (4)",
+        "sp_hp": "Integer 0~32",
+        "sp_atk": "Integer 0~32",
+        "sp_def": "Integer 0~32",
+        "sp_spa": "Integer 0~32",
+        "sp_spd": "Integer 0~32",
+        "sp_spe": "Integer 0~32",
+        "sp_total_constraint": "≤ 66",
+        "memo": "Text (required)",
+        "partner_pokemon": "Array<String> (optional)",
+        "counter_pokemon": "Array<String> (optional)",
+        "tera_type": "String | null",
+        "likes": "Integer",
+        "views": "Integer",
+        "created_at": "Timestamp"
+      }
+    },
+    "UsageStat": {
+      "description": "통계 캐시. TeamSample + StandaloneSample 동일 가중치 합산.",
+      "fields": {
+        "pokemon_count": "포켓몬별 등장 샘플 수 / 전체 샘플 수 → 등록기반 %",
+        "pokemon_weighted": "좋아요 가중치 기반 사용률 % (팀+단일 통합)",
+        "move_usage": "포켓몬 × 기술 채용률 (합산)",
+        "item_usage": "포켓몬 × 도구 채용률 (합산)",
+        "ability_usage": "포켓몬 × 특성 채용률 (합산)",
+        "sp_spread_top3": "포켓몬별 SP배분 Top3 (합산)",
+        "core_pairs_2": "2마리 코어 조합 + 빈도 (팀 내 기준)",
+        "core_pairs_3": "3마리 코어 조합 + 빈도 (팀 내 기준)",
+        "sample_top_likes": "포켓몬별 좋아요 많은 샘플 Top N (팀+단일 통합)",
+        "last_updated": "Timestamp"
+      }
+    }
+  },
+  "confirmed_decisions": [
+    {
+      "category": "인증",
+      "decision": "팀/단일 샘플 등록 모두 로그인 필수"
+    },
+    {
+      "category": "렌탈팀코드",
+      "decision": "선택 입력, 중복 허용"
+    },
+    {
+      "category": "샘플 이름",
+      "decision": "[접두사 자유입력] + '[포켓몬명] 샘플' 자동 고정, 접두사 빈칸 허용"
+    },
+    {
+      "category": "SP 입력 UI",
+      "decision": "가로 슬라이더 + MAX/MIN + 총합 66·스탯당 32 초과 방지 (실시간)"
+    },
+    {
+      "category": "IV",
+      "decision": "전부 31 고정, 입력 필드 없음"
+    },
+    {
+      "category": "실수치 공식",
+      "decision": "HP: floor((2×종족값+31)×50/100+60)+SP / 나머지: floor((2×종족값+31)×50/100+5)×성격+SP"
+    },
+    {
+      "category": "팀 수정/삭제",
+      "decision": "수정 불가 / 삭제 가능 / 복사 가능"
+    },
+    {
+      "category": "단일 샘플 팀 편입",
+      "decision": "단독 등록 후 팀 등록 시 '내 샘플 목록에서 가져오기'"
+    },
+    {
+      "category": "좋아요 단위",
+      "decision": "팀 단위 + 팀 내 샘플 단위 + 단일 샘플 단위 (모두 독립)"
+    },
+    {
+      "category": "좋아요 중복",
+      "decision": "계정 기반 1인 1회"
+    },
+    {
+      "category": "통계 기준",
+      "decision": "등록기반 탭 ↔ 좋아요 가중치 탭 전환"
+    },
+    {
+      "category": "통계 합산",
+      "decision": "TeamSample + StandaloneSample 동일 가중치로 합산"
+    },
+    {
+      "category": "코어 조합",
+      "decision": "2마리 + 3마리 둘 다 표시"
+    },
+    {
+      "category": "시즌 필터",
+      "decision": "시즌별 집계 + 전체 기간 탭"
+    },
+    {
+      "category": "배틀형식 필터",
+      "decision": "싱글 / 더블 / 전체"
+    },
+    {
+      "category": "통계 업데이트",
+      "decision": "등록 즉시 반영 + 하루 1회 재집계"
+    },
+    {
+      "category": "홈 화면",
+      "decision": "팀 섹션 + 단일 샘플 섹션 나란히 / 최신순+인기순 탭"
+    },
+    {
+      "category": "팀 카드",
+      "decision": "팀이름 + 6마리 썸네일 + 좋아요 + 시즌/배틀형식 태그 + 등록자 + 렌탈팀코드"
+    },
+    {
+      "category": "단일 샘플 카드",
+      "decision": "포켓몬이미지+이름 + 샘플이름 + 기술4개 + 도구 + 특성 + 좋아요"
+    },
+    {
+      "category": "팀 상세",
+      "decision": "팀설명 + 6샘플카드 + 샘플별좋아요 + 계산기 바로가기 버튼"
+    },
+    {
+      "category": "계산기 팀 불러오기",
+      "decision": "내 팀 즐겨찾기 + 전체 팀 검색"
+    },
+    {
+      "category": "수비 포켓몬",
+      "decision": "이름 검색 + 팀/샘플에서 선택"
+    },
+    {
+      "category": "랭크업 입력",
+      "decision": "+ / - 버튼 1단계씩 (-6~+6)"
+    },
+    {
+      "category": "계산기 결과",
+      "decision": "결정력 + 내구력 + 데미지% 범위(하한~상한) + 몇 타 KO"
+    },
+    {
+      "category": "댓글 기능",
+      "decision": "v1 미포함"
+    },
+    {
+      "category": "샘플 OCR 인식",
+      "decision": "Tesseract.js 기반 / 포켓몬·성격·특성·기술4·SP6 자동 인식 / 도구·샘플명은 수동 입력 / 신뢰도 기반 색상 UI"
+    }
+  ],
+  "pending_verification": [
+    {
+      "id": 1,
+      "topic": "SP 실수치 공식 검증",
+      "detail": "성격보정 적용 위치(SP 가산 전 vs 후) 실제 게임 내 수치로 확인 필요"
+    },
+    {
+      "id": 2,
+      "topic": "Terastallization 지원 여부",
+      "detail": "포챔스 공식 지원 확정 시 입력 항목 + 계산기 보정 추가"
+    },
+    {
+      "id": 3,
+      "topic": "계산기 특수 케이스 v1 범위 확정",
+      "detail": "Self-Destruct/Solar Beam/Weather Ball/Gyro Ball 등 우선순위 결정 필요"
+    }
+  ],
+  "v1_out_of_scope": [
+    "댓글/커뮤니티 기능",
+    "Terastallization 계산기 보정",
+    "Self-Destruct/Explosion 특수처리",
+    "Solar Beam 날씨 위력 변동",
+    "Weather Ball 타입/위력 변동",
+    "Gyro Ball 속도 기반 위력"
+  ]
+}

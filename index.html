@@ -595,7 +595,11 @@
 
     // ── 기획서 ────────────────────────────────────────────────────
     function fileIcon(type) {
-      return type === 'pdf' ? '📄' : type === 'md' ? '📝' : '📁';
+      if (type === 'pdf') return '📄';
+      if (type === 'md') return '📝';
+      if (type === 'json') return '🗂️';
+      if (type === 'docx' || type === 'doc') return '📃';
+      return '📁';
     }
 
     async function openMarkdown(filePath, title) {
@@ -609,6 +613,55 @@
       } catch (e) {
         alert('파일을 불러오지 못했습니다: ' + e.message);
       }
+    }
+
+    async function openJson(filePath, title) {
+      try {
+        const res = await fetch(filePath);
+        if (!res.ok) throw new Error('파일을 불러올 수 없습니다.');
+        const data = await res.json();
+        document.getElementById('modal-title').textContent = title;
+        document.getElementById('modal-body').innerHTML = renderJson(data);
+        document.getElementById('modal-overlay').classList.add('open');
+      } catch (e) {
+        alert('파일을 불러오지 못했습니다: ' + e.message);
+      }
+    }
+
+    function renderJson(data, depth = 0) {
+      const indent = depth * 16;
+      if (data === null) return '<span style="color:#fc8181">null</span>';
+      if (typeof data === 'boolean') return `<span style="color:#f6ad55">${data}</span>`;
+      if (typeof data === 'number') return `<span style="color:#68d391">${data}</span>`;
+      if (typeof data === 'string') return `<span style="color:#90cdf4">"${escHtml(data)}"</span>`;
+      if (Array.isArray(data)) {
+        if (data.length === 0) return '<span style="color:#718096">[]</span>';
+        const simple = data.every(v => typeof v !== 'object' || v === null);
+        if (simple && data.length <= 6) {
+          return '[' + data.map(v => renderJson(v, depth)).join('<span style="color:#4a5568">, </span>') + ']';
+        }
+        const items = data.map(v =>
+          `<div style="margin-left:${indent + 16}px;margin-top:3px">${renderJson(v, depth + 1)}</div>`
+        ).join('');
+        return `<span style="color:#718096">[</span>${items}<div style="margin-left:${indent}px"><span style="color:#718096">]</span></div>`;
+      }
+      if (typeof data === 'object') {
+        const keys = Object.keys(data);
+        if (keys.length === 0) return '<span style="color:#718096">{}</span>';
+        const items = keys.map(k => {
+          const val = data[k];
+          const isObj = val !== null && typeof val === 'object';
+          return `<div style="margin-left:${indent + 16}px;margin-top:5px">
+            <span style="color:#b794f4;font-weight:600">${escHtml(k)}</span><span style="color:#4a5568">: </span>${renderJson(val, depth + 1)}
+          </div>`;
+        }).join('');
+        return `<div style="font-family:'Consolas',monospace;font-size:0.82rem;line-height:1.6">${items}</div>`;
+      }
+      return String(data);
+    }
+
+    function escHtml(s) {
+      return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
     }
 
     document.getElementById('modal-close').addEventListener('click', () => {
@@ -656,25 +709,48 @@
             </div>`;
         } else {
           filesHtml = files.map(f => {
-            const ext = f.file.split('.').pop().toLowerCase();
+            const ext = (f.type || f.file.split('.').pop()).toLowerCase();
             const icon = fileIcon(ext);
+            const safeTitle = f.title.replace(/'/g, "\\'");
+            const meta = `${f.date || ''} · ${ext.toUpperCase()}`;
+
             if (ext === 'md') {
               return `
-                <div class="specs-file-item" onclick="openMarkdown('${f.file}', '${f.title.replace(/'/g, "\\'")}')">
+                <div class="specs-file-item" onclick="openMarkdown('${f.file}', '${safeTitle}')">
                   <span class="specs-file-icon">${icon}</span>
                   <div class="specs-file-info">
                     <div class="specs-file-title">${f.title}</div>
-                    <div class="specs-file-meta">${f.date || ''} · Markdown</div>
+                    <div class="specs-file-meta">${meta}</div>
                   </div>
                   <span style="color:#4a5568;font-size:0.75rem;">열기 →</span>
                 </div>`;
+            } else if (ext === 'json') {
+              return `
+                <div class="specs-file-item" onclick="openJson('${f.file}', '${safeTitle}')">
+                  <span class="specs-file-icon">${icon}</span>
+                  <div class="specs-file-info">
+                    <div class="specs-file-title">${f.title}</div>
+                    <div class="specs-file-meta">${meta}</div>
+                  </div>
+                  <span style="color:#4a5568;font-size:0.75rem;">열기 →</span>
+                </div>`;
+            } else if (ext === 'docx' || ext === 'doc') {
+              return `
+                <a class="specs-file-item" href="${f.file}" download>
+                  <span class="specs-file-icon">${icon}</span>
+                  <div class="specs-file-info">
+                    <div class="specs-file-title">${f.title}</div>
+                    <div class="specs-file-meta">${meta}</div>
+                  </div>
+                  <span style="color:#4a5568;font-size:0.75rem;">다운로드 ↓</span>
+                </a>`;
             } else {
               return `
                 <a class="specs-file-item" href="${f.file}" target="_blank">
                   <span class="specs-file-icon">${icon}</span>
                   <div class="specs-file-info">
                     <div class="specs-file-title">${f.title}</div>
-                    <div class="specs-file-meta">${f.date || ''} · ${ext.toUpperCase()}</div>
+                    <div class="specs-file-meta">${meta}</div>
                   </div>
                   <span style="color:#4a5568;font-size:0.75rem;">열기 →</span>
                 </a>`;
