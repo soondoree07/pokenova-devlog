@@ -1,6 +1,18 @@
 [
   {
     "date": "2026-04-13",
+    "project": "pokenova_project",
+    "title": "OG 이미지 교체 - 몬스터볼 + Pokénova 영문 로고",
+    "items": [
+      "링크 공유 시 미리보기 이미지(OG image)에서 한글 깨짐 문제 수정",
+      "Pillow로 1200x630 OG 이미지 재생성 — 몬스터볼 아이콘 + Pokénova 영문 로고 (nova는 레드 컬러)"
+    ],
+    "commits": [
+      "57ef697 - fix: OG 이미지 - 몬스터볼 + Pokénova 영문 로고로 교체 (한글 깨짐 수정)"
+    ]
+  },
+  {
+    "date": "2026-04-13",
     "project": "pochams_project",
     "title": "버그 신고·SEO·GA4·모바일 최적화·OCR 개선",
     "items": [
