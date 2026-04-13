@@ -2,7 +2,7 @@
   {
     "date": "2026-04-13",
     "project": "pochams_project",
-    "title": "버그 신고 시스템 추가 + Google Analytics 연결",
+    "title": "버그 신고 시스템 추가 + GA4 연결 + SEO 설정",
     "items": [
       "버그/오류 신고 페이지(/report) 추가 — 신고 종류(포켓몬 정보 오류·기술 정보 오류·도구 오류·계산기 오류·페이지 오류·비속어 신고) + 제목·내용 폼, 접수 완료 화면",
       "신고 접수 API(POST /api/reports) — 비로그인·로그인 모두 가능, 카테고리·길이 유효성 검사",
@@ -11,11 +11,15 @@
       "Header 네비게이션 계산기 오른쪽에 '신고' 링크 추가",
       "BugReport Prisma 모델 추가 + db push로 DB 반영",
       "한국어 비속어 필터 모듈(profanity.ts) 추가",
-      "Google Analytics 4(G-B03JQ26Q27) 연결 — layout.tsx에 gtag 스크립트 추가"
+      "Google Analytics 4(G-B03JQ26Q27) 연결 — layout.tsx에 gtag 스크립트 추가",
+      "Google Search Console 소유권 인증 + sitemap.xml / robots.txt 추가",
+      "네이버 서치어드바이저 소유권 인증 + 사이트맵 제출"
     ],
     "commits": [
       "28e269f - feat: 버그 신고 시스템 추가",
-      "43480af - feat: Google Analytics(G-B03JQ26Q27) 연결"
+      "43480af - feat: Google Analytics(G-B03JQ26Q27) 연결",
+      "25ca5ff - feat: Google Search Console 인증 + sitemap/robots 추가",
+      "5c1f5c5 - feat: 네이버 서치어드바이저 소유권 인증 추가"
     ]
   },
   {
