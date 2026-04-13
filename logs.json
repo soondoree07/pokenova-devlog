@@ -84,7 +84,7 @@
   },
   {
     "date": "2026-04-13",
-    "project": "pokenova",
+    "project": "pokenova_project",
     "title": "오픈그래프 이미지 교체",
     "items": [
       "기존 피카츄 스프라이트 OG 이미지 → '포케노바' 텍스트 이미지로 교체 (전체 HTML 파일)"
@@ -95,7 +95,7 @@
   },
   {
     "date": "2026-04-12",
-    "project": "pokenova",
+    "project": "pokenova_project",
     "title": "27마리 기본폼 forms 추가 및 hidden forms 지원",
     "items": [
       "기본폼 learnset이 비어있는 27마리에 실드폼/수컷/노말폼 등 기본 forms 항목 삽입 (type=base, 별도 DB 행 생성 없이 표시용으로만)",
@@ -273,7 +273,7 @@
   },
   {
     "date": "2026-04-12",
-    "project": "pokenova",
+    "project": "pokenova_project",
     "title": "모든 en 필드 underscore 정규화",
     "items": [
       "JSON 데이터 6개 파일 전체 en 필드 underscore 정규화 완료",
@@ -300,7 +300,7 @@
   },
   {
     "date": "2026-04-12",
-    "project": "pokenova",
+    "project": "pokenova_project",
     "title": "learnsets URL을 pochams API DB로 전환",
     "items": [
       "movedex.html, entry.html: /data/learnsets.json → /api/data/learnsets (pochams DB 기반), 캐시 키 pkdex_learnsets_v3로 업"
@@ -311,7 +311,7 @@
   },
   {
     "date": "2026-04-12",
-    "project": "pokenova",
+    "project": "pokenova_project",
     "title": "기술 명중·PP 버그 수정 및 캐시 무효화",
     "items": [
       "기술도감·배틀팀 퀴즈 등 기술 표시 곳곳에서 명중·PP가 '-'로 나오던 버그 수정 (pochams API select 필드 누락이 원인)",
@@ -399,7 +399,7 @@
   },
   {
     "date": "2026-04-11",
-    "project": "pokenova",
+    "project": "pokenova_project",
     "title": "퀴즈 세대 필터 + 포챔스 필터 버그 수정",
     "items": [
       "리전폼(알로라/가라르/히스이/팔데아), 메가진화, 거다이맥스 폼이 세대 필터에서 올바른 세대로 분류되지 않는 버그 수정",
@@ -792,7 +792,7 @@
   },
   {
     "date": "2026-04-09",
-    "project": "pokenova",
+    "project": "pokenova_project",
     "title": "포켓몬 데이터 fetch를 pochams API로 전환",
     "items": [
       "브리두라스(Brute Bonnet) 기술 리스트에서 바디프레스(body-press) 제거",
@@ -850,7 +850,7 @@
   },
   {
     "date": "2026-04-08",
-    "project": "pokenova",
+    "project": "pokenova_project",
     "title": "도구 설명 포켓몬 위키 기준 전면 업데이트",
     "items": [
       "도구 설명 포켓몬 위키(SV/최신버전) 기준으로 전면 업데이트 (491/659개, 기술머신/열매류 제외)",
@@ -877,7 +877,7 @@
   },
   {
     "date": "2026-04-07",
-    "project": "pokenova",
+    "project": "pokenova_project",
     "title": "특성 데이터 오류 수정 및 백마 탄 모습 설명 수정",
     "items": [
       "에써르 암컷(Indeedee-female) 1번 특성을 정신력(Inner Focus)에서 마이페이스(Own Tempo)로 수정",
@@ -941,7 +941,7 @@
   },
   {
     "date": "2026-04-06",
-    "project": "pokenova",
+    "project": "pokenova_project",
     "title": "SEO 설정 + 능력치 맞추기 퀴즈 + 오늘의 포켓몬 페이지 추가",
     "items": [
       "sitemap.xml 생성 (URL 구조 및 페이지별 lastmod 포함)",
@@ -1023,7 +1023,7 @@
   },
   {
     "date": "2026-04-05",
-    "project": "pokenova",
+    "project": "pokenova_project",
     "title": "햄버거/카드 버그 수정 + 아이템 도감 오류신고 개선 + Google Search Console 등록",
     "items": [
       "햄버거 메뉴 CSS 순서 버그 수정: .hamburger-btn 규칙이 미디어쿼리 뒤에 위치하여 display:none이 항상 우선되던 문제 해결 — 규칙을 미디어쿼리 앞으로 이동",
@@ -1042,7 +1042,7 @@
   },
   {
     "date": "2026-04-05",
-    "project": "pokenova",
+    "project": "pokenova_project",
     "title": "Vercel 배포 및 커스텀 도메인 설정",
     "items": [
       "Vercel CLI로 pokenova_project 배포",
@@ -1057,7 +1057,7 @@
   },
   {
     "date": "2026-04-04",
-    "project": "pokenova",
+    "project": "pokenova_project",
     "title": "모바일 반응형: 가로 스크롤 방지 + 햄버거 메뉴",
     "items": [
       "모든 페이지(index/pokedex/movedex/itemdex/entry/admin)에 html, body { overflow-x: hidden } 추가",
@@ -1085,7 +1085,7 @@
   },
   {
     "date": "2026-04-02",
-    "project": "pokenova",
+    "project": "pokenova_project",
     "title": "도감 이미지 누락 수정 및 리전폼/히스이 필터 완성",
     "items": [
       "ZA 메가폼 12종 이미지 파일명 끝의 __revision__latest 제거 → .png 확장자로 정상화",
@@ -1163,7 +1163,7 @@
   },
   {
     "date": "2026-04-01",
-    "project": "pokenova",
+    "project": "pokenova_project",
     "title": "전체 페이지 모바일 최적화",
     "items": [
       "movedex: 헤더 nav 모바일 크기 조정, 검색 입력 font-size 1rem(iOS auto-zoom 방지), 칩 터치 영역 38px 확보",
@@ -1177,7 +1177,7 @@
   },
   {
     "date": "2026-04-01",
-    "project": "pokenova",
+    "project": "pokenova_project",
     "title": "Gen 8/9 기술 데이터 오류 전면 검증 및 수정",
     "items": [
       "ID 850~884 기술 35개가 8세대로 잘못 표기된 것을 9세대로 수정",
@@ -1211,7 +1211,7 @@
   },
   {
     "date": "2026-04-01",
-    "project": "pokenova",
+    "project": "pokenova_project",
     "title": "신규 아이템 스프라이트 보완",
     "items": [
       "악의족자·물의족자 스프라이트 이미지 추가 (serebii 출처)",
@@ -1272,7 +1272,7 @@
   },
   {
     "date": "2026-03-31",
-    "project": "pokenova",
+    "project": "pokenova_project",
     "title": "엔트리 도구 모달 섹션 재구성 + 뒤로가기 기능",
     "items": [
       "entry.html 신규 생성: 메인 엔트리 6슬롯 + 벤치 엔트리 6슬롯 팀 빌더 페이지",
@@ -1321,7 +1321,7 @@
   },
   {
     "date": "2026-03-29",
-    "project": "pokenova",
+    "project": "pokenova_project",
     "title": "도감 UI 개선 / 데이터 대규모 수정",
     "items": [
       "모달 이름 표시 개선: 모든 카드 상단에 포켓몬 이름, 폼이름은 (폼이름) 형태로 표시",
@@ -1389,7 +1389,7 @@
   },
   {
     "date": "2026-03-28",
-    "project": "pokenova",
+    "project": "pokenova_project",
     "title": "메가/리전폼 특성 및 도감 개선",
     "items": [
       "메가진화 및 리전폼 특성 데이터 보강",
@@ -1434,7 +1434,7 @@
   },
   {
     "date": "2026-03-27",
-    "project": "pokenova",
+    "project": "pokenova_project",
     "title": "닉네임 욕설 필터링 / 데이터 수정",
     "items": [
       "NICK_BLACKLIST 배열: 한국어/영어 욕설 목록 추가",
@@ -1453,7 +1453,7 @@
   },
   {
     "date": "2026-03-26",
-    "project": "pokenova",
+    "project": "pokenova_project",
     "title": "사이트 리브랜딩 / Firebase 연동 / 리더보드 / 모바일 최적화",
     "items": [
       "사이트 이름 전체 Pokénova 로 변경",
@@ -1498,7 +1498,7 @@
   },
   {
     "date": "2026-03-25",
-    "project": "pokenova",
+    "project": "pokenova_project",
     "title": "UI 통일 / 데이터 수정 / 도감 개선",
     "items": [
       "UI 통일: 다크 테마 + 레드 포인트 컬러 전체 적용",
@@ -1524,7 +1524,7 @@
   },
   {
     "date": "2026-03-24",
-    "project": "pokenova",
+    "project": "pokenova_project",
     "title": "도구 퀴즈 카테고리 / 번역 완료 / 도감 페이지 / Z-A 메가 26종",
     "items": [
       "도구 퀴즈에 카테고리 탭 3개 추가: 중요한물건 / 도구 / 기타",
@@ -1670,7 +1670,7 @@
   },
   {
     "date": "2026-03-18",
-    "project": "pokenova",
+    "project": "pokenova_project",
     "title": "프로젝트 초기 생성",
     "items": [
       "포켓몬 퀴즈 사이트 초기 구현 (실루엣 맞추기)",
