@@ -13,13 +13,26 @@
       "한국어 비속어 필터 모듈(profanity.ts) 추가",
       "Google Analytics 4(G-B03JQ26Q27) 연결 — layout.tsx에 gtag 스크립트 추가",
       "Google Search Console 소유권 인증 + sitemap.xml / robots.txt 추가",
-      "네이버 서치어드바이저 소유권 인증 + 사이트맵 제출"
+      "네이버 서치어드바이저 소유권 인증 + 사이트맵 제출",
+      "오픈그래프 이미지 추가 — 공유 시 '포챔스' 텍스트 미리보기 이미지 표시"
     ],
     "commits": [
       "28e269f - feat: 버그 신고 시스템 추가",
       "43480af - feat: Google Analytics(G-B03JQ26Q27) 연결",
       "25ca5ff - feat: Google Search Console 인증 + sitemap/robots 추가",
-      "5c1f5c5 - feat: 네이버 서치어드바이저 소유권 인증 추가"
+      "5c1f5c5 - feat: 네이버 서치어드바이저 소유권 인증 추가",
+      "f5f6f9f - feat: 오픈그래프 이미지 추가"
+    ]
+  },
+  {
+    "date": "2026-04-13",
+    "project": "pokenova",
+    "title": "오픈그래프 이미지 교체",
+    "items": [
+      "기존 피카츄 스프라이트 OG 이미지 → '포케노바' 텍스트 이미지로 교체 (전체 HTML 파일)"
+    ],
+    "commits": [
+      "d79cfe8 - feat: 오픈그래프 이미지 추가 (포케노바 텍스트 이미지)"
     ]
   },
   {
