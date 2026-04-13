@@ -557,11 +557,11 @@
 
         const color = getProjectColor(log.project || 'etc');
         const badgeStyle = `background:${color.bg};border:1px solid ${color.border};color:${color.text}`;
-        const itemsHtml = log.items.map(item => `<li>${item}</li>`).join('');
+        const itemsHtml = [...log.items].reverse().map(item => `<li>${item}</li>`).join('');
 
         let commitsHtml = '';
         if (log.commits && log.commits.length > 0) {
-          const commitItems = log.commits.map(c => {
+          const commitItems = [...log.commits].reverse().map(c => {
             const [hash, ...rest] = c.split(' - ');
             return `<div class="commit-item"><span>${hash}</span> — ${rest.join(' - ')}</div>`;
           }).join('');
