@@ -23,7 +23,8 @@
       "9a31c2d - feat: add bilingual game name translation for DB-stored fixed names",
       "efc994b - feat: 영문 기술/특성/도구명 표시 포매팅 적용 (언더스코어→공백, 첫 글자 대문자)",
       "75b139f - feat: 계산기 영어 모드 - 포켓몬/도구/특성/기술/성격/타입/분류 모두 영문화",
-      "e343394 - feat: 영어 모드 전체 영문화 2차 - 패치노트/도감/팀목록/샘플/통계"
+      "e343394 - feat: 영어 모드 전체 영문화 2차 - 패치노트/도감/팀목록/샘플/통계",
+      "6d9559b - fix: 메인 페이지 Weekly/Sample Top 포켓몬 이름 대문자 적용"
     ]
   },
   {
