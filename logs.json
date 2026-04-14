@@ -11,10 +11,12 @@
       "통계 상세 페이지 UsageBarClient·SampleSubline 클라이언트 컴포넌트 분리로 기술/도구/특성 번역 지원",
       "BATTLE_FORMAT_LABEL_EN 추가, 팀/샘플 포맷 라벨 한/영 전환",
       "팀 목록·상세·수정, 통계 목록, 마이페이지, 신고, 닉네임 설정, 로그인 페이지 UI 한/영 전환",
-      "한국어 등록 샘플을 영어 UI에서 볼 때 포켓몬 이름·기술·도구·특성·성격·타입이 모두 영어로 표시됨"
+      "한국어 등록 샘플을 영어 UI에서 볼 때 포켓몬 이름·기술·도구·특성·성격·타입이 모두 영어로 표시됨",
+      "영문 기술/도구/특성명 표시 포매팅: DB의 언더스코어 표기(fire_punch)를 공백+첫 글자 대문자(Fire Punch)로 변환"
     ],
     "commits": [
-      "9a31c2d - feat: add bilingual game name translation for DB-stored fixed names"
+      "9a31c2d - feat: add bilingual game name translation for DB-stored fixed names",
+      "efc994b - feat: 영문 기술/특성/도구명 표시 포매팅 적용 (언더스코어→공백, 첫 글자 대문자)"
     ]
   },
   {
