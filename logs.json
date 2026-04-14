@@ -17,14 +17,18 @@
       "패치노트 DB에 titleEn/contentEn 추가, 관리자 한/영 2단 입력, 영어 모드에서 영문 패치노트 표시",
       "도감·통계 포켓몬 이름 fmtName 적용(Mega Charizard X 등), 타입 영문 표시",
       "팀목록·샘플 검색폼 placeholder·버튼 영문화, 싱글/더블→Singles/Doubles",
-      "익명 이름 곤충채집소년→Bug Catcher, 반바지꼬마→Youngster"
+      "익명 이름 곤충채집소년→Bug Catcher, 반바지꼬마→Youngster",
+      "샘플 상세 페이지 수정/삭제 버튼 겹침 수정 — 좋아요/계산하기/내팀추가 아래 별도 줄, 오른쪽 정렬",
+      "DB 직접 수정: 메가스톤 보유 샘플(골루그×2, 마폭시×2, 팬텀×1) pokemonId를 원종→메가폼으로 변경",
+      "저순의 히트로토무 샘플 pokemonId를 로토무(479)→히트로토무(204790)로 수정 (실수치 자동 반영)"
     ],
     "commits": [
       "9a31c2d - feat: add bilingual game name translation for DB-stored fixed names",
       "efc994b - feat: 영문 기술/특성/도구명 표시 포매팅 적용 (언더스코어→공백, 첫 글자 대문자)",
       "75b139f - feat: 계산기 영어 모드 - 포켓몬/도구/특성/기술/성격/타입/분류 모두 영문화",
       "e343394 - feat: 영어 모드 전체 영문화 2차 - 패치노트/도감/팀목록/샘플/통계",
-      "6d9559b - fix: 메인 페이지 Weekly/Sample Top 포켓몬 이름 대문자 적용"
+      "6d9559b - fix: 메인 페이지 Weekly/Sample Top 포켓몬 이름 대문자 적용",
+      "4d24cde - fix: 샘플 상세 수정/삭제 버튼 위치 조정 - 좋아요/계산하기 아래 오른쪽 정렬"
     ]
   },
   {
