@@ -2,6 +2,19 @@
   {
     "date": "2026-04-14",
     "project": "pochams_project",
+    "title": "결정력 계산기 실수치 공식 버그 수정",
+    "items": [
+      "DamageCalc calcStat 함수에서 성격보정을 SP 가산 전에 적용하던 버그 수정",
+      "수정 전: floor((base+20) × mult) + sp → 수정 후: floor((base+20+sp) × mult)",
+      "게임 수치와 비교 검증 완료 (종족치 94, SP 32, x1.1 → 157 → 160)"
+    ],
+    "commits": [
+      "2110edc - fix: 결정력 계산기 실수치 공식 수정 — 성격보정 적용 순서 버그"
+    ]
+  },
+  {
+    "date": "2026-04-14",
+    "project": "pochams_project",
     "title": "샘플/팀 싱글·더블 포맷 필터 추가, 버그 수정 및 코드 최적화",
     "items": [
       "샘플 목록에 싱글/더블 탭 추가 (기본 싱글), 팀 목록도 전체 탭 제거하고 싱글/더블만 유지",
