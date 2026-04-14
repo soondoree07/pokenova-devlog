@@ -1,5 +1,41 @@
 [
   {
+    "date": "2026-04-14",
+    "project": "pochams_project",
+    "title": "샘플/팀 싱글·더블 포맷 필터 추가, 버그 수정 및 코드 최적화",
+    "items": [
+      "샘플 목록에 싱글/더블 탭 추가 (기본 싱글), 팀 목록도 전체 탭 제거하고 싱글/더블만 유지",
+      "샘플 수정 페이지에 battleFormat 선택 UI 추가 — 기존에는 수정해도 포맷이 안 바뀌는 버그 있었음",
+      "PUT API에 battleFormat 업데이트 누락 수정",
+      "샘플 상세 페이지에 싱글/더블 배지 표시",
+      "API route에서 getSampleList/getTeamList 재사용 — 중복 쿼리 약 100줄 제거",
+      "페이지 전환/정렬 변경 시 pokemon en·stats 필드 누락으로 실수치 사라지던 버그 수정",
+      "SampleListClient·TeamListClient SORTS 배열 useMemo 처리"
+    ],
+    "commits": [
+      "ef059b6 - feat: 샘플/팀 목록 싱글·더블 포맷 필터 추가 및 코드 최적화"
+    ]
+  },
+  {
+    "date": "2026-04-14",
+    "project": "pochams_project",
+    "title": "다국어(i18n) 언어 전환 기능 구현 (2차: DamageCalc, OCR, 편집 페이지 완료)",
+    "items": [
+      "feature/lang-toggle 브랜치에서 계속 작업 — 유저에게는 미노출",
+      "DamageCalc: 공격자·수비자 패널, 기술·조건 섹션, 계산결과 전체 EN/KO 번역 완료",
+      "DamageCalc: 포켓몬·기술 Combobox 옵션도 lang에 따라 한/영 전환, 날씨·필드·벽 버튼 레이블 번역",
+      "DamageCalc: 내부 게임 로직(메가스톤 감지, 날씨·필드 상태값 비교)은 한국어 유지",
+      "SampleOCR: 제목, 드롭존 안내, 버튼, OCR 결과 영역 전체 번역",
+      "samples/[id]/edit: 폼 섹션 제목·라벨·플레이스홀더·버튼 전체 번역",
+      "teams/new/client: 팀 등록 폼(팀 이름·렌탈코드·배틀구분·설명·슬롯), 미리보기, 버튼 전체 번역",
+      "빌드 검증 통과 후 feature/lang-toggle 브랜치 원격 push"
+    ],
+    "commits": [
+      "14222fa - feat: 언어 전환 기능 기반 구현",
+      "13d288f - feat: 언어 전환 2차 구현 - DamageCalc, OCR, 팀/샘플 편집 페이지"
+    ]
+  },
+  {
     "date": "2026-04-13",
     "project": "pokenova_project",
     "title": "OG 이미지 교체 + 오늘의 포켓몬 영상 스킵",
