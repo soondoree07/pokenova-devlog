@@ -2,6 +2,24 @@
   {
     "date": "2026-04-14",
     "project": "pochams_project",
+    "title": "언어 토글 — DB 고정 명칭(기술·도구·특성·성격·타입) 한/영 자동 전환",
+    "items": [
+      "GameNamesContext 생성: /api/game-names 엔드포인트를 통해 기술·도구·특성 한→영 맵을 클라이언트에 1회 로드",
+      "성격·타입 정적 맵(NATURE_EN, TYPE_EN) nameMaps.ts에 추가",
+      "SampleListCard, SampleCard, PokedexPopup에 useGameNames() 훅 적용 — 기술/도구/특성/성격/타입 언어 전환",
+      "getSampleDetail 쿼리에 abilityEn·itemEn·movesEn 추가, 샘플 상세 페이지 <T> 컴포넌트로 렌더링",
+      "통계 상세 페이지 UsageBarClient·SampleSubline 클라이언트 컴포넌트 분리로 기술/도구/특성 번역 지원",
+      "BATTLE_FORMAT_LABEL_EN 추가, 팀/샘플 포맷 라벨 한/영 전환",
+      "팀 목록·상세·수정, 통계 목록, 마이페이지, 신고, 닉네임 설정, 로그인 페이지 UI 한/영 전환",
+      "한국어 등록 샘플을 영어 UI에서 볼 때 포켓몬 이름·기술·도구·특성·성격·타입이 모두 영어로 표시됨"
+    ],
+    "commits": [
+      "9a31c2d - feat: add bilingual game name translation for DB-stored fixed names"
+    ]
+  },
+  {
+    "date": "2026-04-14",
+    "project": "pochams_project",
     "title": "알트폼(지역폼/폼체인지) 포챔스 전체 지원 + 결정력 계산기 버그 수정",
     "items": [
       "알로라/가라르/히스이/팔데아/폼체인지 등 알트폼 21종을 포챔스 전 영역(도감, 샘플 제작, 태그 검색, 계산기, OCR)에서 선택 가능하도록 지원",
