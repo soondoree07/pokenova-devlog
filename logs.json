@@ -2,6 +2,18 @@
   {
     "date": "2026-04-15",
     "project": "pochams_project",
+    "title": "프로필 볼 선택 기능 + 샘플 댓글 기능 추가",
+    "items": [
+      "유저 페이지에서 볼 아이템 스프라이트로 프로필 이미지 변경 가능 (27종)",
+      "GET /api/my/avatar-options — DB에서 볼 카테고리 아이템 목록 반환",
+      "PUT /api/my/profile — avatarUrl 파라미터 추가로 프로필 이미지 업데이트 지원",
+      "AvatarPicker 클라이언트 컴포넌트 — 볼 그리드에서 선택 후 저장"
+    ],
+    "commits": []
+  },
+  {
+    "date": "2026-04-15",
+    "project": "pochams_project",
     "title": "샘플 댓글 기능 추가 (로그인 유저가 올린 샘플에만)",
     "items": [
       "Prisma 스키마에 StandaloneSampleComment 모델 추가 및 DB 반영",
