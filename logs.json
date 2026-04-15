@@ -2,6 +2,19 @@
   {
     "date": "2026-04-15",
     "project": "pochams_project",
+    "title": "샘플 카드 댓글 수 표시 + 프로필 이미지 수정 + 기본 몬스터볼 설정",
+    "items": [
+      "샘플 카드에 댓글 수 표시 (좋아요와 조회수 사이, 댓글 있을 때만)",
+      "queries.ts 샘플 목록/마이샘플/좋아요 목록에 _count.comments 추가",
+      "프로필 이미지 표시 수정 — rounded-full 컨테이너 + object-contain으로 볼 스프라이트 올바르게 표시",
+      "프로필 미설정 시 기본 이미지를 몬스터볼로 지정 (유저 페이지·AvatarPicker·댓글 아바타)",
+      "볼 이미지 교체 위치: /home/soondoree07/pokenova_project/sprites/items/"
+    ],
+    "commits": []
+  },
+  {
+    "date": "2026-04-15",
+    "project": "pochams_project",
     "title": "프로필 볼 선택 기능 + 샘플 댓글 기능 추가",
     "items": [
       "유저 페이지에서 볼 아이템 스프라이트로 프로필 이미지 변경 가능 (27종)",
