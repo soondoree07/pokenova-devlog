@@ -40,7 +40,7 @@
   },
   {
     "date": "2026-04-15",
-    "project": "pokenova",
+    "project": "pokenova_project",
     "title": "도메인 변경 후 POCHAMS_API URL 수정 + 도감 알트폼 원종 옆 정렬 + 기술 8개 추가",
     "items": [
       "포케노바 도감(pokedex/movedex/itemdex/entry/index/today) POCHAMS_API URL을 pochams-battle.vercel.app → pochams.com으로 교체",
@@ -74,7 +74,7 @@
   },
   {
     "date": "2026-04-15",
-    "project": "pokenova",
+    "project": "pokenova_project",
     "title": "커스텀 도메인 연결 및 검색엔진 등록",
     "items": [
       "pokenova.pochams.com 서브도메인 Vercel 연결",
