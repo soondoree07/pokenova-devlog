@@ -1,6 +1,36 @@
 [
   {
     "date": "2026-04-15",
+    "project": "pokenova",
+    "title": "커스텀 도메인 연결 및 검색엔진 등록",
+    "items": [
+      "pokenova.pochams.com 서브도메인 Vercel 연결",
+      "robots.txt 사이트맵 URL을 pokenova.pochams.com으로 업데이트",
+      "sitemap.xml URL을 pokenova.pochams.com으로 전체 업데이트",
+      "pokenova.vercel.app → pokenova.pochams.com 301 리다이렉트 설정 (vercel.json)",
+      "Google Search Console에 pokenova.pochams.com 속성 추가 (자동 인증)",
+      "네이버 서치어드바이저에 pokenova.pochams.com 등록 및 인증 태그 적용"
+    ],
+    "commits": []
+  },
+  {
+    "date": "2026-04-15",
+    "project": "pochams_project",
+    "title": "커스텀 도메인 연결 및 검색엔진 등록",
+    "items": [
+      "pochams.com 도메인 구매 (가비아) 및 Vercel 연결",
+      "가비아 DNS A레코드(76.76.21.21), CNAME(cname.vercel-dns.com) 설정",
+      "sitemap.ts BASE_URL을 pochams.com으로 변경",
+      "robots.ts 사이트맵 URL을 pochams.com으로 변경",
+      "pochams-battle.vercel.app → pochams.com 301 리다이렉트 설정 (next.config.ts)",
+      "Google Search Console에 pochams.com 속성 추가 및 인증 태그 교체",
+      "네이버 서치어드바이저 pochams.com 등록 및 인증 태그 교체",
+      "Google Search Console 사이트맵 제출 완료"
+    ],
+    "commits": []
+  },
+  {
+    "date": "2026-04-15",
     "project": "pochams_project",
     "title": "팀 댓글 시스템 추가 + 예약 닉네임 + 볼 이미지 수정",
     "items": [
