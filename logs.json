@@ -2,8 +2,10 @@
   {
     "date": "2026-04-15",
     "project": "pochams_project",
-    "title": "성능 최적화 + 샘플/팀 폼 포켓몬 초기화 버그 수정",
+    "title": "성능 최적화 + 샘플/팀 폼 포켓몬 초기화 버그 수정 + 샘플 이름 suffix 개선",
     "items": [
+      "샘플 이름에서 {포켓몬} 샘플 접미사를 고정(수정 불가)하고 별명 prefix만 입력 가능하도록 UX 변경",
+      "영어 모드에서 샘플 이름 접미사를 영어 포켓몬명 + Set으로 표시 (예: Pikachu Set)",
       "Vercel 함수 리전을 iad1(미국)→sin1(싱가포르)으로 변경, DB와 동일 리전으로 지연 개선",
       "stats, stats/[id], stats/core, patch-notes, users API에 CDN 캐시 헤더 추가",
       "샘플 등록 폼에서 포켓몬 이름 지우면 작성 중인 폼이 초기화되는 버그 수정",
@@ -17,6 +19,8 @@
       "Vercel 빌드 에러 수정: git에 커밋 안 된 SampleComments·Comments·댓글 API·아바타 기능 파일들 일괄 커밋"
     ],
     "commits": [
+      "7ca355c - feat: 영어 모드에서 샘플 이름 접미사를 영어 포켓몬명 + Set으로 표시",
+      "34a95ea - fix: 샘플 이름 suffix({포켓몬} 샘플) 고정, 별명만 입력 가능하도록 변경",
       "2266e9a - perf: Vercel 리전 sin1으로 변경 + 공개 API 캐시 헤더 추가",
       "6e59613 - fix: 포켓몬 이름 지울 때 폼 초기화되는 버그 수정",
       "63c6c87 - fix: 기술 한/영 언어별 표시 + 상세 메타 오른쪽 정렬 + 날짜 YY/MM/DD",
