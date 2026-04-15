@@ -2,6 +2,19 @@
   {
     "date": "2026-04-15",
     "project": "pochams_project",
+    "title": "팀 댓글 시스템 추가 + 예약 닉네임 + 볼 이미지 수정",
+    "items": [
+      "팀 상세 페이지에 댓글 시스템 추가 (로그인 유저가 올린 팀에만)",
+      "Prisma TeamComment 모델 추가 및 API 생성 (GET/POST/DELETE)",
+      "SampleComments를 제네릭 Comments 컴포넌트로 통합 (endpoint prop)",
+      "예약 닉네임 '마스터볼', '관리자' — 관리자만 사용 가능",
+      "볼 이미지 배경제거 오류 수정 — 원본 투명배경 보존, URL 중복 버그 수정"
+    ],
+    "commits": []
+  },
+  {
+    "date": "2026-04-15",
+    "project": "pochams_project",
     "title": "샘플 카드 댓글 수 표시 + 프로필 이미지 수정 + 기본 몬스터볼 설정",
     "items": [
       "샘플 카드에 댓글 수 표시 (좋아요와 조회수 사이, 댓글 있을 때만)",
