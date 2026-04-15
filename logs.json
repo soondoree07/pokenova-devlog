@@ -1,6 +1,21 @@
 [
   {
     "date": "2026-04-15",
+    "project": "pochams_project",
+    "title": "성능 최적화 + 샘플/팀 폼 포켓몬 초기화 버그 수정",
+    "items": [
+      "Vercel 함수 리전을 iad1(미국)→sin1(싱가포르)으로 변경, DB와 동일 리전으로 지연 개선",
+      "stats, stats/[id], stats/core, patch-notes, users API에 CDN 캐시 헤더 추가",
+      "샘플 등록 폼에서 포켓몬 이름 지우면 작성 중인 폼이 초기화되는 버그 수정",
+      "팀 등록 폼(PokemonSlotForm)에도 동일 버그 존재하여 함께 수정"
+    ],
+    "commits": [
+      "2266e9a - perf: Vercel 리전 sin1으로 변경 + 공개 API 캐시 헤더 추가",
+      "6e59613 - fix: 포켓몬 이름 지울 때 폼 초기화되는 버그 수정"
+    ]
+  },
+  {
+    "date": "2026-04-15",
     "project": "pokenova",
     "title": "도메인 변경 후 POCHAMS_API URL 수정",
     "items": [
