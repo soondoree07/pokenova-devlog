@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-04-15",
+    "project": "pochams_project",
+    "title": "샘플 댓글 기능 추가 (로그인 유저가 올린 샘플에만)",
+    "items": [
+      "Prisma 스키마에 StandaloneSampleComment 모델 추가 및 DB 반영",
+      "댓글 조회(GET), 작성(POST) API 생성 — 익명 샘플은 댓글 불가",
+      "댓글 삭제(DELETE) API 생성 — 본인 댓글만 삭제 가능",
+      "SampleComments 클라이언트 컴포넌트 제작 (목록, 작성 폼, 삭제 버튼)",
+      "샘플 상세 페이지 하단에 댓글 섹션 연결 (authorId 있는 샘플에만 노출)"
+    ],
+    "commits": ["8b7965c - 미커밋 상태로 vercel prod 배포"]
+  },
+  {
     "date": "2026-04-14",
     "project": "pochams_project",
     "title": "언어 토글 — DB 고정 명칭(기술·도구·특성·성격·타입) 한/영 자동 전환",
