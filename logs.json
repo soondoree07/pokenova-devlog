@@ -30,18 +30,20 @@
   {
     "date": "2026-04-15",
     "project": "pokenova",
-    "title": "도메인 변경 후 POCHAMS_API URL 수정 + 도감 알트폼 원종 옆 정렬",
+    "title": "도메인 변경 후 POCHAMS_API URL 수정 + 도감 알트폼 원종 옆 정렬 + 기술 8개 추가",
     "items": [
       "포케노바 도감(pokedex/movedex/itemdex/entry/index/today) POCHAMS_API URL을 pochams-battle.vercel.app → pochams.com으로 교체",
       "API fetch 요청이 리다이렉트를 따라가지 못해 도감 데이터 미출력되던 문제 수정",
       "캐스퐁 폼·루가루암 한낮의 모습·대쓰여너(수컷/암컷) 한국어 표시명 수정 + DB 재시드",
       "도감 renderAll에서 기본형(id < 100000)만 처리하도록 필터 추가 (메가/알트폼 DB 별도 행 중복 렌더링 방지)",
-      "알트폼이 원종 바로 다음에 같은 도감 번호로 표시되도록 개선, 캐시 키 v5로 갱신"
+      "알트폼이 원종 바로 다음에 같은 도감 번호로 표시되도록 개선, 캐시 키 v5로 갱신",
+      "포켓몬 챔피언스 기술 조사: 챔피언스 포켓몬이 배울 수 있는 기술 8개 in_champions=true 추가 (스피드스타·매지컬리프·분발·기선제압·손톱갈기·아쿠아커터·바디퍼지·테라버스트)"
     ],
     "commits": [
       "8227688 - fix: POCHAMS_API URL pochams-battle.vercel.app → pochams.com",
       "badeffe - fix: 캐스퐁 폼·루가루암·대쓰여너 한국어 표시명 수정",
-      "c5729b9 - 도감: 알트폼을 원종 바로 옆에 같은 번호로 표시, 캐시 키 v5 갱신"
+      "c5729b9 - 도감: 알트폼을 원종 바로 옆에 같은 번호로 표시, 캐시 키 v5 갱신",
+      "402767a - feat: 기술 8개 in_champions=true 추가"
     ]
   },
   {
