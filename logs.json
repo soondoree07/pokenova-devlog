@@ -2,6 +2,29 @@
   {
     "date": "2026-04-15",
     "project": "pokenova",
+    "title": "도메인 변경 후 POCHAMS_API URL 수정",
+    "items": [
+      "포케노바 도감(pokedex/movedex/itemdex/entry/index/today) POCHAMS_API URL을 pochams-battle.vercel.app → pochams.com으로 교체",
+      "API fetch 요청이 리다이렉트를 따라가지 못해 도감 데이터 미출력되던 문제 수정"
+    ],
+    "commits": [
+      "8227688 - fix: POCHAMS_API URL pochams-battle.vercel.app → pochams.com"
+    ]
+  },
+  {
+    "date": "2026-04-15",
+    "project": "pochams_project",
+    "title": "도메인 변경 후 로그인 오류 수정",
+    "items": [
+      "Vercel 프로덕션 NEXTAUTH_URL을 pochams-battle.vercel.app → pochams.com으로 수정",
+      "echo 명령 trailing \\n으로 인한 redirect_uri_mismatch 오류 추가 수정",
+      "Google Cloud Console OAuth 클라이언트에 pochams.com 콜백 URI 추가"
+    ],
+    "commits": []
+  },
+  {
+    "date": "2026-04-15",
+    "project": "pokenova",
     "title": "커스텀 도메인 연결 및 검색엔진 등록",
     "items": [
       "pokenova.pochams.com 서브도메인 Vercel 연결",
