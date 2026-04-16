@@ -2,6 +2,18 @@
   {
     "date": "2026-04-16",
     "project": "pochams_project",
+    "title": "코드베이스 오류 수정 및 최적화",
+    "items": [
+      "isAdmin 유틸리티 함수 lib/isAdmin.ts로 중앙화 — 7개 API 라우트에서 중복 정의 제거",
+      "팀 PUT(수정) API에서 기존 샘플 삭제+재생성을 $transaction으로 묶어 원자적 처리 (중간 실패 시 데이터 손실 방지)",
+      "PatchNotePanel, /patch-notes 페이지의 fetch 호출에 에러 처리 추가 (res.ok 확인, .catch() 핸들러)",
+      "삭제 API 응답 실패 시 UI 상태 업데이트 차단 (서버 삭제 실패해도 목록에서 사라지던 버그 수정)"
+    ],
+    "commits": []
+  },
+  {
+    "date": "2026-04-16",
+    "project": "pochams_project",
     "title": "영어 버전 포켓몬 세부 통계 페이지 한국어 텍스트 영어화",
     "items": [
       "통계 세부 페이지(stats/[id]) SpTop3 컴포넌트 내 하드코딩된 '데이터 없음' → 'No data'로 영어화",
