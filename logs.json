@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-04-17",
+    "project": "pochams_project",
+    "title": "신규 로그인 시 기본 프로필 몬스터볼 자동 설정",
+    "items": [
+      "첫 로그인한 신규 유저의 프로필 이미지를 몬스터볼로 자동 설정 (auth.ts events.createUser 콜백)",
+      "기존 로그인 유저 3명 프로필 일괄 몬스터볼 변경 (관리자 제외)"
+    ],
+    "commits": [
+      "84cbf51 - feat: 신규 로그인 시 기본 프로필을 몬스터볼로 설정"
+    ]
+  },
+  {
     "date": "2026-04-16",
     "project": "pochams_project",
     "title": "팀 댓글 표시 버그 수정",
