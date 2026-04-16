@@ -2,6 +2,17 @@
   {
     "date": "2026-04-16",
     "project": "pochams_project",
+    "title": "팀 댓글 기능 추가",
+    "items": [
+      "팀 상세 페이지에 댓글 섹션 추가 — 기존 Comments 공통 컴포넌트 재사용 (/api/teams/[id]/comments 엔드포인트)",
+      "팀 목록 카드(TeamCard)에 댓글 수 아이콘 표시 — 샘플 카드와 동일한 UI",
+      "getTeamList 쿼리에 _count.comments 포함"
+    ],
+    "commits": []
+  },
+  {
+    "date": "2026-04-16",
+    "project": "pochams_project",
     "title": "코드베이스 오류 수정 및 최적화",
     "items": [
       "isAdmin 유틸리티 함수 lib/isAdmin.ts로 중앙화 — 7개 API 라우트에서 중복 정의 제거",
