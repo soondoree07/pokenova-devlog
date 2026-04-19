@@ -27,14 +27,22 @@
       "샘플 목록 카드 일본어화 — 포켓몬 이름(ja), 테라타입, 노력치/실수치 라벨, 조회수, 익명 표시",
       "샘플 상세 페이지 일본어화 — 타입, 테라타입, 샘플 이름, 특성/도구/성격/기술 일본어, 노력치/실수치, 메모, 파트너/카운터 포켓몬",
       "getSampleDetail 쿼리에 abilityJa, itemJa, movesJa 필드 추가",
-      "SampleSubline translateNature 적용 + 일본어 持ち物なし 표시"
+      "SampleSubline translateNature 적용 + 일본어 持ち物なし 표시",
+      "SampleNewForm 등록 폼 일본어화 — suffix 'サンプル', 포켓몬/기술/도구/특성/성격/노력치 라벨, 에러 메시지, 버튼 전부",
+      "SampleCard(팀 상세용) 일본어화 — 테라타입, 특성/도구/성격/기술/노력치/실수치 라벨, 계산하기 버튼",
+      "TeamCard 일본어화 — 날짜 로케일, 싱글/더블 배틀 포맷, 조회수",
+      "PokemonSlotForm 일본어화 — 포켓몬 검색, 별명, 특성/성격/도구/기술/노력치 라벨, 숨겨진 특성",
+      "MySamplesModal 일본어화 — 모달 타이틀, 로딩/빈 상태, 도구없음, 샘플 이름 ja 전달",
+      "setup-nickname 페이지 일본어화 — 제목, 설명, 라벨, 에러 메시지, 버튼",
+      "팀 수정(edit/client.tsx) 일본어화 — 제목, 팀정보 섹션, 배틀포맷, 에러, 버튼"
     ],
     "commits": [
       "f1277f7 - fix: KO/JA/EN 3개 언어 토글 복구",
       "5719826 - feat: 일본어 지원 완성 — 계산기/도감/샘플 전체 일본어화",
       "3f8bf23 - feat: 계산기 탁쳐서떨구기 도구 소지 시 위력 ×1.5 적용",
       "d98fb7f - feat: 일본어 현지화 2차 - T컴포넌트, 팀/샘플/통계/계산기/신고/패치노트 전페이지",
-      "6d9ff34 - feat: 샘플 상세/목록 카드 일본어화 + getSampleDetail 기술·도구·특성 ja 필드 추가"
+      "6d9ff34 - feat: 샘플 상세/목록 카드 일본어화 + getSampleDetail 기술·도구·특성 ja 필드 추가",
+      "f4fb9f6 - feat(i18n): complete Japanese localization for remaining UI components"
     ]
   },
   {
