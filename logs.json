@@ -2,12 +2,16 @@
   {
     "date": "2026-04-20",
     "project": "pochams_project",
-    "title": "결정력 계산기 포켓몬 목록 버그 수정 (alt폼 중복 노출)",
+    "title": "계산기 폼별 능력치 정상화 + 전체 en 이름 언더바 통일",
     "items": [
-      "포켓몬 API baseRows 쿼리에 id < 100000 필터 누락으로 돌핀맨 마이티폼 등 alt폼이 계산기 검색에 중복 노출되던 버그 수정"
+      "API baseRows 쿼리에 id < 100000 필터 추가 - alt폼 중복/스탯 오류 해결",
+      "계산기 fetch를 championsOnly=true&includeMega=true로 변경 - 포챔스 포켓몬 + 나이브/마이티폼 각각 표시",
+      "pochams 로컬 데이터 form name_en·stats en 하이픈→언더바 통일 (264개)",
+      "DB 시드 재실행으로 전체 폼 능력치 최신화 (돌핀맨 마이티폼 160 공격 정상 반영)"
     ],
     "commits": [
-      "1aa1120 - fix: /api/data/pokemon base query에 id < 100000 필터 추가"
+      "1aa1120 - fix: /api/data/pokemon base query에 id < 100000 필터 추가",
+      "7668f6d - fix: 계산기 폼별 데이터 표시 및 언더바 통일"
     ]
   },
   {
