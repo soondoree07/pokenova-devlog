@@ -30,7 +30,8 @@
       "DB 시드 재실행으로 전체 폼 능력치 최신화 (돌핀맨 마이티폼 160 공격 정상 반영)",
       "계산기 일본어 버전에서 특성명을 /api/data/abilities API에서 가져와 일본어로 표시",
       "개별 데이터 upsert 스크립트 추가 (npm run upsert) - 전체 seed 없이 1개만 DB 반영 가능",
-      "전역·프로젝트 CLAUDE.md에 upsert 우선 규칙 문서화 - 앞으로 JSON 수정 시 반드시 upsert 또는 seed 실행"
+      "전역·프로젝트 CLAUDE.md에 upsert 우선 규칙 문서화 - 앞으로 JSON 수정 시 반드시 upsert 또는 seed 실행",
+      "learnsets API 캐시 s-maxage 3600→300초로 단축 - DB 수정 후 최대 5분이면 반영"
     ],
     "commits": [
       "1aa1120 - fix: /api/data/pokemon base query에 id < 100000 필터 추가",
@@ -38,7 +39,8 @@
       "8c4536b - feat: 계산기 수비자 메가스톤 자동 적용 + 아이템/특성 순서 변경",
       "297d6d5 - feat(calc): show ability names in Japanese using abilities API",
       "4022edc - feat: add upsert script for per-item DB update without full reseed",
-      "dbc9548 - docs: update CLAUDE.md with upsert-first DB update rule"
+      "dbc9548 - docs: update CLAUDE.md with upsert-first DB update rule",
+      "bf215ea - fix: learnsets API 캐시 s-maxage 3600→300초로 단축"
     ]
   },
   {
