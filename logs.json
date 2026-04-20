@@ -1,6 +1,13 @@
 [
   {
     "date": "2026-04-20",
+    "project": "pokenova",
+    "title": "전 페이지 로고 몬스터볼 CSS 통일",
+    "items": ["entry·pokedex·today·itemdex·movedex HTML 로고 몬스터볼 CSS를 퀴즈(index) 페이지 기준으로 통일"],
+    "commits": ["64d776b - fix: 전 페이지 로고 몬스터볼 CSS 퀴즈 페이지 기준으로 통일"]
+  },
+  {
+    "date": "2026-04-20",
     "project": "pochams_project",
     "title": "계산기 폼별 능력치 정상화 + 전체 en 이름 언더바 통일",
     "items": [
