@@ -2,9 +2,15 @@
   {
     "date": "2026-04-20",
     "project": "pokenova",
-    "title": "전 페이지 로고 몬스터볼 CSS 통일",
-    "items": ["entry·pokedex·today·itemdex·movedex HTML 로고 몬스터볼 CSS를 퀴즈(index) 페이지 기준으로 통일"],
-    "commits": ["64d776b - fix: 전 페이지 로고 몬스터볼 CSS 퀴즈 페이지 기준으로 통일"]
+    "title": "아쿠스타 아쿠아제트 추가 + 로고 몬스터볼 CSS 통일",
+    "items": [
+      "아쿠스타·메가아쿠스타 아쿠아제트 레벨업 12 추가, DB 시드 및 champions_learnsets 갱신",
+      "entry·pokedex·today·itemdex·movedex HTML 로고 몬스터볼 CSS를 퀴즈(index) 페이지 기준으로 통일"
+    ],
+    "commits": [
+      "64d776b - fix: 전 페이지 로고 몬스터볼 CSS 퀴즈 페이지 기준으로 통일",
+      "a509b18 - fix: 아쿠스타·메가아쿠스타 아쿠아제트 레벨업 12 추가"
+    ]
   },
   {
     "date": "2026-04-20",
