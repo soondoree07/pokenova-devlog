@@ -9,8 +9,10 @@
   {
     "date": "2026-04-20",
     "project": "pochams_project",
-    "title": "계산기 폼별 능력치 정상화 + 전체 en 이름 언더바 통일",
+    "title": "계산기 수비자 메가스톤 자동 + 폼별 능력치 정상화 + 언더바 통일",
     "items": [
+      "계산기 수비자 메가진화 선택 시 메가스톤·특성 자동 적용",
+      "계산기 수비자 UI 아이템/특성 순서 변경 (아이템 먼저)",
       "API baseRows 쿼리에 id < 100000 필터 추가 - alt폼 중복/스탯 오류 해결",
       "계산기 fetch를 championsOnly=true&includeMega=true로 변경 - 포챔스 포켓몬 + 나이브/마이티폼 각각 표시",
       "pochams 로컬 데이터 form name_en·stats en 하이픈→언더바 통일 (264개)",
@@ -18,7 +20,8 @@
     ],
     "commits": [
       "1aa1120 - fix: /api/data/pokemon base query에 id < 100000 필터 추가",
-      "7668f6d - fix: 계산기 폼별 데이터 표시 및 언더바 통일"
+      "7668f6d - fix: 계산기 폼별 데이터 표시 및 언더바 통일",
+      "8c4536b - feat: 계산기 수비자 메가스톤 자동 적용 + 아이템/특성 순서 변경"
     ]
   },
   {
