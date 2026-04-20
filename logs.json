@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-04-20",
+    "project": "pochams_project",
+    "title": "결정력 계산기 포켓몬 목록 버그 수정 (alt폼 중복 노출)",
+    "items": [
+      "포켓몬 API baseRows 쿼리에 id < 100000 필터 누락으로 돌핀맨 마이티폼 등 alt폼이 계산기 검색에 중복 노출되던 버그 수정"
+    ],
+    "commits": [
+      "1aa1120 - fix: /api/data/pokemon base query에 id < 100000 필터 추가"
+    ]
+  },
+  {
     "date": "2026-04-19",
     "project": "pochams_project",
     "title": "일본어(JA) 3번째 언어 지원 완성 + 계산기·도감·샘플 일본어화",
