@@ -2,12 +2,17 @@
   {
     "date": "2026-04-20",
     "project": "pokenova",
-    "title": "아쿠스타 아쿠아제트 추가 + 로고 몬스터볼 CSS 통일",
+    "title": "세레비넷 비교 후 누락 기술 683개 추가 + 아쿠스타 아쿠아제트 + CSS 통일",
     "items": [
+      "세레비넷 포켓몬챔피언스 페이지와 learnsets.json 전수 비교 — 185마리 대상",
+      "누락 기술 683개 learnsets.json에 추가, npm run upsert learnset으로 DB 전체 반영",
+      "champions_learnsets.json 재생성 (186마리, 11542개 기술 항목)",
+      "포챔스 포켓몬 전체 기술 목록 표 생성 (포켓몬 가나다 → 기술타입 → 기술이름 가나다순)",
       "아쿠스타·메가아쿠스타 아쿠아제트 레벨업 12 추가, DB 시드 및 champions_learnsets 갱신",
       "entry·pokedex·today·itemdex·movedex HTML 로고 몬스터볼 CSS를 퀴즈(index) 페이지 기준으로 통일"
     ],
     "commits": [
+      "e9a6a20 - learnsets: 세레비넷 포켓몬챔피언스 비교 후 누락 기술 683개 추가",
       "64d776b - fix: 전 페이지 로고 몬스터볼 CSS 퀴즈 페이지 기준으로 통일",
       "a509b18 - fix: 아쿠스타·메가아쿠스타 아쿠아제트 레벨업 12 추가"
     ]
