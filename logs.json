@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-04-21",
+    "project": "pochams_project",
+    "title": "learnsets 캐시 단축 + 세레비넷 비교 가이드 + 기술 목록 문서화",
+    "items": [
+      "learnsets API s-maxage 3600→300초로 단축 — DB 수정 후 최대 5분이면 반영",
+      "세레비넷 포켓몬챔피언스 learnset 비교 가이드 작성 (specs/세레비넷_learnset_비교_가이드.md)",
+      "포챔스 포켓몬 전체 기술 목록 파일 최신 데이터로 재생성 (186마리, 11542개 항목)"
+    ],
+    "commits": [
+      "bf215ea - fix: learnsets API 캐시 s-maxage 3600→300초로 단축",
+      "f6b95ed - docs: 세레비넷 learnset 비교 가이드 추가"
+    ]
+  },
+  {
     "date": "2026-04-20",
     "project": "pokenova",
     "title": "세레비넷 비교 후 누락 기술 683개 추가 + 아쿠스타 아쿠아제트 + CSS 통일",
