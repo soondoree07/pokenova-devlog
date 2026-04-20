@@ -15,7 +15,7 @@
   {
     "date": "2026-04-20",
     "project": "pochams_project",
-    "title": "계산기 수비자 메가스톤 자동 + 폼별 능력치 정상화 + 언더바 통일 + 일본어 특성명",
+    "title": "계산기 개선 + upsert 스크립트 + 일본어 특성명",
     "items": [
       "계산기 수비자 메가진화 선택 시 메가스톤·특성 자동 적용",
       "계산기 수비자 UI 아이템/특성 순서 변경 (아이템 먼저)",
@@ -23,13 +23,17 @@
       "계산기 fetch를 championsOnly=true&includeMega=true로 변경 - 포챔스 포켓몬 + 나이브/마이티폼 각각 표시",
       "pochams 로컬 데이터 form name_en·stats en 하이픈→언더바 통일 (264개)",
       "DB 시드 재실행으로 전체 폼 능력치 최신화 (돌핀맨 마이티폼 160 공격 정상 반영)",
-      "계산기 일본어 버전에서 특성명을 /api/data/abilities API에서 가져와 일본어로 표시"
+      "계산기 일본어 버전에서 특성명을 /api/data/abilities API에서 가져와 일본어로 표시",
+      "개별 데이터 upsert 스크립트 추가 (npm run upsert) - 전체 seed 없이 1개만 DB 반영 가능",
+      "전역·프로젝트 CLAUDE.md에 upsert 우선 규칙 문서화 - 앞으로 JSON 수정 시 반드시 upsert 또는 seed 실행"
     ],
     "commits": [
       "1aa1120 - fix: /api/data/pokemon base query에 id < 100000 필터 추가",
       "7668f6d - fix: 계산기 폼별 데이터 표시 및 언더바 통일",
       "8c4536b - feat: 계산기 수비자 메가스톤 자동 적용 + 아이템/특성 순서 변경",
-      "297d6d5 - feat(calc): show ability names in Japanese using abilities API"
+      "297d6d5 - feat(calc): show ability names in Japanese using abilities API",
+      "4022edc - feat: add upsert script for per-item DB update without full reseed",
+      "dbc9548 - docs: update CLAUDE.md with upsert-first DB update rule"
     ]
   },
   {
