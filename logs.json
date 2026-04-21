@@ -2,10 +2,11 @@
   {
     "date": "2026-04-21",
     "project": "devlog",
-    "title": "pochams/pokenova 기획서 최신화 + pokenova 기획서 신규 작성",
+    "title": "pochams/pokenova/jbae 기획서 최신화 및 신규 작성",
     "items": [
-      "pochams 기획서(v7.3) 누락 항목 보완 — pokenova 배포 플랫폼 오기 수정(GitHub Pages→Vercel), 팀 메가폼 자동 전환/표시 기능 추가, 계산기 일본어 특성명 API 연동·수비자 UI 순서 추가, feature/japanese 머지 완료 체크, 히스토리 2026-04-21 행 보완",
-      "pokenova 기획서 신규 작성 (v1.0) — 퀴즈 5종, 오늘의 포켓몬, 도감 3종, 데이터 구조, 밸런스 패치 이력, 개발 히스토리 전체 정리"
+      "pochams 기획서(v7.3) 누락 항목 보완 — pokenova 배포 플랫폼 오기 수정, 팀 메가폼 자동 전환/표시 기능 추가, 계산기 일본어 특성명 API 연동 추가, feature/japanese 머지 완료 체크",
+      "pokenova 기획서 신규 작성 (v1.0) — 퀴즈 5종, 오늘의 포켓몬, 도감 3종, 데이터 구조, 밸런스 패치 이력, 개발 히스토리 전체 정리",
+      "jbae 포트폴리오 기획서 신규 작성 (v1.0) — 작가 정보, 기술 스택, 페이지별 기능, 작품 현황(134점), 이미지 처리 원칙, 개발 히스토리"
     ],
     "commits": []
   },
