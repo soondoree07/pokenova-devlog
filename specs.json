@@ -1,4 +1,12 @@
 {
+  "junghyeok-portfolio": [
+    {
+      "title": "Junghyeok Portfolio 기획서 v1.0",
+      "file": "specs/junghyeok-portfolio/기획서.md",
+      "date": "2026-04-22",
+      "type": "md"
+    }
+  ],
   "pokenova_project": [],
   "pochams_project": [
     {
