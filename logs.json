@@ -8,12 +8,14 @@
       "세레비넷 포켓몬챔피언스 learnset 비교 가이드 작성 (specs/세레비넷_learnset_비교_가이드.md)",
       "포챔스 포켓몬 전체 기술 목록 파일 최신 데이터로 재생성 (186마리, 11542개 항목)",
       "팀 상세 페이지에서 base 폼 + 메가스톤 조합 시 메가폼 이름/스프라이트로 올바르게 표시되도록 수정",
-      "팀 작성 폼에서 메가스톤 선택 시 해당 메가폼으로 자동 전환 로직 추가"
+      "팀 작성 폼에서 메가스톤 선택 시 해당 메가폼으로 자동 전환 로직 추가",
+      "미사용 dead code 3개 파일 삭제 (pokemon-data.ts, profanity.ts, ocrProcessor.ts)"
     ],
     "commits": [
       "bf215ea - fix: learnsets API 캐시 s-maxage 3600→300초로 단축",
       "f6b95ed - docs: 세레비넷 learnset 비교 가이드 추가",
-      "92a312b - fix: 팀 상세에서 base 폼 + 메가스톤 조합 시 메가폼으로 표시"
+      "92a312b - fix: 팀 상세에서 base 폼 + 메가스톤 조합 시 메가폼으로 표시",
+      "35f8a41 - chore: remove dead code files (pokemon-data, profanity, ocrProcessor)"
     ]
   },
   {
