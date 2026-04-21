@@ -20,13 +20,15 @@
       "포챔스 포켓몬 전체 기술 목록 파일 최신 데이터로 재생성 (186마리, 11542개 항목)",
       "팀 상세 페이지에서 base 폼 + 메가스톤 조합 시 메가폼 이름/스프라이트로 올바르게 표시되도록 수정",
       "팀 작성 폼에서 메가스톤 선택 시 해당 메가폼으로 자동 전환 로직 추가",
-      "미사용 dead code 3개 파일 삭제 (pokemon-data.ts, profanity.ts, ocrProcessor.ts)"
+      "미사용 dead code 3개 파일 삭제 (pokemon-data.ts, profanity.ts, ocrProcessor.ts)",
+      "데미지 계산기 바 색상 KO 판정별 컬러 코딩 추가 (확정1타 빨강→난수1타 주황→2타 노랑→3타+ 회색)"
     ],
     "commits": [
       "bf215ea - fix: learnsets API 캐시 s-maxage 3600→300초로 단축",
       "f6b95ed - docs: 세레비넷 learnset 비교 가이드 추가",
       "92a312b - fix: 팀 상세에서 base 폼 + 메가스톤 조합 시 메가폼으로 표시",
-      "35f8a41 - chore: remove dead code files (pokemon-data, profanity, ocrProcessor)"
+      "35f8a41 - chore: remove dead code files (pokemon-data, profanity, ocrProcessor)",
+      "6993c8e - feat: 데미지 계산기 바 색상 KO 판정별 컬러 코딩"
     ]
   },
   {
