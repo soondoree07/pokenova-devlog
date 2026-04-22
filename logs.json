@@ -32,11 +32,13 @@
       "로컬 폴더 01_디자인/appicon/에 v1.0 공식 앱 아이콘(1024x1024 PNG) 추가 + 초안 5종(prac/Frame 4·5·11·12·13) 보관",
       "01_디자인/README.md 작성 — 디자인 토큰 명시(배경 #0F1733 Midnight Navy, 포인트 #FFD95A Gold Yellow, 연결선 #E5E7EB 50%)",
       "레포 구조 재편: 원격 docs/ → 로컬 00_문서/ 로 rename, 01_디자인/ 신설",
-      "로컬 디렉토리 git init + origin/main fetch·reset 후 재편 커밋을 push (히스토리 보존)"
+      "로컬 디렉토리 git init + origin/main fetch·reset 후 재편 커밋을 push (히스토리 보존)",
+      "01_디자인/appicon/prac/README.md 작성 — 앱 아이콘 후보 5종(A1/A2/B1/B2/C2) 평가 + 최종 선택(C1) 근거 기록"
     ],
     "commits": [
       "a0b36fe - docs: PRD, 기획서, 프리모템 문서 추가 (soondoree07/byeolharu)",
-      "228ce2b - chore: restructure docs and add v1.0 app icon assets"
+      "228ce2b - chore: restructure docs and add v1.0 app icon assets",
+      "e9583d9 - docs: add app icon exploration README"
     ]
   },
   {
