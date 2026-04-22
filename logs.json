@@ -28,10 +28,15 @@
       "Windows Zone.Identifier 메타데이터 파일 5개 일괄 삭제",
       "GitHub private 레포 soondoree07/byeolharu 생성 후 docs/ 폴더에 문서 5개 최초 커밋",
       "devlog specs/byeolharu/기획서.md 작성 — PRD·planning·PreMortem 통합 요약본(컨셉·철학·카테고리·북두칠성·프리미엄·로드맵·Launch-Blocking 6대 리스크 대응)",
-      "핵심 결정 기록: Flutter+Firebase+Riverpod 스택 확정, 북두칠성 7슬롯 표준화, 극복 스토리 2단계 분리(연출 먼저), 키워드 기반 감정 위기 모달(1393), v1.0 무료→v1.5 프리미엄(₩4,900/월)"
+      "핵심 결정 기록: Flutter+Firebase+Riverpod 스택 확정, 북두칠성 7슬롯 표준화, 극복 스토리 2단계 분리(연출 먼저), 키워드 기반 감정 위기 모달(1393), v1.0 무료→v1.5 프리미엄(₩4,900/월)",
+      "로컬 폴더 01_디자인/appicon/에 v1.0 공식 앱 아이콘(1024x1024 PNG) 추가 + 초안 5종(prac/Frame 4·5·11·12·13) 보관",
+      "01_디자인/README.md 작성 — 디자인 토큰 명시(배경 #0F1733 Midnight Navy, 포인트 #FFD95A Gold Yellow, 연결선 #E5E7EB 50%)",
+      "레포 구조 재편: 원격 docs/ → 로컬 00_문서/ 로 rename, 01_디자인/ 신설",
+      "로컬 디렉토리 git init + origin/main fetch·reset 후 재편 커밋을 push (히스토리 보존)"
     ],
     "commits": [
-      "a0b36fe - docs: PRD, 기획서, 프리모템 문서 추가 (soondoree07/byeolharu)"
+      "a0b36fe - docs: PRD, 기획서, 프리모템 문서 추가 (soondoree07/byeolharu)",
+      "228ce2b - chore: restructure docs and add v1.0 app icon assets"
     ]
   },
   {
@@ -130,7 +135,6 @@
   {
     "date": "2026-04-19",
     "project": "pochams_project",
-    "title": "일본어(JA) 3번째 언어 지원 완성 + 계산기·도감·샘플 일본어화",
     "title": "일본어(JA) 전 페이지 현지화 완성",
     "items": [
       "KO/JA/EN 3개 언어 토글 구현 (헤더 데스크탑·모바일)",
