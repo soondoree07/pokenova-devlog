@@ -40,7 +40,9 @@
       "최상위 폴더 5개 한글→영문 리네임: 00_문서→00_docs, 01_디자인→01_design, 02_개발→02_dev, 03_리서치→03_research, 04_운영→04_ops",
       "앱 아이콘 후보 파일명 시맨틱→숫자 체계 재정비 (01_navy_6colors_with_line ~ 05_black_anchor_with_line)",
       "prac/README.md 내용 전면 재작성 — 새 숫자 네이밍 + 선택 근거 4가지(톤 일치·북두칠성 정체성·focal point·축소 안정성) 정리",
-      "빈 폴더 3개(02_dev/03_research/04_ops)에 각각 README.md placeholder 추가 — git이 빈 디렉토리 추적 불가 이슈 우회"
+      "빈 폴더 3개(02_dev/03_research/04_ops)에 각각 README.md placeholder 추가 — git이 빈 디렉토리 추적 불가 이슈 우회",
+      "00_docs/README.md 추가 — 5개 기획 문서(PRD md·docx, planning md·docx, PreMortem) 파일 인덱스 정리",
+      "02_dev/README.md 대폭 확장 — 기술 스택(Flutter+Firebase+Riverpod+Lottie/Rive), 예정 디렉토리 구조, 개발 5단계 Phase(총 4~6개월), 보안 주의사항(.gitignore 필수 항목) 정리"
     ],
     "commits": [
       "a0b36fe - docs: PRD, 기획서, 프리모템 문서 추가 (soondoree07/byeolharu)",
@@ -49,7 +51,9 @@
       "4c4a62b - chore: rename app icon candidates with semantic names",
       "809d2cb - fix: swap B1 and C2 app icon filenames (mismatched content)",
       "9a2e3ca - fix: swap B2 and C2 app icon filenames (mismatched content)",
-      "9073f26 - chore: rename top-level folders to English + prac files to numeric scheme"
+      "9073f26 - chore: rename top-level folders to English + prac files to numeric scheme",
+      "4416ba7 - docs: add 00_docs README with file index",
+      "38deed8 - docs: expand 02_dev README with stack, phases, and security notes"
     ]
   },
   {
