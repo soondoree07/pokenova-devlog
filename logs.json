@@ -1,6 +1,23 @@
 [
   {
     "date": "2026-04-22",
+    "project": "byeolharu",
+    "title": "별하루 프로젝트 문서 구조화 + GitHub private 레포 최초 커밋",
+    "items": [
+      "신규 프로젝트 '별하루(Byeolharu)' 킥오프 — 후회를 성장의 연료로 변환하는 심리학 기반 Flutter 모바일 앱",
+      "핵심 기획 문서 3종 정리: PRD v1.0, 초기 기획서, PreMortem 리스크 분석 (docx+md 각 2개씩 총 5개 파일)",
+      "로컬 작업 디렉토리 구조 확정: /home/soondoree07/byeolharu/ 하위에 00_문서·01_디자인·02_개발·03_리서치·04_운영 5개 폴더 생성",
+      "Windows Zone.Identifier 메타데이터 파일 5개 일괄 삭제",
+      "GitHub private 레포 soondoree07/byeolharu 생성 후 docs/ 폴더에 문서 5개 최초 커밋",
+      "devlog specs/byeolharu/기획서.md 작성 — PRD·planning·PreMortem 통합 요약본(컨셉·철학·카테고리·북두칠성·프리미엄·로드맵·Launch-Blocking 6대 리스크 대응)",
+      "핵심 결정 기록: Flutter+Firebase+Riverpod 스택 확정, 북두칠성 7슬롯 표준화, 극복 스토리 2단계 분리(연출 먼저), 키워드 기반 감정 위기 모달(1393), v1.0 무료→v1.5 프리미엄(₩4,900/월)"
+    ],
+    "commits": [
+      "a0b36fe - docs: PRD, 기획서, 프리모템 문서 추가 (soondoree07/byeolharu)"
+    ]
+  },
+  {
+    "date": "2026-04-22",
     "project": "junghyeok-portfolio",
     "title": "시네마틱 개인 포트폴리오 초기 구축 + GitHub archive 푸시",
     "items": [
