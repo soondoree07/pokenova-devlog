@@ -1,6 +1,24 @@
 [
   {
     "date": "2026-04-22",
+    "project": "claude-config",
+    "title": "agency-agents 21개 서브에이전트 설치 + 프로젝트별 매핑 체계 수립",
+    "items": [
+      "msitarzewski/agency-agents 레포 clone (/home/soondoree07/agency-agents)",
+      "엄선한 21개 에이전트 md 파일을 ~/.claude/agents/ 로 복사 (engineering 6 + design 6 + product 3 + marketing 3 + testing 1 + project-management 1 + specialized 1)",
+      "~/.claude/CLAUDE.md 에 '프로젝트별 에이전트 사용 매핑' 섹션 신설 — 21개 에이전트 × 3개 프로젝트(대시보드·별하루·포트폴리오)+공용 매트릭스 테이블",
+      "프로젝트 식별자·로컬 경로 확정: claude-dashboard, byeolharu, junghyeok-portfolio 3개",
+      "별하루 할당 10개: mobile-app-builder, ui-designer, ux-researcher, whimsy-injector, brand-guardian, visual-storyteller, product-manager, feedback-synthesizer, behavioral-nudge-engine, app-store-optimizer",
+      "대시보드 할당 4개: frontend-developer, backend-architect, devops-automator, security-engineer",
+      "포트폴리오 할당 5개: frontend-developer, ui-designer, visual-storyteller, image-prompt-engineer, seo-specialist, content-creator",
+      "공용 4개: code-reviewer, reality-checker, project-shepherd, korean-business-navigator",
+      "~/.claude/commands/별하루.md + project_byeolharu.md 메모리 파일 에이전트 섹션도 전역 매핑과 일관되게 정리 (Security Engineer 제거 등)",
+      "사용 원칙: 단순 작업은 직접 처리, 실제 구현·리뷰·설계 단계에서 Agent 툴 호출, 병렬 가능하면 한 메시지에 여러 에이전트 동시 호출"
+    ],
+    "commits": []
+  },
+  {
+    "date": "2026-04-22",
     "project": "byeolharu",
     "title": "별하루 프로젝트 문서 구조화 + GitHub private 레포 최초 커밋",
     "items": [
