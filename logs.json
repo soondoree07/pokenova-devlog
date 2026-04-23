@@ -14,7 +14,8 @@
       "결정력 STAB값을 적응력 특성(×2.0)도 반영하도록 수정 — 기존엔 무조건 ×1.5",
       "수비자 미선택 상태에서도 공격자+기술+조건만으로 결정력 표시 — ketteiryokuOnly useMemo 신설, 결과 박스 '공격자만' 배지 추가",
       "수비자 미선택 상태에서도 보정 칩(자속보정·급소·날씨·필드·도우미·충전·화상·광역기·미스트+드래곤·그래스+땅기) + 공격 특성·도구 라벨 표시",
-      "멀티워드 특성명 매칭 버그 수정 — DB pokemon.abilities는 공백 형식('mega launcher'), abilityModifiers.ts switch는 언더스코어('mega_launcher')로 매칭 불일치 → 메가런처·철주먹·단단한발톱·강한턱·형틀깨기·타오르는불꽃·물거품·펑크록·용의턱·바위나르기·암흑의아우라·요정의아우라 등 대부분의 배율 특성이 실제로 무반영이던 문제. calcAbilityMod·calcDefenderAbilityMod·needsXxx 진입 시 공백/아포스트로피/하이픈 → 언더스코어 정규화"
+      "멀티워드 특성명 매칭 버그 수정 — DB pokemon.abilities는 공백 형식('mega launcher'), abilityModifiers.ts switch는 언더스코어('mega_launcher')로 매칭 불일치 → 메가런처·철주먹·단단한발톱·강한턱·형틀깨기·타오르는불꽃·물거품·펑크록·용의턱·바위나르기·암흑의아우라·요정의아우라 등 대부분의 배율 특성이 실제로 무반영이던 문제. calcAbilityMod·calcDefenderAbilityMod·needsXxx 진입 시 공백/아포스트로피/하이픈 → 언더스코어 정규화",
+      "탁쳐서떨구기 knock_off 매칭 오타 수정 — DB는 'knock_off'인데 코드는 'knock off'로 비교해 도구 소지 수비자 ×1.5 미적용이던 문제"
     ],
     "commits": [
       "c95cfe4 - fix: 결정력 계산에 특성 보정 반영 + 스킨 계열 3종 추가",
@@ -22,7 +23,8 @@
       "2fe10e4 - fix(calc): 결정력 계산에 공격자측 버프 반영",
       "5a04e1a - feat(calc): 수비자 미선택 시에도 결정력 표시",
       "a075f78 - feat(calc): 수비자 미선택 시에도 보정 칩 + 공격 특성/도구 라벨 표시",
-      "418e405 - fix(calc): 공백 형식 특성명 정규화 — 멀티워드 특성 배율 미적용 버그"
+      "418e405 - fix(calc): 공백 형식 특성명 정규화 — 멀티워드 특성 배율 미적용 버그",
+      "19c5fea - fix(calc): 탁쳐서떨구기 knock_off 매칭 오타"
     ]
   },
   {
