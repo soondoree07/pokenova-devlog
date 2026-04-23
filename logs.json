@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-04-24",
+    "project": "pochams_project",
+    "title": "결정력 계산기 특성 보정 버그 수정 + 스킨 계열 특성 3종 추가",
+    "items": [
+      "결정력 계산에 특성 보정 미반영 버그 수정 — DamageCalc의 ketteiryoku가 effAtk×power만 쓰고 atkMod.multiplier를 빠뜨려 철주먹/예리함/메가런처 등 위력 배율 특성이 결정력 수치에 반영 안 되던 문제 해결",
+      "abilityModifiers.ts에 페어리스킨(pixilate)/프리즈스킨(refrigerate)/스카이스킨(aerilate) 3종 추가 — 노말 타입 기술 ×1.2 (드래곤스킨·일렉트릭스킨과 동일 방식)",
+      "ABILITY_LIST '타입별' 그룹에 3종 드롭다운 노출"
+    ],
+    "commits": [
+      "c95cfe4 - fix: 결정력 계산에 특성 보정 반영 + 스킨 계열 3종 추가"
+    ]
+  },
+  {
     "date": "2026-04-22",
     "project": "claude-config",
     "title": "agency-agents 21개 서브에이전트 설치 + 프로젝트별 매핑 체계 수립",
