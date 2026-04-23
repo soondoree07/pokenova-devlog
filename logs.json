@@ -16,7 +16,8 @@
       "수비자 미선택 상태에서도 보정 칩(자속보정·급소·날씨·필드·도우미·충전·화상·광역기·미스트+드래곤·그래스+땅기) + 공격 특성·도구 라벨 표시",
       "멀티워드 특성명 매칭 버그 수정 — DB pokemon.abilities는 공백 형식('mega launcher'), abilityModifiers.ts switch는 언더스코어('mega_launcher')로 매칭 불일치 → 메가런처·철주먹·단단한발톱·강한턱·형틀깨기·타오르는불꽃·물거품·펑크록·용의턱·바위나르기·암흑의아우라·요정의아우라 등 대부분의 배율 특성이 실제로 무반영이던 문제. calcAbilityMod·calcDefenderAbilityMod·needsXxx 진입 시 공백/아포스트로피/하이픈 → 언더스코어 정규화",
       "탁쳐서떨구기 knock_off 매칭 오타 수정 — DB는 'knock_off'인데 코드는 'knock off'로 비교해 도구 소지 수비자 ×1.5 미적용이던 문제",
-      "DB 식별자 포맷 전체 언더스코어 통일 — pokenova_project/data/quiz_pokemon.json의 pokemon.abilities[].en 1229건(멀티워드 175종)을 공백/하이픈/아포스트로피 → 언더스코어로 정규화 후 pochams_project seed 재실행. 'dragon's maw' → 'dragons_maw', 'soul-heart' → 'soul_heart' 등 quiz_abilities.json 표준 키와 완전 일치시켜 특성 매칭 포맷 불일치 버그 원천 차단. abilityModifiers.ts 정규화 규칙도 아포스트로피 drop 방식으로 수정하고 DamageCalc.tsx 내 공백 형식 하드코딩(huge power/orichalcum pulse/hadron engine/flower gift/tablets·vessel·sword·beads of ruin/dark·fairy aura/mind's eye)도 언더스코어로 변경"
+      "DB 식별자 포맷 전체 언더스코어 통일 — pokenova_project/data/quiz_pokemon.json의 pokemon.abilities[].en 1229건(멀티워드 175종)을 공백/하이픈/아포스트로피 → 언더스코어로 정규화 후 pochams_project seed 재실행. 'dragon's maw' → 'dragons_maw', 'soul-heart' → 'soul_heart' 등 quiz_abilities.json 표준 키와 완전 일치시켜 특성 매칭 포맷 불일치 버그 원천 차단. abilityModifiers.ts 정규화 규칙도 아포스트로피 drop 방식으로 수정하고 DamageCalc.tsx 내 공백 형식 하드코딩(huge power/orichalcum pulse/hadron engine/flower gift/tablets·vessel·sword·beads of ruin/dark·fairy aura/mind's eye)도 언더스코어로 변경",
+      "forms(메가/알트폼)의 abilities[].en 247건 누락분 추가 정규화 — 이전 스크립트는 base pokemon.abilities만 처리해서 메가거북왕 'mega launcher'가 공백으로 남아 매칭 실패하던 문제. forms 내부도 언더스코어 통일 후 seed 재실행, 메가거북왕·메가리자몽Y 등 폼 특성 매칭 정상화"
     ],
     "commits": [
       "c95cfe4 - fix: 결정력 계산에 특성 보정 반영 + 스킨 계열 3종 추가",
@@ -27,7 +28,8 @@
       "418e405 - fix(calc): 공백 형식 특성명 정규화 — 멀티워드 특성 배율 미적용 버그",
       "19c5fea - fix(calc): 탁쳐서떨구기 knock_off 매칭 오타",
       "6bb932b - fix(data): pochams 코드 하드코딩 특성명 공백 → 언더스코어 통일",
-      "pokenova 7390ac2 - data: quiz_pokemon.json abilities.en 1229건 언더스코어 통일"
+      "pokenova 7390ac2 - data: quiz_pokemon.json abilities.en 1229건 언더스코어 통일",
+      "pokenova 334531c - data: quiz_pokemon.json forms[].abilities.en 247건 언더스코어 통일 (메가/알트폼 누락분)"
     ]
   },
   {
