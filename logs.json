@@ -1,6 +1,34 @@
 [
   {
     "date": "2026-04-24",
+    "project": "claude-config",
+    "title": "세션 요약 자동 기록 규칙 + devlog 프로젝트명 표준 테이블 추가",
+    "items": [
+      "~/.claude/CLAUDE.md 에 '세션 요약 자동 기록' 섹션 신설 — ai.junghyeok.com 히스토리와 연동, 커밋/푸시 직후 `~/.claude/session-summaries/{sessionId}.md` 에 frontmatter + 한 줄 요약 + 주요 작업/변경 파일/관련 커밋 포맷으로 저장",
+      "~/.claude/bin/resolve-session-id 헬퍼 스크립트 작성 — `find ~/.claude/projects -name '*.jsonl' -printf '%T@ %p\\n' | sort -rn | head -1` 방식으로 가장 최근 mtime의 JSONL에서 sessionId 추출 (cwd 독립적)",
+      "자동 devlog 업데이트 규칙에 '고정 프로젝트명 테이블' 추가 — pochams_project/pokenova_project/byeolharu/claude-dashboard/junghyeok-portfolio/devlog/claude-config 7종 표준화, 별칭(pochams·pokenova 등) 사용 금지 명시",
+      "~/.claude/session-summaries/ 디렉토리 신설, 본 세션 요약 파일 65399849... 최초 작성 (플로우 검증)"
+    ],
+    "commits": []
+  },
+  {
+    "date": "2026-04-24",
+    "project": "claude-dashboard",
+    "title": "세션 부팅 오버레이 + Claude Code 히스토리 시스템 MVP 구축",
+    "items": [
+      "components/Terminal.tsx에 'Claude 부팅 중…' 전체화면 오버레이 추가 — WebSocket 출력 스트림에서 `for shortcuts` / `Welcome to Claude` 패턴을 ANSI 제거 후 4KB 링버퍼로 감지해 자동 해제, 30초 타임아웃 safety + error/exit 수신 시 강제 해제, readyRef로 클로저 stale state 방지",
+      "components/SessionList.tsx 생성 플로우 개선 — '+새 세션' 성공 직후 3초 폴링 기다리지 않고 `router.push('/session/{name}')`로 즉시 이동",
+      "/history + /history/[sessionId] 라우트 신설 — 메인 페이지 상단에 '히스토리 →' 링크 추가",
+      "lib/history.ts JSONL 파서 — `~/.claude/projects/*/*.jsonl` 전수 스캔(최근 50개), 폴더명(-home-soondoree07-byeolharu)→(~/byeolharu) 라벨 변환, user/assistant 턴 추출, tool_use 블록 이름·요약(file_path/command/pattern) 추출",
+      "app/api/history/route.ts + [sessionId]/route.ts — 서버사이드 API, next-auth middleware로 자동 보호",
+      "히스토리 상세 페이지 타임라인 UI — 사용자/Claude 턴 색상 구분(border-l-2), tool_use 블록 배지, 세션 요약이 있으면 상단에 emerald 배지로 강조 표시",
+      "lib/history.ts에 세션 요약 파일 통합 — `~/.claude/session-summaries/{sessionId}.md`의 frontmatter 제거 후 '## 한 줄 요약' 섹션을 제목으로 우선 사용, hasSummary 플래그로 리스트에 '요약됨' 배지 표시",
+      "devlog/logs.json `\"project\": \"pokenova\"` 1건 → `\"pokenova_project\"`로 통일 (고정 프로젝트명 표준 준수)"
+    ],
+    "commits": []
+  },
+  {
+    "date": "2026-04-24",
     "project": "pochams_project",
     "title": "결정력 계산기 특성 보정 + 아이템 위력 보정 UI·전기구슬 수정",
     "items": [
@@ -142,7 +170,7 @@
   },
   {
     "date": "2026-04-20",
-    "project": "pokenova",
+    "project": "pokenova_project",
     "title": "세레비넷 비교 후 누락 기술 683개 추가 + 아쿠스타 아쿠아제트 + CSS 통일",
     "items": [
       "세레비넷 포켓몬챔피언스 페이지와 learnsets.json 전수 비교 — 185마리 대상",
