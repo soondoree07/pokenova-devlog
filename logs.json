@@ -23,7 +23,13 @@
       "app/api/history/route.ts + [sessionId]/route.ts — 서버사이드 API, next-auth middleware로 자동 보호",
       "히스토리 상세 페이지 타임라인 UI — 사용자/Claude 턴 색상 구분(border-l-2), tool_use 블록 배지, 세션 요약이 있으면 상단에 emerald 배지로 강조 표시",
       "lib/history.ts에 세션 요약 파일 통합 — `~/.claude/session-summaries/{sessionId}.md`의 frontmatter 제거 후 '## 한 줄 요약' 섹션을 제목으로 우선 사용, hasSummary 플래그로 리스트에 '요약됨' 배지 표시",
-      "devlog/logs.json `\"project\": \"pokenova\"` 1건 → `\"pokenova_project\"`로 통일 (고정 프로젝트명 표준 준수)"
+      "devlog/logs.json `\"project\": \"pokenova\"` 1건 → `\"pokenova_project\"`로 통일 (고정 프로젝트명 표준 준수)",
+      "메인 페이지 2컬럼 레이아웃으로 재설계 — 왼쪽 세션 목록(3fr) + 오른쪽 세로 히스토리 사이드바(2fr, 카드 클릭 시 사이드바 내에서 요약·타임라인 미리보기 10턴·'전체 타임라인 →' 링크로 교체, '← 목록' 복귀 버튼). 별도 `/history` 리스트 페이지 제거, `/history/[sessionId]`는 전체 타임라인 뷰로 유지",
+      "lib/history-types.ts 타입 파일 분리 — 클라이언트 컴포넌트가 `fs` 의존 없이 타입만 import 가능하도록",
+      "전체 UI 네온사인 테마 전면 리디자인 (UI Designer 에이전트) — Orbitron(display) + Noto Sans KR(한글) + JetBrains Mono(mono) 폰트 스택, 컬러 위계(시안=네비/활성/사용자턴, 마젠타=주요 CTA, 바이올렛=요약/Claude턴, 로즈=오류), `#050510` 배경 + 3방향 래디얼 그라디언트 + 32px 도트 그리드 + 3px 스캔라인 오버레이",
+      "네온 글로우 유틸 + 커스텀 스크롤바 — tailwind.config.ts에 color/shadow/keyframe 토큰화, globals.css에 `text-glow-*` / `neon-surface` / `neon-btn` / `neon-dot-active` 유틸 추가, 스크롤바 5px·시안 22%(호버 50%)·Firefox scrollbar-width thin 전역 적용",
+      "부팅 오버레이 시각 강화 — 시안/마젠타 이중 역회전 링, Orbitron 자간 확장 타이틀, 래디얼 디머 + backdrop-blur",
+      "세션 카드·버튼 리디자인 — 활성 세션 이름 시안 글로우 + 펄스 점, '+새 세션'은 마젠타 CTA / '열기'는 시안 CTA로 역할 구분, '요약' 필은 바이올렛 튜브 스타일, 타임라인 턴 좌측 보더 inset glow"
     ],
     "commits": []
   },
