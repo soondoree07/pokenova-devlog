@@ -1,6 +1,18 @@
 [
   {
     "date": "2026-04-25",
+    "project": "pochams_project",
+    "title": "메가플라엣테 누락 복구 — DB upsert + 태그 옵션 비대칭 필터 버그 수정",
+    "items": [
+      "계산기에서 메가플라엣테 미노출 원인 추적 — 데이터 파일·seed 코드는 정상, DB의 inChampions 플래그가 stale했음. `npm run upsert pokemon floette` 로 base/메가/영원의꽃 3건 재반영",
+      "src/lib/gameData.ts:55-60 getTagPokemonOptions 비대칭 버그 수정 — 메가 row 필터링이 base의 inChampions에 의존해, base 미포챔스(예: 플라엣테 670) 케이스에서 메가만 별도 포챔스(메가플라엣테)인 항목이 샘플 파트너/카운터 태그에서 누락되던 문제. 알트폼과 동일하게 inChampions 직접 필터로 통일"
+    ],
+    "commits": [
+      "7a14bfa - fix(samples): 태그 옵션에서 메가폼이 inChampions 직접 필터로 노출되도록 수정"
+    ]
+  },
+  {
+    "date": "2026-04-25",
     "project": "byeolharu",
     "title": "디자인 명세 6종 + Phase 1 Flutter 프로토타입 스캐폴드",
     "items": [
