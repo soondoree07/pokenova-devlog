@@ -1,5 +1,22 @@
 [
   {
+    "date": "2026-04-27",
+    "project": "byeolharu",
+    "title": "AVD 부팅 막힘 → Flutter Web 우회 검증 + 홈 화면 1차 버그 수정",
+    "items": [
+      "Pixel 6 AVD 재시도 — Windows 시스템 로캘 UTF-8(Beta)로 변경 + 재부팅 후에도 동일 에러(`Failed to retrieve exit code due to: 핸들이 잘못되었습니다` + `detected a hanging thread 'QEMU2 CPU0/1/2/3 thread'`). 인코딩 외 가상화/QEMU 호환성 원인으로 재진단",
+      "AVD 시간 낭비 차단하고 Flutter Web 우회 결정 — 폰 미보유, 영문 계정 신설은 1~2시간, Phase 1은 UI 위주라 web 검증으로 충분",
+      "`flutter create . --platforms=web` 으로 web/index.html·manifest.json·icons 5종 추가 (기존 lib/ 코드 보존). `flutter run -d web-server --web-port 8080` + Windows Chrome `localhost:8080` 접속으로 첫 화면 검증 성공",
+      "1차 버그 #1 발견 — HomePage 북두칠성 7슬롯 좌표가 `home_page.dart:15` 어림 추정. design-system.md §9 표 그대로 정합 (Dubhe 18,38 / Merak 18,65 / Phecda 36,70 / Megrez 38,50 / Alioth 56,45 / Mizar 74,38 / Alkaid 90,28). 미세 튜닝은 후속",
+      "1차 버그 #2 발견 — FAB '별을 기록하다' 라벨이 흰색 배경 위 흰색 텍스트(AppTextStyles.button.color = white)로 안 보임. `button.copyWith(color: AppColors.midnightNavy)` 로 명시 (text/onColor 토큰 규칙)",
+      "flutter analyze 0 issues. Hot restart(R) 로 좌표·텍스트 색 둘 다 즉시 반영 확인",
+      "02_dev/RESUME.md 진행 메모도 함께 push (다음 세션 인계용)"
+    ],
+    "commits": [
+      "cad01c4 - dev: AVD 우회용 Flutter web 플랫폼 추가 + 홈 화면 1차 버그 수정"
+    ]
+  },
+  {
     "date": "2026-04-25",
     "project": "pochams_project",
     "title": "메가플라엣테 누락 복구 + 도감 메가진화 통계 분리",
