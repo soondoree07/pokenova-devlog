@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-04-29",
+    "project": "byeolharu",
+    "title": "검증 환경 결정 변경 — AVD·Flutter Web 폐기, 안드로이드 실기기 USB 디버깅으로 전환",
+    "items": [
+      "사용자가 안드로이드 폰을 직접 구해와 USB 디버깅으로 Phase 1 검증 진행하기로 결정. AVD(Pixel_6 QEMU2 thread hang)와 Flutter Web 우회는 모두 폐기",
+      "글로벌 메모리 갱신 — `feedback_byeolharu_device.md` 추가, `MEMORY.md` 인덱스 업데이트. 이후 별하루에서 AVD 재진단·web 띄우기 제안은 금지",
+      "RESUME.md 전면 재작성 — 폰 도착 전 가능 작업 13개를 우선순위(코드/환경셋업/디자인결제/단위테스트) 4단계로 정리. 내일 첫 액션은 #1 기록 3단계 위저드 코드 골격(`lib/features/record/record_page.dart`)",
+      "결정 대기 항목 6개 정리 — 앱 아이콘, 한글 폰트, 별 모양, 스크린샷 헤드라인 + 신규 2건(패키지명 `com.junghyeok.byeolharu` / 로컬 저장소 Hive vs drift)",
+      "코드 수정 없는 전략 정리 세션. 별하루 레포 커밋 없음, RESUME.md만 갱신"
+    ],
+    "commits": [
+      "0d4286a - docs: RESUME.md 2026-04-29 마감 — 검증 환경을 안드로이드 실기기 USB로 전환"
+    ]
+  },
+  {
     "date": "2026-04-27",
     "project": "byeolharu",
     "title": "AVD 부팅 막힘 → Flutter Web 우회 검증 + 홈 화면 1차 버그 수정",
