@@ -454,7 +454,15 @@
       padding: 24px 16px 60px;
     }
 
-    .detail-back {
+    .detail-toolbar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .detail-btn {
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -466,10 +474,59 @@
       cursor: pointer;
       font-size: 0.85rem;
       font-family: inherit;
-      margin-bottom: 20px;
       transition: all 0.15s;
     }
-    .detail-back:hover { background: #2d3748; color: #e2e8f0; border-color: #4a5568; }
+    .detail-btn:hover { background: #2d3748; color: #e2e8f0; border-color: #4a5568; }
+    .detail-btn.copied { background: #1a3a2a; color: #68d391; border-color: #68d391; }
+
+    .detail-pager {
+      display: flex;
+      gap: 12px;
+      margin-top: 32px;
+      padding-top: 22px;
+      border-top: 1px solid #2d3748;
+    }
+
+    .detail-pager-btn {
+      flex: 1;
+      padding: 14px 18px;
+      border: 1px solid #2d3748;
+      background: #1a202c;
+      color: #cbd5e0;
+      border-radius: 10px;
+      cursor: pointer;
+      font-family: inherit;
+      text-align: left;
+      transition: all 0.15s;
+      min-width: 0;
+    }
+    .detail-pager-btn:hover:not(:disabled) {
+      background: #1e2535;
+      border-color: #4a5568;
+      color: #e2e8f0;
+    }
+    .detail-pager-btn:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+    .detail-pager-btn.next { text-align: right; }
+    .detail-pager-label {
+      display: block;
+      font-size: 0.7rem;
+      color: #718096;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .detail-pager-title {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 600;
+      line-height: 1.4;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
 
     .detail-header {
       background: linear-gradient(135deg, #1a1f2e 0%, #16213e 100%);
@@ -593,7 +650,10 @@
   <!-- 상세 페이지 -->
   <div id="detail-view">
     <main>
-      <button class="detail-back" id="detail-back">← 목록으로</button>
+      <div class="detail-toolbar">
+        <button class="detail-btn" id="detail-back">← 목록으로</button>
+        <button class="detail-btn" id="detail-copy" title="이 항목 직접 링크 복사">🔗 링크 복사</button>
+      </div>
       <div class="detail-header">
         <div class="detail-meta">
           <span id="detail-date"></span>
@@ -606,6 +666,16 @@
       <div class="detail-section-label">상세 내용</div>
       <div class="md-body detail-body" id="detail-body"></div>
       <div class="detail-commits" id="detail-commits"></div>
+      <div class="detail-pager">
+        <button class="detail-pager-btn prev" id="detail-prev" disabled>
+          <span class="detail-pager-label">← 이전 (더 최근)</span>
+          <span class="detail-pager-title" id="detail-prev-title">―</span>
+        </button>
+        <button class="detail-pager-btn next" id="detail-next" disabled>
+          <span class="detail-pager-label">다음 (더 오래된) →</span>
+          <span class="detail-pager-title" id="detail-next-title">―</span>
+        </button>
+      </div>
     </main>
   </div>
 
@@ -761,9 +831,12 @@
     }
 
     // ── 상세 페이지 라우팅 ────────────────────────────────────────
+    let CURRENT_IDX = -1;
+
     function openDetail(idx) {
       const log = LOGS[idx];
       if (!log) return;
+      CURRENT_IDX = idx;
 
       document.body.classList.add('detail-mode');
 
@@ -796,12 +869,23 @@
         commitsEl.innerHTML = `<div class="commits-label">Commits</div><div class="no-commits">기록 없음</div>`;
       }
 
+      // prev/next 버튼 업데이트 (LOGS는 최신이 위, 즉 idx-1이 더 최근)
+      const prevBtn = document.getElementById('detail-prev');
+      const nextBtn = document.getElementById('detail-next');
+      const prevLog = idx > 0 ? LOGS[idx - 1] : null;
+      const nextLog = idx < LOGS.length - 1 ? LOGS[idx + 1] : null;
+      prevBtn.disabled = !prevLog;
+      nextBtn.disabled = !nextLog;
+      document.getElementById('detail-prev-title').textContent = prevLog ? prevLog.title : '―';
+      document.getElementById('detail-next-title').textContent = nextLog ? nextLog.title : '―';
+
       window.scrollTo(0, 0);
       const target = '#log/' + idx;
       if (location.hash !== target) location.hash = target;
     }
 
     function closeDetail() {
+      CURRENT_IDX = -1;
       document.body.classList.remove('detail-mode');
       if (location.hash) history.replaceState(null, '', location.pathname + location.search);
     }
@@ -812,11 +896,45 @@
         const idx = parseInt(m[1], 10);
         if (idx >= 0 && idx < LOGS.length) openDetail(idx);
       } else {
+        CURRENT_IDX = -1;
         document.body.classList.remove('detail-mode');
       }
     }
 
     document.getElementById('detail-back').addEventListener('click', closeDetail);
+    document.getElementById('detail-prev').addEventListener('click', () => {
+      if (CURRENT_IDX > 0) openDetail(CURRENT_IDX - 1);
+    });
+    document.getElementById('detail-next').addEventListener('click', () => {
+      if (CURRENT_IDX >= 0 && CURRENT_IDX < LOGS.length - 1) openDetail(CURRENT_IDX + 1);
+    });
+    document.getElementById('detail-copy').addEventListener('click', async () => {
+      const btn = document.getElementById('detail-copy');
+      try {
+        await navigator.clipboard.writeText(location.href);
+        const originalText = btn.textContent;
+        btn.textContent = '✓ 복사됨';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.classList.remove('copied');
+        }, 1500);
+      } catch (e) {
+        // 폴백: 보안 컨텍스트가 아니면 prompt로 노출
+        prompt('아래 URL을 복사하세요:', location.href);
+      }
+    });
+
+    // ESC 키로 목록 복귀
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && document.body.classList.contains('detail-mode')) {
+        // 모달이 열려있으면 그건 모달 닫기 우선
+        const modal = document.getElementById('modal-overlay');
+        if (modal && modal.classList.contains('open')) return;
+        closeDetail();
+      }
+    });
+
     window.addEventListener('hashchange', handleHashRoute);
 
     // ── 기획서 ────────────────────────────────────────────────────
