@@ -327,6 +327,31 @@
       font-size: 0.82rem;
     }
 
+    .specs-file-action {
+      color: #4a5568;
+      font-size: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    .specs-file-download {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      color: #94a3b8;
+      font-size: 0.95rem;
+      text-decoration: none;
+      flex-shrink: 0;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .specs-file-download:hover {
+      background: #1a2332;
+      color: #e2e8f0;
+    }
+
     .specs-empty-hint {
       margin-top: 6px;
       font-size: 0.76rem;
@@ -716,6 +741,9 @@
             const safeTitle = f.title.replace(/'/g, "\\'");
             const meta = `${f.date || ''} · ${ext.toUpperCase()}`;
 
+            const downloadName = f.file.split('/').pop();
+            const downloadBtn = `<a class="specs-file-download" href="${f.file}" download="${downloadName}" title="다운로드" onclick="event.stopPropagation()">↓</a>`;
+
             if (ext === 'md') {
               return `
                 <div class="specs-file-item" onclick="openMarkdown('${f.file}', '${safeTitle}')">
@@ -724,7 +752,8 @@
                     <div class="specs-file-title">${f.title}</div>
                     <div class="specs-file-meta">${meta}</div>
                   </div>
-                  <span style="color:#4a5568;font-size:0.75rem;">열기 →</span>
+                  <span class="specs-file-action">열기 →</span>
+                  ${downloadBtn}
                 </div>`;
             } else if (ext === 'json') {
               return `
@@ -734,17 +763,18 @@
                     <div class="specs-file-title">${f.title}</div>
                     <div class="specs-file-meta">${meta}</div>
                   </div>
-                  <span style="color:#4a5568;font-size:0.75rem;">열기 →</span>
+                  <span class="specs-file-action">열기 →</span>
+                  ${downloadBtn}
                 </div>`;
             } else if (ext === 'docx' || ext === 'doc') {
               return `
-                <a class="specs-file-item" href="${f.file}" download>
+                <a class="specs-file-item" href="${f.file}" download="${downloadName}">
                   <span class="specs-file-icon">${icon}</span>
                   <div class="specs-file-info">
                     <div class="specs-file-title">${f.title}</div>
                     <div class="specs-file-meta">${meta}</div>
                   </div>
-                  <span style="color:#4a5568;font-size:0.75rem;">다운로드 ↓</span>
+                  <span class="specs-file-action">다운로드 ↓</span>
                 </a>`;
             } else {
               return `
@@ -754,7 +784,8 @@
                     <div class="specs-file-title">${f.title}</div>
                     <div class="specs-file-meta">${meta}</div>
                   </div>
-                  <span style="color:#4a5568;font-size:0.75rem;">열기 →</span>
+                  <span class="specs-file-action">열기 →</span>
+                  ${downloadBtn}
                 </a>`;
             }
           }).join('');
