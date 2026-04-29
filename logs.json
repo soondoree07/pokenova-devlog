@@ -2,14 +2,16 @@
   {
     "date": "2026-04-29",
     "project": "devlog",
-    "title": "specs.json에 byeolharu·pokenova_project 기획서 등록",
+    "title": "specs.json에 byeolharu·pokenova_project 기획서 등록 + 다운로드 버튼 추가",
     "items": [
       "사용자 보고 — devlog UI에서 pokenova 사이트 기획서가 안 보이고, 별하루 기획서도 올라가 있지 않음. 원인 추적 결과 기획서 md 파일 자체는 둘 다 이미 존재(`specs/byeolharu/기획서.md` 291줄 / `specs/pokenova_project/기획서.md` 238줄)했으나 `specs.json` 인덱스에 등록되지 않아 노출되지 않은 상태",
       "specs.json 수정 — byeolharu 키 신규 추가(`별하루 기획서 v1.0.4 (devlog 스냅샷)`, 2026-04-29), pokenova_project 빈 배열에 `포케노바 기획서 v1.0`(2026-04-21) 항목 추가",
-      "JSON 유효성 + 키 4종(byeolharu/junghyeok-portfolio/pokenova_project/pochams_project) 모두 정상 확인 후 push"
+      "JSON 유효성 + 키 4종(byeolharu/junghyeok-portfolio/pokenova_project/pochams_project) 모두 정상 확인 후 push",
+      "기획서 카드 파일 항목 우측에 ↓ 다운로드 버튼 추가 — md/json은 '열기' 동작은 그대로 유지하고 다운로드는 별도 버튼으로 분리. event.stopPropagation으로 다운로드 클릭 시 모달이 안 열리게 처리. docx는 기존처럼 항목 전체가 다운로드 트리거"
     ],
     "commits": [
-      "ebcded2 - devlog: specs.json에 byeolharu·pokenova_project 기획서 등록"
+      "ebcded2 - devlog: specs.json에 byeolharu·pokenova_project 기획서 등록",
+      "08fb415 - devlog: 기획서 카드에 파일 다운로드 버튼 추가"
     ]
   },
   {
