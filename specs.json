@@ -1,4 +1,12 @@
 {
+  "byeolharu": [
+    {
+      "title": "별하루 기획서 v1.0.4 (devlog 스냅샷)",
+      "file": "specs/byeolharu/기획서.md",
+      "date": "2026-04-29",
+      "type": "md"
+    }
+  ],
   "junghyeok-portfolio": [
     {
       "title": "Junghyeok Portfolio 기획서 v1.0",
@@ -7,7 +15,14 @@
       "type": "md"
     }
   ],
-  "pokenova_project": [],
+  "pokenova_project": [
+    {
+      "title": "포케노바 기획서 v1.0",
+      "file": "specs/pokenova_project/기획서.md",
+      "date": "2026-04-21",
+      "type": "md"
+    }
+  ],
   "pochams_project": [
     {
       "title": "포챔스 배틀 기획서 v6.3 (개발 반영본)",
