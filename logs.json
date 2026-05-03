@@ -1,5 +1,27 @@
 [
   {
+    "date": "2026-05-03",
+    "project": "flow-project",
+    "title": "Flow Project 초기 셋업 — Next.js 15 + Tailwind v4 + 4개 라우트",
+    "description": "데이터 시각화 시리즈 사이트 'Flow Project'의 Phase 1(포켓몬 MVP) 착수. PLAN.md(v0.4) 기반으로 폴더 구조 잡고, create-next-app 없이 옵션 B(수동 셋업)로 Next.js 15.5.15 + React 19 + Tailwind v4 스캐폴딩. /, /stories, /stories/pokemon-types, /about 4개 라우트 정상 렌더링 확인 후 GitHub private repo 생성 + 첫 푸시까지 완료.",
+    "items": [
+      "PLAN.md(v0.4 기획서, 9개 시리즈 정의) docs/PLAN.md로 이동, CLAUDE.md 작성 (사용자 사양: 기획 요약 + 기술 스택 + 폴더 구조 + 컨벤션 + 명령어)",
+      "폴더 구조 생성: src/{app,components/visualizations,data,lib,types}, docs, scripts, public — Pochams 컨벤션 + 시리즈 슬러그별 격리",
+      "수동 스캐폴딩(옵션 B): package.json, tsconfig.json (paths @/* → ./src/*), next.config.ts, postcss.config.mjs, eslint.config.mjs (FlatCompat + next/core-web-vitals + next/typescript), .gitignore, next-env.d.ts",
+      "스택: Next.js 15.5.15 (15.5.4의 CVE-2025-66478 회피), React 19.1.1, Tailwind v4 (@tailwindcss/postcss), TypeScript 5",
+      "src/lib/stories.ts — 9개 시리즈 메타 단일 소스 (slug/title/tagline/shape/priority/status). Home과 /stories에서 같은 데이터 사용",
+      "공용 컴포넌트 4개: Header, Footer, PageContainer, SeriesCard (status별 disabled 처리)",
+      "라우트 4개: / (시리즈 갤러리), /stories (인덱스), /stories/pokemon-types (Phase 1 본진 placeholder), /about — 모두 200, 메타데이터 템플릿 'Title — Flow Project' 정상",
+      "Tailwind v4 globals.css에 @import \"tailwindcss\" + @theme inline 토큰 + 다크모드 prefers-color-scheme",
+      "ESLint flat config 이슈: 15.5.x의 eslint-config-next는 legacy CJS 포맷이라 FlatCompat(@eslint/eslintrc) 통해 extends 필요. 수정 후 lint clean",
+      "검증: npm run build → 5개 라우트 (4 + _not-found) 모두 정적 prerender, First Load JS 102~106 kB. npm run dev (포트 3001, 3000은 claude-dashboard가 점유) → 4개 라우트 + 404 fallback 모두 200/404 정상",
+      "git init -b main, GitHub private repo 'soondoree07/flow-project' 생성 (gh CLI), origin/main 트래킹, 첫 푸시"
+    ],
+    "commits": [
+      "9e8036e - chore: initial scaffold with Next.js 15 + Tailwind v4 + 4 routes"
+    ]
+  },
+  {
     "date": "2026-04-29",
     "project": "claude-dashboard",
     "title": "Dependency Graph 폴리시 + 분석기 5종 + CLAUDE.md + cross-project link",
