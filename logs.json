@@ -52,7 +52,35 @@
       "083657b - feat(maplestory): switch to absolute population data, show all servers",
       "00ca8b1 - feat(maplestory): expand to 11 timepoints — full Maple.GG world-leap matrix",
       "6e4803f - feat(maplestory): interpolate city-4 servers in source-locked timepoints",
-      "593bcb7 - feat(lol-rank): series 5-1 — 50 monthly snapshots from champion.gg via Wayback"
+      "593bcb7 - feat(lol-rank): series 5-1 — 50 monthly snapshots from champion.gg via Wayback",
+      "abe81d6 - chore: enable static export for Cloudflare Pages deployment",
+      "6590838 - chore: pin Cloudflare to static Pages mode (out/) — disable Workers auto-deploy",
+      "57990dd - ci: GitHub Actions auto-deploy to Cloudflare Pages on main push",
+      "5301ed6 - ci: pass Cloudflare token via env var",
+      "7d30fef - ci: drop wrangler-action wrapper, call wrangler directly via run+env",
+      "a36866f - docs: PLAN v0.8 — 8개 시리즈 가동 완료, §9 진행 현황 표 신설"
+    ]
+  },
+  {
+    "date": "2026-05-03",
+    "project": "flow-project",
+    "title": "Cloudflare Pages 배포 + Access 보호 + GitHub Actions 자동화",
+    "description": "사이트 본인 전용으로 인터넷 호스팅. Next.js 정적 export(out/) → Cloudflare Pages → Cloudflare Access(본인 계정만) → GitHub Actions 자동 deploy 파이프라인 완성. https://flow-project.pages.dev/ 가동, main 브랜치 push 시 1~2분 내 자동 반영.",
+    "items": [
+      "next.config.ts에 output:'export' + images.unoptimized + trailingSlash 추가 → 14 라우트 모두 정적 prerender (out/ 폴더 1.2MB)",
+      "Cloudflare Pages 첫 셋업이 자동으로 OpenNext Workers 모드로 잡혀서 .next/standalone/server/pages-manifest.json 누락으로 실패. wrangler.jsonc로 pages_build_output_dir './out' 명시했지만 빌드 시 deploy command 'npx wrangler deploy'가 자동 박혀 계속 OpenNext 호출",
+      "해결: 프로젝트 삭제 후 로컬에서 'npx wrangler login' + 'npx wrangler pages deploy out --project-name=flow-project' 직접 deploy → Direct Upload 모드로 새 Pages 프로젝트 자동 생성, OpenNext 우회",
+      "Cloudflare Access (Zero Trust) 적용 — 카드 등록 후 Free plan. pages.dev 도메인은 일반 Self-hosted application 직접 보호 불가 → Pages 프로젝트의 Settings → Access policy 토글 ON으로 자동 super admin 본인만 접근 (별도 이메일 입력 X)",
+      "GitHub Actions 워크플로우 .github/workflows/deploy.yml 작성 — main push 시 npm ci → npm run build → wrangler pages deploy out. 시행착오: wrangler-action@v3 wrapper가 apiToken input/env를 wrangler subprocess에 전달 못 해서 'Not logged in' 실패 → 'npx wrangler@4 pages deploy ... ' 직접 run + env 블록으로 CLOUDFLARE_API_TOKEN 명시 전달로 해결",
+      "GitHub Secret CLOUDFLARE_API_TOKEN 등록. Account permission 'Cloudflare Pages: Edit' 토큰. account ID는 hardcoded (public)",
+      "Build 캐시 경고 + npm 6 vulnerabilities + Node 20 deprecation(2026.06) 경고는 후속 폴리시로 분리"
+    ],
+    "commits": [
+      "abe81d6 - chore: enable static export for Cloudflare Pages deployment",
+      "6590838 - chore: pin Cloudflare to static Pages mode (out/)",
+      "57990dd - ci: GitHub Actions auto-deploy to Cloudflare Pages on main push",
+      "5301ed6 - ci: pass Cloudflare token via env var",
+      "7d30fef - ci: drop wrangler-action wrapper, call wrangler directly via run+env"
     ]
   },
   {
