@@ -23,11 +23,17 @@
       "src/lib/pokemon/aggregate.ts — 세대별 누적 타입 비율 집계 (듀얼 타입 양쪽 +1, totalTypeSlots 기준 % 계산해 각 세대 합계 정확히 100%)",
       "/stories/pokemon-types 임시 검증 UI: 세대 슬라이더(1~9) + 18타입 비율 표 (TypeRatioTable client component, 막대 분포). D3 벌집 시각화는 다음 슬라이스로 분리",
       "검증 — 세대별 누적 마릿수: 1세대 151, 2세대 251, 3세대 386, 9세대 1086. 9세대 비율 1위 물 9.5%, 18타입 합계 100.00%. 잘못된 cwd로 devlog에 tsx 잘못 설치된 사고 발견 후 정리 (devlog는 원래 Node 프로젝트 아님)",
-      "한계 노트 — Pokenova는 현 시점 기준 타입 데이터라 1세대 누적에서 페어리 5마리·강철 2마리가 미리 잡힘 (실제 게임 도입은 6세대/2세대). 'X세대에 신타입 도입' 스토리텔링을 살리려면 별도 재분류 오버라이드 필요. MVP 후 결정"
+      "타입 재분류 오버라이드 적용 — Pokenova가 현 시점 기준 타입이라 발생하던 1세대 누적의 페어리 5/강철 2 사전 카운트 문제 해결",
+      "src/data/pokemon/type-reclassifications.ts — 24마리 매핑 (6세대 페어리 도입 22 + 2세대 강철 도입 2). pokedexId × fromGeneration × originalTypes",
+      "재분류 22마리(페어리 도입 전): 1세대 5(삐삐/픽시/푸린/푸크린/마임맨), 2세대 8(삐/푸푸린/토게피/토게틱/마릴/마릴리/블루/그랑블루), 3세대 5(랄토스/킬리아/가디안/루리리/입치트), 4세대 2(흉내내/토게키스), 5세대 2(소미안/엘풍)",
+      "재분류 2마리(강철 도입 전): 1세대 코일/레어코일 단일 전기로 환원",
+      "aggregate.ts에 getEffectiveTypes() 추가: variant=='base' && asOfGeneration < r.fromGeneration이면 originalTypes 사용, 그 외 entry.types. 듀얼 타입 +1 룰과 합계 100% 무결성 유지",
+      "검증 결과 — 1세대 페어리/강철/악 모두 0 ✓. 5→6세대 페어리 0%→3.27% 점프 (PLAN.md 6세대 페어리 도입 스토리 살아남), 1→2세대 강철 0%→1.66%, 악 0%→1.66%"
     ],
     "commits": [
       "9e8036e - chore: initial scaffold with Next.js 15 + Tailwind v4 + 4 routes",
-      "dbf63f4 - feat(pokemon): import Pokenova data and aggregate type ratios by generation"
+      "dbf63f4 - feat(pokemon): import Pokenova data and aggregate type ratios by generation",
+      "cc48e0d - feat(pokemon): retroactive type reclassification for newly introduced types"
     ]
   },
   {
