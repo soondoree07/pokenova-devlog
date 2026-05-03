@@ -15,10 +15,19 @@
       "Tailwind v4 globals.css에 @import \"tailwindcss\" + @theme inline 토큰 + 다크모드 prefers-color-scheme",
       "ESLint flat config 이슈: 15.5.x의 eslint-config-next는 legacy CJS 포맷이라 FlatCompat(@eslint/eslintrc) 통해 extends 필요. 수정 후 lint clean",
       "검증: npm run build → 5개 라우트 (4 + _not-found) 모두 정적 prerender, First Load JS 102~106 kB. npm run dev (포트 3001, 3000은 claude-dashboard가 점유) → 4개 라우트 + 404 fallback 모두 200/404 정상",
-      "git init -b main, GitHub private repo 'soondoree07/flow-project' 생성 (gh CLI), origin/main 트래킹, 첫 푸시"
+      "git init -b main, GitHub private repo 'soondoree07/flow-project' 생성 (gh CLI), origin/main 트래킹, 첫 푸시",
+      "Phase 1 포켓몬 본격 작업 1단계 — Pokenova(quiz_pokemon.json 1025마리) → 정제 import 스크립트 작성 (scripts/import-pokemon.ts, tsx 사용)",
+      "1종 1카운트 원칙 적용: 베이스 1025 + 리전폼 4종(alola 18 + galar 20 + hisui 19 + paldea 4 = 61) = 1086 엔트리. mega/gmax/primal/zen/alt/base/origin은 모두 같은 종의 변형이라 제외 (alt 폼은 타입 동일/변경 무관 모두 제외)",
+      "리전폼 도입 세대 매핑 (alola→7, galar→8, hisui→8, paldea→9). 베이스는 pokedex id 범위로 자동 매핑 (1세대 1-151, ..., 9세대 906-1025)",
+      "src/types/pokemon.ts — POKEMON_TYPES 18개(표준 순서 노말→페어리), Generation 1~9, PokemonEntry, PokemonVariant",
+      "src/lib/pokemon/aggregate.ts — 세대별 누적 타입 비율 집계 (듀얼 타입 양쪽 +1, totalTypeSlots 기준 % 계산해 각 세대 합계 정확히 100%)",
+      "/stories/pokemon-types 임시 검증 UI: 세대 슬라이더(1~9) + 18타입 비율 표 (TypeRatioTable client component, 막대 분포). D3 벌집 시각화는 다음 슬라이스로 분리",
+      "검증 — 세대별 누적 마릿수: 1세대 151, 2세대 251, 3세대 386, 9세대 1086. 9세대 비율 1위 물 9.5%, 18타입 합계 100.00%. 잘못된 cwd로 devlog에 tsx 잘못 설치된 사고 발견 후 정리 (devlog는 원래 Node 프로젝트 아님)",
+      "한계 노트 — Pokenova는 현 시점 기준 타입 데이터라 1세대 누적에서 페어리 5마리·강철 2마리가 미리 잡힘 (실제 게임 도입은 6세대/2세대). 'X세대에 신타입 도입' 스토리텔링을 살리려면 별도 재분류 오버라이드 필요. MVP 후 결정"
     ],
     "commits": [
-      "9e8036e - chore: initial scaffold with Next.js 15 + Tailwind v4 + 4 routes"
+      "9e8036e - chore: initial scaffold with Next.js 15 + Tailwind v4 + 4 routes",
+      "dbf63f4 - feat(pokemon): import Pokenova data and aggregate type ratios by generation"
     ]
   },
   {
