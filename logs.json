@@ -1,5 +1,29 @@
 [
   {
+    "date": "2026-05-04",
+    "project": "maple-boss",
+    "title": "메이플 보스 파티 기록 — MVP 가동 + 결정석 편집 페이지",
+    "description": "PLAN.md 명세대로 maple-boss 프로젝트 처음부터 작성 후 사용자 피드백 반영. 9개 ES Module + index.html + style.css. localStorage 키 'maple-boss-v1'. 결정석 가격 편집 페이지(#/crystals) 신설. 유니크 전리품 글자색을 이미지 도미넌트 컬러로 자동 추출. 트리거 키워드 '메이플보스' 등록.",
+    "items": [
+      "MVP 처음부터 작성 — js/{app, data, storage, utils, party, progress, calendar, record, backup}.js 9개 + index.html + css/style.css. PLAN.md 명세 기반, reference zip 참고하되 dayDiff timezone fix / ID 12자 / viewedMonth 보존 / ESC 닫기 등 개선",
+      "파티 만들기 모달 — 닉네임 1칸 → 6칸 고정 그리드 (Enter로 다음 칸 이동, 빈 칸 무시, 1명 이상이면 저장)",
+      "파티 카드 우상단 × 삭제 버튼 — confirm으로 기록 N건 함께 삭제 안내, 호버 시 노출 (모바일은 옅게 항상)",
+      "채널 picker 버튼 그리드 — 드롭다운 폐기. 캘린더 날짜 모달에 1·20세이상·2~39 버튼(8열 그리드)로 채널 선택. 첫 회차 채널이 정해지면 잠금. 채널 미선택 시 + 보스 기록 추가 비활성",
+      "같은 날 두 번째 회차부터 opener / baseReward 직전 값 자동 미리 채움. 같은 주(주간)·같은 달(검마) 클리어한 보스는 보스 드롭다운에서 자동 제외",
+      "BossRun.baseReward 신설 — '먹은 사람' 의미를 '기본 보상 받은 사람'으로 명확화. 폼에 상자 연 사람 / 기본 보상 form-row 2열. 둘 다 선택 안 해도 저장 가능 (필수: 보스 + 상자 연 사람만)",
+      "전리품 입력 타일 그리드 — select 폐기 (글자색이 dark 배경과 합쳐져 안 보이던 버그 동시 해결). 보스의 전리품들이 이미지+이름 타일로 노출, 토글 선택. 선택된 항목들은 아래에 [이름 라벨][먹은사람][가격][×] 행으로 자동 추가",
+      "이미지 27 + 오만의 원죄 1종 sync — 사용자가 /home/soondoree07/maple-boss/png/에 추가하면 프로젝트 안 png/로 cp 후 data.js의 LOOT_IMAGE 매핑. 신마석/연마석/장신망상자만 .webp",
+      "유니크 6종 글자색 — Pillow + 채도/명도 가중치로 도미넌트 컬러 추출. 황홀한 악몽 #FE9500 / 근원의 속삭임 #A500A6 / 죽음의 맹세 #00FEFD / 불멸의 유산 #FFA700 / 창세의 뱃지 #FB0400 / 오만의 원죄 #C9B58E. LOOT_NAME_COLOR + getDisplayLootColor(name, group) 헬퍼",
+      "유피테르(jupiter) BOSS_LOOT에 '오만의 원죄'(group: unique) 추가. 보스 자체는 enabled: false 유지",
+      "결정석 가격 편집 페이지 #/crystals — storage.js에 crystalOverrides + setCrystalOverrides + getEffectiveCrystal 헬퍼. 주간 8보스 카드 2열 + 월간 검마 별도 섹션 + 페이지 저장 버튼 1개. 빈/0/숫자 아닌 값은 자동으로 기본값 복귀. 백업 JSON에도 포함",
+      "진행도 위젯 결정석 이미지 클릭 → #/crystals (a 태그 + 호버 확대). 월간 영역에도 결정석 이미지 + 1인 분배액 추가 (검마 결정석 ÷ 인원). 주간 합계 cycle === 'weekly' 가드 추가 (검마 92억이 주간에 더해지던 문제 fix). 모든 분배액에 crystalOverrides 적용",
+      "트리거 키워드 등록 — /메이플보스 슬래시 커맨드 신설, ~/.claude/CLAUDE.md 트리거 표에 매이플보스/maple-boss 추가. /mnt/c/Users/박정혁/Downloads/maple-boss/RESUME.md 작성. 프로젝트 메모리 project_maple_boss.md + MEMORY.md 인덱스 추가",
+      "devlog/specs/maple-boss/기획서.md 신설 — v0.2 (MVP + 결정석 편집)",
+      "알려진 이슈: 분배액 132.2 vs 사용자 expected 114.2 차이 18억. 세렌+대적자+흉성+림보+발드=정확히 132.2 매치. 결정석 가격 편집 페이지에서 직접 조정으로 해결 가능. 자고 와서 사용자 확인 예정"
+    ],
+    "commits": []
+  },
+  {
     "date": "2026-05-03",
     "project": "flow-project",
     "title": "Flow Project Phase 1~3 완료 — 8개 시리즈 데이터 수집 + 시각화 가동 + PLAN v0.8",
