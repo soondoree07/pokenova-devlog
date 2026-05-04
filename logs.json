@@ -2,8 +2,8 @@
   {
     "date": "2026-05-04",
     "project": "maple-boss",
-    "title": "메이플 보스 파티 기록 — MVP 가동 + 결정석 편집 페이지",
-    "description": "PLAN.md 명세대로 maple-boss 프로젝트 처음부터 작성 후 사용자 피드백 반영. 9개 ES Module + index.html + style.css. localStorage 키 'maple-boss-v1'. 결정석 가격 편집 페이지(#/crystals) 신설. 유니크 전리품 글자색을 이미지 도미넌트 컬러로 자동 추출. 트리거 키워드 '메이플보스' 등록.",
+    "title": "메이플 보스 파티 기록 — 월별 사이드/예약/배경 테마/배포 + 채널 룰렛",
+    "description": "PLAN.md 명세대로 maple-boss 프로젝트 처음부터 작성 후 사용자 피드백 반영. 9개 ES Module + index.html + style.css. localStorage 키 'maple-boss-v1'. 결정석 가격 편집 페이지(#/crystals) 신설. 유니크 전리품 글자색을 이미지 도미넌트 컬러로 자동 추출. 트리거 키워드 '메이플보스' 등록. 추가로 월별 누적 사이드바·미래 예약·배경 이미지 6장+aqua 팔레트 전환·GitHub Pages 배포·채널 룰렛 사이드 카드까지.",
     "items": [
       "MVP 처음부터 작성 — js/{app, data, storage, utils, party, progress, calendar, record, backup}.js 9개 + index.html + css/style.css. PLAN.md 명세 기반, reference zip 참고하되 dayDiff timezone fix / ID 12자 / viewedMonth 보존 / ESC 닫기 등 개선",
       "파티 만들기 모달 — 닉네임 1칸 → 6칸 고정 그리드 (Enter로 다음 칸 이동, 빈 칸 무시, 1명 이상이면 저장)",
@@ -15,13 +15,26 @@
       "이미지 27 + 오만의 원죄 1종 sync — 사용자가 /home/soondoree07/maple-boss/png/에 추가하면 프로젝트 안 png/로 cp 후 data.js의 LOOT_IMAGE 매핑. 신마석/연마석/장신망상자만 .webp",
       "유니크 6종 글자색 — Pillow + 채도/명도 가중치로 도미넌트 컬러 추출. 황홀한 악몽 #FE9500 / 근원의 속삭임 #A500A6 / 죽음의 맹세 #00FEFD / 불멸의 유산 #FFA700 / 창세의 뱃지 #FB0400 / 오만의 원죄 #C9B58E. LOOT_NAME_COLOR + getDisplayLootColor(name, group) 헬퍼",
       "유피테르(jupiter) BOSS_LOOT에 '오만의 원죄'(group: unique) 추가. 보스 자체는 enabled: false 유지",
-      "결정석 가격 편집 페이지 #/crystals — storage.js에 crystalOverrides + setCrystalOverrides + getEffectiveCrystal 헬퍼. 주간 8보스 카드 2열 + 월간 검마 별도 섹션 + 페이지 저장 버튼 1개. 빈/0/숫자 아닌 값은 자동으로 기본값 복귀. 백업 JSON에도 포함",
-      "진행도 위젯 결정석 이미지 클릭 → #/crystals (a 태그 + 호버 확대). 월간 영역에도 결정석 이미지 + 1인 분배액 추가 (검마 결정석 ÷ 인원). 주간 합계 cycle === 'weekly' 가드 추가 (검마 92억이 주간에 더해지던 문제 fix). 모든 분배액에 crystalOverrides 적용",
-      "트리거 키워드 등록 — /메이플보스 슬래시 커맨드 신설, ~/.claude/CLAUDE.md 트리거 표에 매이플보스/maple-boss 추가. /mnt/c/Users/박정혁/Downloads/maple-boss/RESUME.md 작성. 프로젝트 메모리 project_maple_boss.md + MEMORY.md 인덱스 추가",
-      "devlog/specs/maple-boss/기획서.md 신설 — v0.2 (MVP + 결정석 편집)",
-      "알려진 이슈: 분배액 132.2 vs 사용자 expected 114.2 차이 18억. 세렌+대적자+흉성+림보+발드=정확히 132.2 매치. 결정석 가격 편집 페이지에서 직접 조정으로 해결 가능. 자고 와서 사용자 확인 예정"
+      "결정석 가격 편집 페이지 #/crystals — storage.js에 crystalOverrides + setCrystalOverrides + getEffectiveCrystal 헬퍼. 주간 8보스 카드 2열 + 월간 검마 별도 섹션 + 페이지 저장 버튼 1개. 빈/0/숫자 아닌 값은 자동으로 기본값 복귀. 백업 JSON에도 포함. 저장 시 alert 제거 후 history.back()으로 즉시 이전 화면",
+      "진행도 위젯 결정석 이미지 클릭 → #/crystals (a 태그 + 호버 확대). 월간 영역에도 결정석 이미지 + 1인 분배액 추가 (검마 결정석 ÷ 인원). 주간 합계 cycle === 'weekly' 가드 추가 (검마 92억이 주간에 더해지던 문제 fix). 모든 분배액에 crystalOverrides 적용. 결정석 아이콘 22→30px + summary 수직 baseline→center 정렬. 분배액 0건일 때 '—' 대신 '0억' 표기",
+      "월별 누적 사이드바 신설 (js/monthly.js) — 오늘 기준 이번 달/-1/-2 카드 3개. 헤더에 '인당 총 결정석'(weekly+monthly 합 ÷ 인원), 본문에 회차 전리품 평탄화 행(이미지+이름+나누기 전 가격, 유니크 항목별 도미넌트 컬러). sticky로 스크롤 따라옴",
+      "파티 상세 레이아웃 — party-detail-main을 grid로. 파티원 strip을 grid 양쪽에 걸쳐서 좌측 첫 진행도 카드와 우측 첫 월별 카드가 같은 y에서 시작. 1080px 이하에서 stack",
+      "미래 날짜 예약 (js/record.js) — 캘린더에서 미래 날짜 클릭 시 reservations 모달. <input type=time>로 시간 입력. 하루에 1예약만 (1건이라도 있으면 입력 폼 숨김). storage.js에 reservations 배열 + getReservationsByPartyAndDate / createReservation / deleteReservation + 백업/복원/cascade",
+      "캘린더 셀에 예약 표시 (js/calendar.js) — 미래 셀에 골드 점선 보더 pill로 시간(HH:MM) 노출, has-reservation 클래스 부여",
+      "배경 이미지 6장 + aqua 팔레트 전환 — /home/soondoree07/maple-boss/background/의 6장(리버스시티/별이삼켜지는심해/빛이마지막으로닿는곳/산호숲가는길/생명의동굴/정령의나무가있는곳)을 프로젝트 background/로 cp. app.js가 페이지 로드마다 6장 중 1장 랜덤으로 --bg-image 주입. html에 fixed cover로 깔고 어두운 그라디언트 overlay 약하게(0.18~0.40)",
+      "팔레트 골드→시안/aqua 전환 — --accent-gold #D4A056 → #4ee5f5(분배액·결정석 글로우·today 셀·hover 자동 반영). --accent-purple은 #a78bff. 텍스트는 푸른 화이트(#eaf6fb / #9ec3d6). 카드 배경 rgba 반투명 + backdrop-filter: blur(10px)로 사진 위 가독성",
+      "CSS variable url() base 함정 — variable의 url()은 그 variable이 사용되는 stylesheet 위치 기준으로 풀림. /css/style.css에서 var(--bg-image)를 쓰면 css/background/로 잘못 풀려 404. 해결: CSS 디폴트도, JS override도 모두 '../background/' prefix 통일",
+      "z-index 스태킹 함정 — body::before(z:-2)로 배경 깔면 html background-color 뒤로 가버림. ::before 제거하고 html에 직접 background fixed로 깔기",
+      "GitHub Pages 배포 — git remote를 maple-boss → maple-boss-party로 교체, gh repo create + push + Pages API 활성화. 사이트: https://soondoree07.github.io/maple-boss-party/",
+      "채널 룰렛 사이드 카드 (js/roulette.js) — 파티 상세 grid를 220px(룰렛) | 1fr(메인) | 320px(월별) 3컬럼으로. 슬롯 윈도우 + 시안/보라 그라데이션 버튼. SPIN_MS 1100, eased tick interval(35ms→180ms)로 굴러가다 멈추며 CHANNELS 1개 추천. roulette-pop / roulette-shake 키프레임 애니메이션",
+      "트리거 키워드 등록 — /메이플보스 슬래시 커맨드 신설, ~/.claude/CLAUDE.md 트리거 표에 메이플보스/maple-boss 추가. /mnt/c/Users/박정혁/Downloads/maple-boss/RESUME.md 작성. 프로젝트 메모리 project_maple_boss.md + MEMORY.md 인덱스 추가",
+      "devlog/specs/maple-boss/기획서.md 신설 → v0.3 (월별 사이드 + 예약 + 룰렛 + aqua 테마 + 배포)",
+      "해소된 이슈: 분배액 132.2 vs 사용자 expected 114.2 차이 → 결정석 가격 편집 페이지에서 사용자가 직접 조정 가능 (UX 정리됨)"
     ],
-    "commits": []
+    "commits": [
+      "0aae021 - feat: monthly side history, future-day reservations, aqua theme + bg images",
+      "3bfd313 - feat: channel roulette in left side column"
+    ]
   },
   {
     "date": "2026-05-03",
