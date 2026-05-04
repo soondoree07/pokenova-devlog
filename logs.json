@@ -27,13 +27,16 @@
       "z-index 스태킹 함정 — body::before(z:-2)로 배경 깔면 html background-color 뒤로 가버림. ::before 제거하고 html에 직접 background fixed로 깔기",
       "GitHub Pages 배포 — git remote를 maple-boss → maple-boss-party로 교체, gh repo create + push + Pages API 활성화. 사이트: https://soondoree07.github.io/maple-boss-party/",
       "채널 룰렛 사이드 카드 (js/roulette.js) — 파티 상세 grid를 220px(룰렛) | 1fr(메인) | 320px(월별) 3컬럼으로. 슬롯 윈도우 + 시안/보라 그라데이션 버튼. SPIN_MS 1100, eased tick interval(35ms→180ms)로 굴러가다 멈추며 CHANNELS 1개 추천. roulette-pop / roulette-shake 키프레임 애니메이션",
+      "캘린더 셀 클릭 → 회차 카드 전리품 행에도 이미지 표시 (record.renderRunCard) — grid를 24px 1fr auto auto로 늘리고 loot-img 추가, 매핑 없으면 회색 fallback 박스",
       "트리거 키워드 등록 — /메이플보스 슬래시 커맨드 신설, ~/.claude/CLAUDE.md 트리거 표에 메이플보스/maple-boss 추가. /mnt/c/Users/박정혁/Downloads/maple-boss/RESUME.md 작성. 프로젝트 메모리 project_maple_boss.md + MEMORY.md 인덱스 추가",
       "devlog/specs/maple-boss/기획서.md 신설 → v0.3 (월별 사이드 + 예약 + 룰렛 + aqua 테마 + 배포)",
       "해소된 이슈: 분배액 132.2 vs 사용자 expected 114.2 차이 → 결정석 가격 편집 페이지에서 사용자가 직접 조정 가능 (UX 정리됨)"
     ],
     "commits": [
       "0aae021 - feat: monthly side history, future-day reservations, aqua theme + bg images",
-      "3bfd313 - feat: channel roulette in left side column"
+      "3bfd313 - feat: channel roulette in left side column",
+      "488fed6 - docs: refresh RESUME — deployment + roulette + monthly side + reservations",
+      "76584c1 - feat: show loot image in date-modal run cards"
     ]
   },
   {
